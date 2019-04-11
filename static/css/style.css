@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bangers:100,200,300,400,500,600,700|Crimson Text:100,200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Calibri(body):100,200,300,400,500,600,700|Sans-serif:100,200,300,400,500,600,700');
 
 /*----------Special Padding / Margin / Text----------*/
 
@@ -34,8 +34,52 @@
 /*------------Navbar----------------*/
 
 
+.navbar {
+    position: relative;
+    width: 100%;
+    min-height: 50px;
+    background: linear-gradient(#091834, #0A337F, #091834);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #091834;
+    margin-bottom: 0px;
+    z-index: 1;
+}
+
+.navbar a {
+    color: #e6e6e6;
+    font-size: large;
+    font-weight: 200;
+    text-decoration: none;
+}
+
 /*-------------Images------*/
 
+.dash-background {
+    
+    position: relative;
+    background: url(../images/Passion.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*required to manage the horixontal centering of the 
+    group image design*/
+}
+
+.opaque-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
 
 /*-------------Containers-------------*/
 
