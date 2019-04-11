@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers:100,200,300,400,500,600,700|Crimson Text:100,200,300,400,500,600,700');
+
+/*----------Special Padding / Margin / Text----------*/
+
+.row {
+    margin-left: 0;
+    /*helps remove unecessary white space on right vertical*/
+    margin-right: 0;
+    /*as above*/
+}
+
+/*---------------Colours - MonoChromatic Scheme--------------*/
+
+.bg-color-blue-lightest {
+    background-color: #DEE9FC;
+}
+
+.bg-color-blue-midlight {
+    background-color: #6395F2;
+}
+
+.bg-color-blue-middle {
+    background-color: #1258DC;
+}
+
+.bg-color-blue-middark {
+    background-color: #0A337F;
+}
+
+.bg-color-blue-darkest {
+    background-color: #091834;
+}
+
+/*------------Navbar----------------*/
+
+
+/*-------------Images------*/
+
+
+/*-------------Containers-------------*/
+
+/* To include tailoring for Introduction / Gender / Summary / Events & Tickets */
+
+
+
+/*---------------Social Media---------------*/
+
+/* To include styling for social media fonts > font awesome */
+
+.bg-color-social-container {
+    background-color: #000;
+    min-height: 20px;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.social-links-footer p {
+    color: #e6e6e6; /*Light Grey*/
+}
+
+.social-links-footer li {
+    color: #e6e6e6; /*Light Grey*/
+}
+
+.social-links-footer li a i {
+    width: 30px;
+    height: 30px;
+    padding: 12px 0;
+    border-radius: 50%;
+    /*Enables creation of circle where width & height of same value*/
+    font-size: 13px;
+    /*Enables icon to sit within border*/
+    line-height: 7px;
+    text-align: center;
+    color: #000;
+    /*Black*/
+    background: #e6e6e6;
+    /*Light Grey*/
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    /*Opera*/
+    -moz-transition: all 0.5s ease-in-out;
+    /*Windows*/
+    -webkit-transition: all 0.5s ease-in-out;
+    /*Apple*/
+}
+
+.fa-github:hover {
+    background: #6e5494;
+    /*GitHub Purple*/
+    color: #fff;
+}
+
+.fa-linkedin:hover {
+    background: #0077B5;
+    /*LinkedIn Blue*/
+    color: #fff;
+}
+
+
+/*-------------Block Dividers---------*/
+
+
+/*---------------Buttons--------------*/
+
+
+/*--------------Media Queries---------*/
+
+
