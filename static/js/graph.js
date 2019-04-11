@@ -3,5 +3,5 @@ queue()
     .await(makeGraphs);
     
 function makeGraphs(error, studentData) {
-     
-}
+    
+}    
