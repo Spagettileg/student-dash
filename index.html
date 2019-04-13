@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard on Student Exam Performance</title>
-    
+
     <!-- CSS Libraries-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
     <!--Personal CSS-->
     <link rel="stylesheet" href="static/css/style.css" type="text/css" />
-    <!--Font Awesome--> 
+    <!--Font Awesome-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <!--Favicon-->
     <link rel="shortcut icon" type="image/png" href="static/images/DashBPic.png">
@@ -34,123 +35,139 @@
             </div>
         </div>
     </nav>
-    <main class="dash-background">
-    <section>
-    <!--Introduction & Gender Reporting-->
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-6 col-lg-6">
-              <h2 class="section-heading">Introduction</h2>
-              <div id="student-selector"></div>
-            </div>
-            </div> 
-        </div>
-    </article>
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-6 col-lg-6">
-              <h2 class="section-heading">Gender</h2>
-              <div id="gender-selector"></div>
-            </div>
-            </div> 
-        </div>
-    </article>
     
-    
-    <!--Overall Performance Summary-->
-    <article>
-        <div class="container">
-            <div class="row">
-               <div class="col-xs-12">
-              <h2 class="section-heading">Performance Summary</h2>
-            </div> 
-            </div> 
-        </div>
-    </article>
-    
-    <!--Line Graph Analysis-->
-    <article>
-        <div class="container">
-            <div class="row">
-               <div class="col-xs-12">
-              <h2 class="section-heading">Line Graph Analysis</h2>
-            </div>  
-            </div> 
-        </div>
-    </article>
-    
-    <!--Scatter Plot Analysis-->
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-lg-4">
-              <h2 class="section-heading">Maths Regression</h2>
-              <div id="maths-selector"></div>
-            </div>
-            </div> 
-        </div>
-    </article>
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-lg-4">
-              <h2 class="section-heading">Reading Regression</h2>
-              <div id="reading-selector"></div>
-            </div>
-            </div> 
-        </div>
-    </article>
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-lg-4">
-              <h2 class="section-heading">Writing Regression</h2>
-              <div id="writing-selector"></div>
-            </div>
-            </div> 
-        </div>
-    </article>
-    
-    <!--Bar Chart & Pie Chart Analysis-->
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-6 col-lg-3">
-              <h2 class="section-heading">Bar Chart1 - Ethnicity Group vs Student Count </h2>
-            </div>
-            </div> 
-        </div>
-    </article>
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-6 col-lg-3">
-              <h2 class="section-heading">Bar Chart2 - Parents Education vs Student Count </h2>
-            </div>
-            </div> 
-        </div>
-    </article>
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-6 col-lg-3">
-              <h2 class="section-heading">Pie Chart1 - Lunch. Standard vs Free/Reduced </h2>
-            </div>
-            </div> 
-        </div>
-    </article>
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-6 col-lg-3">
-              <h2 class="section-heading">Pie Chart2 - Test Preparation. Completed vs None </h2>
-            </div>
-            </div> 
-        </div>
-    </article>
-    </section>
+    <main>
+        <section>
+            <!--Introduction & Gender Reporting-->
+            <article>
+                <div class="intro-container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 col-lg-6">
+                            <div class="content-wrapper">
+                                <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                                <h3 class="section-heading">Introduction</h3>
+                                <div class="hide-content-toggle">
+                                    <hr>
+                                    <p>This dashboard contains data sourced from <a href="https://www.kaggle.com/spscientist/students-performance-in-exams#StudentsPerformance.csv" target="_blank" class="inline-link" title="Student Exam Results Database">SERD</a> covering 1,000 students.</p>
+                                    <p>The graphical visualizations are created to provide an executive summary of student exam performance, together with detailed data analysis through clicking on the individual charts. </p>
+                                    <p>Individual student exam peformance in Maths, Reading and Writing can be viewed through clicking on 'Filter by student' dropdown box.  </p>
+                                    <p>Alternatively, combinations of data can be configured through the use of options contained in dropdown boxes. </p>
+                                    <hr> <!---->
+                                    <div class="dropdown-box">
+                                        <div>Filter by student:</div>
+                                        <div id="student-selector"></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 col-lg-6">
+                            <h3 class="section-heading">Gender</h3>
+                            <div id="gender-selector"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!--Overall Performance Summary-->
+            <article>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3 class="section-heading">Performance Summary</h3>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!--Line Graph Analysis-->
+            <article>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3 class="section-heading">Line Graph Analysis</h3>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!--Scatter Plot Analysis-->
+            <article>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-lg-4">
+                            <h3 class="section-heading">Maths Regression</h3>
+                            <div id="maths-selector"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-lg-4">
+                            <h3 class="section-heading">Reading Regression</h3>
+                            <div id="reading-selector"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-lg-4">
+                            <h3 class="section-heading">Writing Regression</h3>
+                            <div id="writing-selector"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!--Bar Chart & Pie Chart Analysis-->
+            <article>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <h3 class="section-heading">Bar Chart1 - Ethnicity Group vs Student Count </h3>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <h3 class="section-heading">Bar Chart2 - Parents Education vs Student Count </h3>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <h3 class="section-heading">Pie Chart1 - Lunch. Standard vs Free/Reduced </h3>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <h3 class="section-heading">Pie Chart2 - Test Preparation. Completed vs None </h3>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
     </main>
     <footer>
         <!-- Social Media -->
@@ -159,21 +176,18 @@
                 <ul class="list-inline social-links-footer">
                     <li><a href="https://github.com/Spagettileg" target="_blank"><i class="fa icon-footer fa-github"></i></a><span> GitHub</span></li>
                     <li><a href="https://www.linkedin.com/in/paul-friel-a0821b43/" target="_blank"><i class="fa icon-footer fa-linkedin"></i></a><span> LinkedIn</span></li>
-                <hr>
-                <p>Dashboard - Website design Paul Friel - <a href="http://jigsaw.w3.org/css-validator/check/referer">
-                        <img style="border:0;width:43px;height:15px"
-                            src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
-                                alt="Valid CSS!" />
-                    </a></p>
+                    <hr>
+                    <p>Dashboard - Website design Paul Friel - </p>
                 </ul>
             </div>
         </div>
     </footer>
-     
-     <!-- Add Javascript Bootstrap code from both Bootstrap 'getting started' and 'JQuery CDN' = JQuery Core 3.3.1, minified -->
+
+    <!-- Add Javascript Bootstrap code from both Bootstrap 'getting started' and 'JQuery CDN' = JQuery Core 3.3.1, minified -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-     
+
 </body>
+
 </html>
