@@ -1,4 +1,4 @@
-"Student","gender","ethnicity","parental.education","lunch","test.prep.course","math.score","reading.score","writing.score"
+"student","gender","ethnicity","parental.education","lunch","test.prep.course","math.score","reading.score","writing.score"
 "1","female","group B","bachelor's degree","standard","none",72,72,74
 "2","female","group C","some college","standard","completed",69,90,88
 "3","female","group B","master's degree","standard","none",90,95,93
