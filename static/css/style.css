@@ -35,10 +35,10 @@
 
 
 .navbar {
-    position: relative;
+    position: fixed;
     width: 100%;
     min-height: 50px;
-    background: linear-gradient(#091834, #0A337F, #091834);
+    background: linear-gradient(#091834, #0A337F, #1258DC, #0A337F, #091834);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
