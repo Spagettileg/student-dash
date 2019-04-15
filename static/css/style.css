@@ -101,10 +101,16 @@ hr {
 
 .intro-container {
     margin-top: 50px;
+    
+}
+
+.gender-container {
+    margin-top: 50px;
+    
 }
 
 .content-wrapper {
-    width: 100%;
+    width: 80%;
     padding: 15px 10px;
     border-radius: 10px;
     background-color: #fafafa;
@@ -112,6 +118,29 @@ hr {
     margin: 12.5px 0;
     text-align: justify;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*------------Gender Article------------*/
+
+.color-pink {
+    color: #ff99ff;
+}
+
+.color-blue {
+    color: #004d99;
+}
+
+.gender-box {
+	margin-right: 75px;
+}
+
+.gender-box, .fa.fa-gender {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.fa-gender {
+	margin-right: 10px;
 }
 
 /*---------------Social Media---------------*/
