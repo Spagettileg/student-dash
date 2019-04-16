@@ -101,23 +101,32 @@ hr {
 
 .intro-container {
     margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
     
 }
 
 .gender-container {
     margin-top: 50px;
-    
+    display: flex;
+    flex-wrap: wrap; 
 }
 
 .content-wrapper {
-    width: 80%;
+    width: 85%;
     padding: 15px 10px;
     border-radius: 10px;
     background-color: #fafafa;
     opacity: 0.8;
     margin: 12.5px 0;
+    margin-left: 50px;
     text-align: justify;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.eq-column-height {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /*------------Gender Article------------*/
@@ -132,6 +141,8 @@ hr {
 
 .gender-box {
 	margin-right: 75px;
+	font-size: 1.4em;
+    display: flex;
 }
 
 .gender-box, .fa.fa-gender {
