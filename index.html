@@ -37,152 +37,192 @@
     </nav>
 
     <main>
-        <section>
+        <section class="container-fluid">
             <!--Introduction & Gender Reporting-->
-            <article class="col-xs-12 col-sm-6 col-lg-6 intro-container">
-                    <div class="row">
-                        <div class="content-wrapper">
-                            <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                            <h3 class="section-heading">Introduction</h3>
-                            <div class="hide-content-toggle">
-                                <hr>
-                                <p>This dashboard contains data sourced from <a href="https://www.kaggle.com/spscientist/students-performance-in-exams#StudentsPerformance.csv" target="_blank" class="inline-link" title="Student Exam Results Database">SERD</a>                                    covering 1,000 students.</p>
-                                <p>The graphical visualizations are created to provide an executive summary of student exam performance, together with detailed data analysis through clicking on the individual charts. </p>
-                                <p>Individual student exam peformance in Maths, Reading and Writing can be viewed through clicking on 'Filter by student' dropdown box. </p>
-                                <p>Alternatively, combinations of data can be configured through the use of options contained in dropdown boxes. </p>
-                                <hr>
-                                <div class="dropdown-box">
-                                    <div>Filter by student:</div>
-                                    <div id="student-selector"></div>
+            <header class="col-xs-12 col-sm-6 col-lg-6 intro-container">
+                <div class="row">
+                    <div class="content-wrapper">
+                        <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                        <h4 class="section-heading">Introduction</h4>
+                        <div class="hide-content-toggle">
+                            <hr>
+                            <p>This dashboard contains data sourced from <a href="https://www.kaggle.com/spscientist/students-performance-in-exams#StudentsPerformance.csv" target="_blank" class="inline-link" title="Student Exam Results Database">SERD</a>                                covering 1,000 students.</p>
+                            <p>The graphical visualizations are created to provide an executive summary of student exam performance, together with detailed data analysis through clicking on the individual charts. </p>
+                            <p>Individual student exam peformance in Maths, Reading and Writing can be viewed through clicking on 'Filter by student' dropdown box. </p>
+                            <p>Alternatively, combinations of data can be configured through the use of options contained in dropdown boxes. </p>
+                            <hr>
+                            <div class="dropdown-box">
+                                <div>Filter by student:</div>
+                                <div id="student-selector"></div>
 
-                                </div>
                             </div>
                         </div>
                     </div>
-            </article>
+                </div>
+            </header>
             <article class="col-xs-12 col-sm-6 col-lg-6 gender-container">
-                    <div class="row">
-                        <div class="content-wrapper">
-                            <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                            <h3 class="section-heading">Gender</h3>
-                            <div class="hide-content-toggle">
-                                <hr>
-                                <div class="col-xs-6">
-                                    <i class="fa fa-female fa-gender color-pink" aria-hidden="true"></i> <span class="gender-box" id="female-student-percentage"></span>
-                                </div>
-                                <div class="col-xs-6">
-                                    <i class="fa fa-male fa-gender color-blue" aria-hidden="true"></i> <span class="gender-box" id="male-student-percentage"></span>
-                                </div>
-                                <p>The data sample shows there is almost a 50/50 split of female vs male students. </p>
-                                <p>A sample size of 1,000 is significant and the detailed analysis below is designed to understand the examination success of all students, taking into account factors that may have influenced their respective learning journeys.
-                                    </p>
-                                <hr>
-                                <div class="dropdown-box">
-                                    <div>Filter by gender:</div>
-                                    <div id="gender-selector"></div>
+                <div class="row">
+                    <div class="content-wrapper">
+                        <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                        <h4 class="section-heading">Gender</h4>
+                        <div class="hide-content-toggle">
+                            <hr>
+                            <div class="col-xs-6">
+                                <i class="fa fa-female fa-gender color-pink" aria-hidden="true"></i> <span class="gender-box" id="female-student-percentage"></span>
+                            </div>
+                            <div class="col-xs-6">
+                                <i class="fa fa-male fa-gender color-blue" aria-hidden="true"></i> <span class="gender-box" id="male-student-percentage"></span>
+                            </div>
+                            <p>The data sample shows there is almost a 50/50 split of female vs male students. </p>
+                            <p>A sample size of 1,000 is significant and the detailed analysis below is designed to understand the examination success of all students.
+                            </p>
+                            <p>This takes into account factors that may have influenced the students respective learning journeys.</p>
+                            <hr>
+                            <div class="dropdown-box">
+                                <div>Filter by gender:</div>
+                                <div id="gender-selector"></div>
 
-                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </article>
-        </section>
 
+            <!--Overall Performance Summary-->
 
-        <!--Overall Performance Summary-->
-        <Section>
-            <article>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h3 class="section-heading">Performance Summary</h3>
+            <article class="container-fluid col-xs-12">
+                <div class="row">
+                    <div class="content-wrapper">
+                        <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                        <h4 class="section-heading">Performance Summary</h4>
+                        <div class="hide-content-toggle">
+                            <hr>
+                            <div class="col-xs-3" stats-header>
+                                <h5>Average</h5>
+                                
+                            </div>
+                            <div class="col-xs-3">
+                            <div class="maths-results">
+                                <div>Maths</div>
+                                <div id="average-math-score"></div>
+                            </div>
+                            </div>
+                            <div class="col-xs-3">
+                            <div class="reading-results">
+                                <div>Reading</div>
+                                <div id="average-reading-score"></div>
+                            </div>
+                            </div>
+                            <div class="col-xs-3">
+                            <div class="writing-results">
+                                <div>Writing</div>
+                                <div id="average-writing-score"></div>
+                            </div>
+                            </div>
+                            <hr>
                         </div>
                     </div>
                 </div>
             </article>
-        </section>
 
-        <!--Line Graph Analysis-->
-        <section>
-            <article>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h3 class="section-heading">Line Graph Analysis</h3>
+
+            <!--Line Graph Analysis-->
+
+            <article class="container-fluid col-xs-12">
+                <div class="row">
+                    <div class="content-wrapper">
+                        <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                        <h4 class="section-heading">Line Graph Analysis</h4>
+                        <div class="hide-content-toggle">
+                            <hr>
                         </div>
                     </div>
                 </div>
             </article>
-        </section>
 
-        <!--Scatter Plot Analysis-->
-        <section>
-            <article>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-lg-4">
-                            <h3 class="section-heading">Maths Regression</h3>
+
+            <!--Scatter Plot Analysis-->
+
+            <article class="col-xs-12 col-sm-12 col-lg-4">
+                <div class="row">
+                    <div class="content-wrapper">
+                        <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                        <h4 class="section-heading">Maths Regression</h4>
+                        <div class="hide-content-toggle">
+                            <hr>
                             <div id="maths-selector"></div>
                         </div>
                     </div>
                 </div>
             </article>
-            <article>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-lg-4">
-                            <h3 class="section-heading">Reading Regression</h3>
+            <article class="col-xs-12 col-sm-12 col-lg-4">
+                <div class="row">
+                    <div class="content-wrapper">
+                        <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                        <h4 class="section-heading">Reading Regression</h4>
+                        <div class="hide-content-toggle">
+                            <hr>
                             <div id="reading-selector"></div>
                         </div>
                     </div>
                 </div>
             </article>
-            <article>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-lg-4">
-                            <h3 class="section-heading">Writing Regression</h3>
+            <article class="col-xs-12 col-sm-12 col-lg-4">
+                <div class="row">
+                    <div class="content-wrapper">
+                        <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                        <h4 class="section-heading">Writing Regression</h4>
+                        <div class="hide-content-toggle">
+                            <hr>
                             <div id="writing-selector"></div>
                         </div>
                     </div>
                 </div>
             </article>
-        </section>
 
-        <!--Bar Chart & Pie Chart Analysis-->
-        <section>
-            <article>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6 col-lg-3">
-                            <h3 class="section-heading">Bar Chart1 - Ethnicity Group vs Student Count </h3>
+
+            <!--Bar Chart & Pie Chart Analysis-->
+
+            <article class="col-xs-12 col-md-6 col-lg-3">
+                <div class="row">
+                    <div class="content-wrapper">
+                        <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                        <h4 class="section-heading">Bar Chart1 - Ethnicity Group vs Student Count </h4>
+                        <div class="hide-content-toggle">
+                            <hr>
                         </div>
                     </div>
                 </div>
             </article>
-            <article>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6 col-lg-3">
-                            <h3 class="section-heading">Bar Chart2 - Parents Education vs Student Count </h3>
+            <article class="col-xs-12 col-md-6 col-lg-3">
+                <div class="row">
+                    <div class="content-wrapper">
+                        <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                        <h4 class="section-heading">Bar Chart2 - Parents Education vs Student Count </h4>
+                        <div class="hide-content-toggle">
+                            <hr>
                         </div>
                     </div>
                 </div>
             </article>
-            <article>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6 col-lg-3">
-                            <h3 class="section-heading">Pie Chart1 - Lunch. Standard vs Free/Reduced </h3>
+            <article class="col-xs-12 col-md-6 col-lg-3">
+                <div class="row">
+                    <div class="content-wrapper">
+                        <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                        <h4 class="section-heading">Pie Chart1 - Lunch. Standard vs Free/Reduced </h4>
+                        <div class="hide-content-toggle">
+                            <hr>
                         </div>
                     </div>
                 </div>
             </article>
-            <article>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6 col-lg-3">
-                            <h3 class="section-heading">Pie Chart2 - Test Preparation. Completed vs None </h3>
+            <article class="col-xs-12 col-md-6 col-lg-3">
+                <div class="row">
+                    <div class="content-wrapper">
+                        <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                        <h4 class="section-heading">Pie Chart2 - Test Prep. Completed vs None </h4>
+                        <div class="hide-content-toggle">
+                            <hr>
                         </div>
                     </div>
                 </div>
@@ -207,6 +247,7 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
 </body>
 
