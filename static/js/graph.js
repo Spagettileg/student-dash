@@ -1,3 +1,5 @@
+// ***Engine Room - Source Data & Analysis Catalyst *** 
+
 queue()
     .defer(d3.csv, "data/studentsperformanceData.csv")
     .await(createAnalysis);
@@ -6,7 +8,9 @@ function createAnalysis(error, studentsperformanceData) {
     var ndx = crossfilter(studentsperformanceData); //Crossfilter gets passed to the function that will draw the graph
             studentsperformanceData.forEach(function(d){ 
                 d.student = parseInt(d["student"]);  // Converts string to numbers
-                d.math_score = parseInt(d["math.score"]);  // Converts string data to Integers.     
+                d.math_score = parseInt(d["math.score"]);  // Converts string data to Integers. 
+                d.reading_score = parseInt(d["reading.score"]);  // As above
+                d.writing_score = parseInt(d["writing.score"]);  // As above
             }); 
      
     show_student_selector(ndx);
@@ -16,9 +20,15 @@ function createAnalysis(error, studentsperformanceData) {
     show_gender_percentage(ndx, "male", "#male-student-percentage"); 
     
     show_average_math_score(ndx);
+    show_average_reading_score(ndx);
+    show_average_writing_score(ndx);
+    
+    show_stats_maths(ndx); // Line chart - # for html code
 
-    dc.renderAll(); // Essential command for Chart to appear
+    dc.renderAll(); // Essential command for Chart/Data to appear
 }
+
+// ************ Introduction - Student Filter *************
 
 function show_student_selector(ndx) {
     var studentDim = ndx.dimension(dc.pluck('student')); // Both dimension & group created and passed back to dimensional charting select menu
@@ -49,6 +59,8 @@ function show_gender_selector(ndx) {
         .group(genderGroup);
         
 }
+
+// ************ Gender % Split *************
 
 function show_gender_percentage(ndx, gender, element) {
     var studentgenderPercentage = ndx.groupAll().reduce(
@@ -85,8 +97,11 @@ function show_gender_percentage(ndx, gender, element) {
         .group(studentgenderPercentage);
 }
 
+// ************ Maths Average Performance *************
+
 function show_average_math_score(ndx, math_score, element) {
     var dim = ndx.dimension(dc.pluck('math_score'));
+    
     
     function add_item(p, v) { // p is an accumulator and keeps track of the total count
         p.count++; // Increment the count in our p object  
@@ -118,15 +133,144 @@ function show_average_math_score(ndx, math_score, element) {
     dc.numberDisplay("#average-math-score")
         .formatNumber(d3.format('')) 
         .valueAccessor(function(d) {
-            if (isNaN(d.math_score_count == "NaN")) {
+            if (d.math_score_count / d.total) {
                 return 0;
             }
             else {
-                return (d.math_score_count / d.total);
+                return d.value.average.toFixed(2);
             }
         })
         .group(averageMathScore);
         
-    
 }
+
+// ************ Reading Average Performance *************
+
+function show_average_reading_score(ndx, reading_score, element) {
+    var dim = ndx.dimension(dc.pluck('reading_score'));
     
+    
+    function add_item(p, v) { // p is an accumulator and keeps track of the total count
+        p.count++; // Increment the count in our p object  
+        p.total += v.reading_score; // We increment our total by the value of the reading score we're looking at
+        p.average = p.total / p.count; // Average reading score calculation
+        return p; // Important command. Absence will create errors 
+    }
+    
+    function remove_item(p, v) { // v represents each of the data items being added or removed 
+        p.count--; // Reduce the count in our p object  
+            if(p.count == 0) { // Count value will not be less than Zero & avoid a DIV#0 error
+                p.total = 0;
+                p.average = 0;
+            }else {
+                p.total -= v.reading_score; // We reduce our total by the value of the reading score we're looking at
+                p.average = p.total / p.count; // Average score calculation
+            }
+        return p;
+    }
+    
+    function initialise() { // Creates an initial value for p
+        return {count: 0, total: 0, average: 0};
+    }
+    
+    var averageReadingScore = dim.group().reduce(add_item, remove_item, initialise); 
+    
+    console.log(averageReadingScore.all());  // Console test is good
+    
+    dc.numberDisplay("#average-reading-score")
+        .formatNumber(d3.format('')) 
+        .valueAccessor(function(d) {
+            if (d.reading_score_count / d.total) {
+                return 0;
+            }
+            else {
+                return d.value.average.toFixed(2);
+            }
+        })
+        .group(averageReadingScore);
+        
+}   
+    
+// ************ Writing Average Performance *************
+
+function show_average_writing_score(ndx, writing_score, element) {
+    var dim = ndx.dimension(dc.pluck('writing_score'));
+    
+    
+    function add_item(p, v) { // p is an accumulator and keeps track of the total count
+        p.count++; // Increment the count in our p object  
+        p.total += v.writing_score; // We increment our total by the value of the writing score we're looking at
+        p.average = p.total / p.count; // Average writing score calculation
+        return p; // Important command. Absence will create errors 
+    }
+    
+    function remove_item(p, v) { // v represents each of the data items being added or removed 
+        p.count--; // Reduce the count in our p object  
+            if(p.count == 0) { // Count value will not be less than Zero & avoid a DIV#0 error
+                p.total = 0;
+                p.average = 0;
+            }else {
+                p.total -= v.writing_score; // We reduce our total by the value of the writing score we're looking at
+                p.average = p.total / p.count; // Average score calculation
+            }
+        return p;
+    }
+    
+    function initialise() { // Creates an initial value for p
+        return {count: 0, total: 0, average: 0};
+    }
+    
+    var averageWritingScore = dim.group().reduce(add_item, remove_item, initialise); 
+    
+    console.log(averageWritingScore.all());  // Console test is good
+    
+    dc.numberDisplay("#average-writing-score")
+        .formatNumber(d3.format('')) 
+        .valueAccessor(function(d) {
+            if (d.writing_score_count / d.total) {
+                return 0;
+            }
+            else {
+                return d.value.average.toFixed(2);
+            }
+        })
+        .group(averageWritingScore);
+        
+}   
+
+// ************ Line Chart *************
+
+function show_stats_maths(ndx) {
+    var student_dim = ndx.dimension(dc.pluck('math.score'));
+    function score_by_gender(gender) { // A check on female & male maths score
+            return function(d) {
+                if (d.gender === gender) {
+                    return +d.math_score;  // '+' is a JS trick to convert a string into a number 
+                } else {
+                    return 0;
+                }
+            };
+        }
+        var femaleMathScore = student_dim.group().reduceSum(score_by_gender('female')); // Code has been re-factored as many generic elements for each gender.
+        var maleMathScore = student_dim.group().reduceSum(score_by_gender('male'));
+        
+        var compositeChart = dc.compositeChart('#composite-chart-maths-score');
+        compositeChart
+            .width(300)
+            .height(200)
+            .dimension(student_dim)
+            .x(d3.scale.linear().domain([0, 100]))
+            .xAxisLabel("Math Score")
+            .yAxisLabel("Score")
+            .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5)) // Colour coded legend, per gender  
+            .renderHorizontalGridLines(true).brush      
+            .compose([  // x2 lines created for each gender in scope
+                dc.lineChart(compositeChart)
+                    .colors('pink')
+                    .group(femaleMathScore, 'female'),
+                dc.lineChart(compositeChart)
+                    .colors('blue')
+                    .group(maleMathScore, 'male'),
+            ]);
+     
+}
