@@ -140,7 +140,7 @@ hr {
 }
 
 .gender-box {
-	margin-right: 75px;
+	margin-right: 0px;
 	font-size: 1.4em;
     display: flex;
 }
@@ -153,6 +153,29 @@ hr {
 .fa-gender {
 	margin-right: 10px;
 }
+
+/*----------Performance Article-------------*/
+
+.exam-average-results {
+    display: flex;
+    width: 100%;
+}
+
+.dot {
+    cursor: none;
+    height: 100px;
+    width: 100px;
+    margin: 0 2px;
+    font-size: 70px;
+    background-color: #091834;
+    color: #DEE9FC;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
 
 /*---------------Social Media---------------*/
 
