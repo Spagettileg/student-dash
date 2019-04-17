@@ -38,7 +38,7 @@
 
     <main>
         <section class="container-fluid">
-            <!--Introduction & Gender Reporting-->
+            <!--Introduction-->
             <header class="col-xs-12 col-sm-6 col-lg-6 intro-container">
                 <div class="row">
                     <div class="content-wrapper">
@@ -60,6 +60,7 @@
                     </div>
                 </div>
             </header>
+            <!--Gender Summary-->
             <article class="col-xs-12 col-sm-6 col-lg-6 gender-container">
                 <div class="row">
                     <div class="content-wrapper">
@@ -87,53 +88,66 @@
                     </div>
                 </div>
             </article>
-
-            <!--Overall Performance Summary-->
-
+            <!--Overall Exam Performance Summary-->
             <article class="container-fluid col-xs-12">
                 <div class="row">
                     <div class="content-wrapper">
                         <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                        <h4 class="section-heading">Performance Summary</h4>
+                        <h4 class="section-heading">Exam Performance Summary</h4>
                         <div class="hide-content-toggle">
                             <hr>
-                            <div class="col-xs-3" stats-header>
-                                <h5>Average</h5>
-                                
-                            </div>
-                            <div class="col-xs-3">
-                            <div class="maths-results">
+                            <div class="list-inline exam-average-results">
                                 <div>Maths</div>
-                                <div id="average-math-score"></div>
-                            </div>
-                            </div>
-                            <div class="col-xs-3">
-                            <div class="reading-results">
+                                <div class="col-xs-4">
+                                    <div class="dot" id="average-math-score"></div>
+                                </div>
+
                                 <div>Reading</div>
-                                <div id="average-reading-score"></div>
-                            </div>
-                            </div>
-                            <div class="col-xs-3">
-                            <div class="writing-results">
+                                <div class="col-xs-4">
+                                    <div class="dot" id="average-reading-score"></div>
+                                </div>
+
                                 <div>Writing</div>
-                                <div id="average-writing-score"></div>
-                            </div>
+                                <div class="col-xs-4">
+                                    <div class="dot" id="average-writing-score"></div>
+                                </div>
                             </div>
                             <hr>
+                            <p>All average scores recorded are out of a maximum score of 100</p>
+                            <p>There is a remarkable consistency of exam result performance through taking the <strong>average/mean result</strong> for Maths, Reading & Writing.</p>
+
                         </div>
                     </div>
                 </div>
             </article>
-
-
+            
             <!--Line Graph Analysis-->
-
             <article class="container-fluid col-xs-12">
                 <div class="row">
                     <div class="content-wrapper">
                         <div><i class="fa fa-angle-up hide-content-btn"></i></div>
                         <h4 class="section-heading">Line Graph Analysis</h4>
                         <div class="hide-content-toggle">
+                            <hr>
+                            <div id="composite-chart-maths-score"></div>
+                            
+                            <div class="list-inline exam-average-results">
+                                <div>Maths</div>
+                                <div class="col-xs-4">
+                                    <div id="composite-chart-maths-score"></div>
+                                </div>
+
+                                <div>Reading</div>
+                                <div class="col-xs-4">
+                                    <div id="composite-chart-reading-score"></div>
+                                </div>
+
+                                <div>Writing</div>
+                                <div class="col-xs-4">
+                                    <div id="composite-chart-writing-score"></div>
+                                </div>
+                            </div>
+                            
                             <hr>
                         </div>
                     </div>
