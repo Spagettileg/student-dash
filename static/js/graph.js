@@ -23,7 +23,7 @@ function createAnalysis(error, studentsperformanceData) {
     show_average_reading_score(ndx);
     show_average_writing_score(ndx);
     
-    show_stats_maths(ndx); // Line chart - # for html code
+    show_stats_all_subjects(ndx); // Composite Line chart 
 
     dc.renderAll(); // Essential command for Chart/Data to appear
 }
@@ -238,39 +238,48 @@ function show_average_writing_score(ndx, writing_score, element) {
         
 }   
 
-// ************ Line Chart *************
+// ************ Composite Chart All Subjects *************
 
-function show_stats_maths(ndx) {
-    var student_dim = ndx.dimension(dc.pluck('math.score'));
-    function score_by_gender(gender) { // A check on female & male maths score
+function show_stats_all_subjects(ndx) {
+    var mathDim = ndx.dimension(dc.pluck('math_score'));
+    var readingDim = ndx.dimension(dc.pluck('reading_score'));
+    var writingDim = ndx.dimension(dc.pluck('writing_score'));
+    
+    function score_by_student(student) { // A check on students exam score
             return function(d) {
-                if (d.gender === gender) {
-                    return +d.math_score;  // '+' is a JS trick to convert a string into a number 
+                if (d.student === student) {
+                    return d.math_score.reading_score.writing_score;  // '+' is a JS trick to convert a string into a number 
                 } else {
                     return 0;
                 }
             };
         }
-        var femaleMathScore = student_dim.group().reduceSum(score_by_gender('female')); // Code has been re-factored as many generic elements for each gender.
-        var maleMathScore = student_dim.group().reduceSum(score_by_gender('male'));
+        var mathExamScore = mathDim.group().reduceSum(score_by_student('math_score'));
+        var readingExamScore = readingDim.group().reduceSum(score_by_student('reading_score'));
+        var writingExamScore = writingDim.group().reduceSum(score_by_student('writing_score'));
         
-        var compositeChart = dc.compositeChart('#composite-chart-maths-score');
+        var compositeChart = dc.compositeChart('#composite-chart-exam-score');
         compositeChart
-            .width(300)
+            .width(990)
             .height(200)
-            .dimension(student_dim)
+            .dimension(mathDim,readingDim,writingDim)
             .x(d3.scale.linear().domain([0, 100]))
-            .xAxisLabel("Math Score")
-            .yAxisLabel("Score")
-            .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5)) // Colour coded legend, per gender  
-            .renderHorizontalGridLines(true).brush      
+            .xAxisLabel("Exam Score")
+            .yAxisLabel("Student")
+            .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5)) 
+            .renderHorizontalGridLines(true)
+            .brushOn(false)
             .compose([  // x2 lines created for each gender in scope
                 dc.lineChart(compositeChart)
-                    .colors('pink')
-                    .group(femaleMathScore, 'female'),
+                    .colors('red')
+                    .group(mathExamScore, 'math_score'),
                 dc.lineChart(compositeChart)
                     .colors('blue')
-                    .group(maleMathScore, 'male'),
+                    .group(readingExamScore, 'reading_score'),
+                dc.lineChart(compositeChart)
+                    .colors('green')
+                    .group(writingExamScore, 'writing_score'),
             ]);
      
 }
+
