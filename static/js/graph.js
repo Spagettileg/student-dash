@@ -6,13 +6,14 @@ queue()
 
 function createAnalysis(error, studentsperformanceData) {
     var ndx = crossfilter(studentsperformanceData); //Crossfilter gets passed to the function that will draw the graph
+    
             studentsperformanceData.forEach(function(d){ 
                 d.student = parseInt(d["student"]);  // Converts string to numbers
                 d.math_score = parseInt(d["math.score"]);  // Converts string data to Integers. 
                 d.reading_score = parseInt(d["reading.score"]);  // As above
                 d.writing_score = parseInt(d["writing.score"]);  // As above
             }); 
-     
+    
     show_student_selector(ndx);
     show_gender_selector(ndx);
     
@@ -27,6 +28,7 @@ function createAnalysis(error, studentsperformanceData) {
 
     dc.renderAll(); // Essential command for Chart/Data to appear
 }
+
 
 // ************ Introduction - Student Filter *************
 
