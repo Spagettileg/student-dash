@@ -59,6 +59,18 @@ hr {
     text-decoration: none;
 }
 
+button.btn.btn-danger.navbar-btn {
+	transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+}
+
+button.btn.btn-danger.navbar-btn:hover {
+    border-color: #ffffff;
+	
+}
+
 /*----------Dropdown Navigation------*/
 
 .dropdown-box {
@@ -101,15 +113,10 @@ hr {
 
 .intro-container {
     margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    
 }
 
 .gender-container {
     margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap; 
 }
 
 .content-wrapper {
