@@ -245,40 +245,46 @@ function show_stats_all_subjects(ndx) {
     var readingDim = ndx.dimension(dc.pluck('reading_score'));
     var writingDim = ndx.dimension(dc.pluck('writing_score'));
     
-    function score_by_student(student) { // A check on students exam score
+    function student_id(student) { // A check on students exam score
             return function(d) {
                 if (d.student === student) {
-                    return d.math_score.reading_score.writing_score;  // '+' is a JS trick to convert a string into a number 
+                    return 0;  
                 } else {
-                    return 0;
+                    return d.math_score, d.reading_score, d.writing_score;
                 }
             };
         }
-        var mathExamScore = mathDim.group().reduceSum(score_by_student('math_score'));
-        var readingExamScore = readingDim.group().reduceSum(score_by_student('reading_score'));
-        var writingExamScore = writingDim.group().reduceSum(score_by_student('writing_score'));
+       
+        var mathStudent = mathDim.group().reduceCount(student_id('math_score')); // reduceCount helps to determine frequency on y-axis
+        var readingStudent = readingDim.group().reduceCount(student_id('reading_score'));
+        var writingStudent = writingDim.group().reduceCount(student_id('writing_score'));
+        console.log(mathStudent.all());
+        console.log(readingStudent.all());
+        console.log(writingStudent.all());
         
         var compositeChart = dc.compositeChart('#composite-chart-exam-score');
         compositeChart
-            .width(990)
+            .width(900)
             .height(200)
-            .dimension(mathDim,readingDim,writingDim)
             .x(d3.scale.linear().domain([0, 100]))
             .xAxisLabel("Exam Score")
-            .yAxisLabel("Student")
+            .yAxisLabel("Frequency")
             .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5)) 
             .renderHorizontalGridLines(true)
             .brushOn(false)
-            .compose([  // x2 lines created for each gender in scope
+            .compose([  // x3 lines created for each exam subject in scope
                 dc.lineChart(compositeChart)
-                    .colors('red')
-                    .group(mathExamScore, 'math_score'),
+                    .dimension(mathDim)
+                    .colors('#6395F2') 
+                    .group(mathStudent, 'math_score'),
                 dc.lineChart(compositeChart)
-                    .colors('blue')
-                    .group(readingExamScore, 'reading_score'),
+                    .dimension(readingDim)
+                    .colors('#1258DC') 
+                    .group(readingStudent, 'reading_score'),
                 dc.lineChart(compositeChart)
-                    .colors('green')
-                    .group(writingExamScore, 'writing_score'),
+                    .dimension(writingDim)
+                    .colors('#091834') 
+                    .group(writingStudent, 'writing_score'),
             ]);
      
 }
