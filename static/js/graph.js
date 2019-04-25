@@ -29,13 +29,6 @@ function createAnalysis(error, studentsperformanceData) {
     dc.renderAll(); // Essential command for Chart/Data to appear
 }
 
-// Reset data when the button is clicked
-
-function reset() {
-    makeGraphs(null, sd);
-}
-
-
 // ************ Introduction - Student Filter *************
 
 function show_student_selector(ndx) {
