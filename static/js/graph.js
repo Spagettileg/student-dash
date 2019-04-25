@@ -270,7 +270,8 @@ function show_stats_all_subjects(ndx) {
         var compositeChart = dc.compositeChart('#composite-chart-exam-score');
         compositeChart
             .width(900)
-            .height(200)
+            .height(400)
+            .useViewBoxResizing(true)
             .x(d3.scale.linear().domain([0, 100]))
             .xAxisLabel("Exam Score")
             .yAxisLabel("Frequency")
@@ -315,6 +316,7 @@ function show_math_vs_reading_regression(ndx) { // Establish correlation between
     dc.scatterPlot("#math-vs-reading-regression")
         .width(350)
         .height(250)
+        .useViewBoxResizing(true)
         .x(d3.scale.linear().domain([minMath, maxMath]))
         .brushOn(false)
         .symbolSize(8)
@@ -355,6 +357,7 @@ function show_reading_vs_writing_regression(ndx) { // Establish correlation betw
     dc.scatterPlot("#reading-vs-writing-regression")
         .width(350)
         .height(250)
+        .useViewBoxResizing(true)
         .x(d3.scale.linear().domain([minReading, maxReading]))
         .brushOn(false)
         .symbolSize(8)
@@ -395,6 +398,7 @@ function show_writing_vs_math_regression(ndx) { // Establish correlation between
     dc.scatterPlot("#writing-vs-math-regression")
         .width(350)
         .height(250)
+        .useViewBoxResizing(true)
         .x(d3.scale.linear().domain([minWriting, maxWriting]))
         .brushOn(false)
         .symbolSize(8)
