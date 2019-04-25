@@ -1,3 +1,9 @@
+/* ------------------------------------------------ Reset Filters -*/
+
+$('#reset-data').click(function() {
+    dc.filterAll();
+    dc.renderAll();
+});
 
 /* ------------------------------------------------ Hide Content -*/
 
