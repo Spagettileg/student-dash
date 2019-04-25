@@ -59,17 +59,7 @@ hr {
     text-decoration: none;
 }
 
-button.btn.btn-danger.navbar-btn {
-	transition: all 0.35s ease-in-out;
-    -moz-transition: all 0.35s ease-in-out;
-    -webkit-transition: all 0.35s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-}
 
-button.btn.btn-danger.navbar-btn:hover {
-    border-color: #ffffff;
-	
-}
 
 /*----------Dropdown Navigation------*/
 
@@ -252,6 +242,42 @@ button.btn.btn-danger.navbar-btn:hover {
     padding-right: 5px;
 }
 
+.reset-data-top {
+    margin: 0 20px 0px 5px;
+    background-color: #DEE9FC;
+    border-color: #DEE9FC;
+
+}
+
+.reset-data-top:hover {
+    background-color: #6395F2;
+    /*purple*/
+    border-color: #6395F2;
+    color: #e6e6e6; /*Light Grey*/
+    transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    /*Opera*/
+    -moz-transition: all 0.15s ease-in-out;
+    /*Windows*/
+    -webkit-transition: all 0.15s ease-in-out;
+    /*Apple*/
+}
+
 /*--------------Media Queries---------*/
 
+/********** Preserves consistent position of reset button ********/ 
+@media (max-width: 320px) { /*mobile*/
+    .reset-data-top {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
 
+@media (max-width: 768px) { /*tablet*/
+    .reset-data-top {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/***************************************************************/
