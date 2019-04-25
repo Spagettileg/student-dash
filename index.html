@@ -22,15 +22,15 @@
     <script type="text/javascript" src="static/js/dc.min.js"></script>
     <script type="text/javascript" src="static/js/queue.min.js"></script>
     <script type="text/javascript" src="static/js/graph.js"></script>
-    
+
 
 </head>
 
 <body>
     <!-- Headline Bar -->
     <nav class="container-fluid navbar">
-                <a href="#" class="title">Student Exam Results Dashboard</a>
-                <button id="reset-data" class="btn btn-sm reset-data-top"><strong>Reset Data</strong></button>
+        <a href="#" class="title">Student Exam Results Dashboard</a>
+        <button id="reset-data" class="btn btn-sm reset-data-top"><strong>Reset Data</strong></button>
     </nav>
 
     <main>
@@ -117,7 +117,7 @@
                     </div>
                 </div>
             </article>
-            
+
             <!--Line Graph Analysis-->
             <article class="container-fluid col-xs-12">
                 <div class="row">
@@ -127,12 +127,12 @@
                         <div class="hide-content-toggle">
                             <hr>
                             <div id="composite-chart-exam-score"></div>
-                                    <p>Overall, there appears to be a normal distribution (bell curve) at 70 marks out of 100 for all subjects. This points towards both a clean data set and a significant sample size.</p>
-                                    <p>Mode Range - Math scores peaked between 59-65 marks, reading scores peaked between 64-74 marks & writing scores peaked between 68-74 marks.</p>
-                                    <p>Mode Frequency - Maths (female students score 65 (28 students/5%) vs Male 62 (19 students/4%). Reading (male students score 74 (19 students/4%) vs female 72 (23 students/4%). Writing (female students score 70 (24 students/4%) vs Male 68 (18 students/4%).  </p>
-                                    <p>Summary - Female students exam results appear to be marginally better than male students. The reminder of the detailed analysis may uncover further reasons on female student exam results supremacy. </p>
-                          <hr>
-                            
+                            <p>Overall, there appears to be a normal distribution (bell curve) at 70 marks out of 100 for all subjects. This points towards both a clean data set and a significant sample size.</p>
+                            <p>Mode Range - Math scores peaked between 59-65 marks, reading scores peaked between 64-74 marks & writing scores peaked between 68-74 marks.</p>
+                            <p>Mode Frequency - Maths (female students score 65 (28 students/5%) vs Male 62 (19 students/4%). Reading (male students score 74 (19 students/4%) vs female 72 (23 students/4%). Writing (female students score 70 (24 students/4%)
+                                vs Male 68 (18 students/4%). </p>
+                            <p>Summary - Female students exam results appear to be marginally better than male students. The reminder of the detailed analysis may uncover further reasons on female student exam results supremacy. </p>
+                            <hr>
                         </div>
                     </div>
                 </div>
@@ -145,10 +145,11 @@
                 <div class="row eq-column-height">
                     <div class="content-wrapper">
                         <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                        <h4 class="section-heading">Maths Regression</h4>
+                        <h4 class="section-heading">Math vs Reading Regression Analysis</h4>
                         <div class="hide-content-toggle">
                             <hr>
-                            <div id="maths-selector"></div>
+                            <div id="math-vs-reading-regression"></div>
+                            <hr>
                         </div>
                     </div>
                 </div>
@@ -157,10 +158,11 @@
                 <div class="row eq-column-height">
                     <div class="content-wrapper">
                         <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                        <h4 class="section-heading">Reading Regression</h4>
+                        <h4 class="section-heading">Reading vs Writing Regression Analysis</h4>
                         <div class="hide-content-toggle">
                             <hr>
-                            <div id="reading-selector"></div>
+                            <div id="reading-vs-writing-regression"></div>
+                            <hr>
                         </div>
                     </div>
                 </div>
@@ -169,10 +171,11 @@
                 <div class="row eq-column-height">
                     <div class="content-wrapper">
                         <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                        <h4 class="section-heading">Writing Regression</h4>
+                        <h4 class="section-heading">Math vs Writing Regression Analysis</h4>
                         <div class="hide-content-toggle">
                             <hr>
-                            <div id="writing-selector"></div>
+                            <div id="math-vs-writing-regression"></div>
+                            <hr>
                         </div>
                     </div>
                 </div>
@@ -188,6 +191,8 @@
                         <h4 class="section-heading">Bar Chart1 - Ethnicity Group vs Student Count </h4>
                         <div class="hide-content-toggle">
                             <hr>
+                            <div id="ethnicity-distribution"></div>
+                            <hr>
                         </div>
                     </div>
                 </div>
@@ -198,6 +203,8 @@
                         <div><i class="fa fa-angle-up hide-content-btn"></i></div>
                         <h4 class="section-heading">Bar Chart2 - Parents Education vs Student Count </h4>
                         <div class="hide-content-toggle">
+                            <hr>
+                            <div id="parents-education-distribution"></div>
                             <hr>
                         </div>
                     </div>
@@ -210,6 +217,8 @@
                         <h4 class="section-heading">Pie Chart1 - Lunch. Standard vs Free/Reduced </h4>
                         <div class="hide-content-toggle">
                             <hr>
+                            <div id="lunch-analysis"></div>
+                            <hr>
                         </div>
                     </div>
                 </div>
@@ -220,6 +229,8 @@
                         <div><i class="fa fa-angle-up hide-content-btn"></i></div>
                         <h4 class="section-heading">Pie Chart2 - Test Prep. Completed vs None </h4>
                         <div class="hide-content-toggle">
+                            <hr>
+                            <div id="test-preparation-analysis"></div>
                             <hr>
                         </div>
                     </div>
