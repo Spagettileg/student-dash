@@ -146,17 +146,17 @@ hr {
 
 /*----------Performance Article-------------*/
 
-.exam-average-results {
+.flex-container {
     display: flex;
     width: 100%;
 }
 
 .dot {
     cursor: none;
-    height: 100px;
-    width: 100px;
+    height: 6vw;
+    width: 6vw;
     margin: 0 2px;
-    font-size: 70px;
+    font-size: 4.3vw;
     background-color: #091834;
     color: #DEE9FC;
     border-radius: 50%;
