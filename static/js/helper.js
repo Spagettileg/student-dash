@@ -1,11 +1,11 @@
-/* ------------------------------------------------ Reset Filters -*/
+// Reset data
 
 $('#reset-data').click(function() {
     dc.filterAll();
     dc.renderAll();
 });
 
-/* ------------------------------------------------ Hide Content -*/
+// Hide article content
 
 $('.hide-content-btn').click(function() {
     $(this).parent().nextAll('.hide-content-toggle').slideToggle();
