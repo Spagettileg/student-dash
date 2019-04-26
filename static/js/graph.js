@@ -28,7 +28,9 @@ function createAnalysis(error, studentsperformanceData) {
     
     show_math_vs_reading_regression(ndx); // Scatter Plot for math vs reading
     show_reading_vs_writing_regression(ndx); // Scatter Plot for reading vs writing
-    show_writing_vs_math_regression(ndx); // Scatter Plot for writing vs math
+    show_math_vs_writing_regression(ndx); // Scatter Plot for math vs writing
+    
+    show_ethnicity_distribution(ndx); // Bar chart displaying multiple ethnic groups
 
     dc.renderAll(); // Essential command for Chart/Data to appear
 }
@@ -192,7 +194,7 @@ function show_average_reading_score(ndx, reading_score, element) {
                 return d.value.average.toFixed(2);
             }
         })
-        .group(averageReadingScore);
+                .group(averageReadingScore);
         
 }   
     
@@ -300,7 +302,7 @@ function show_stats_all_subjects(ndx) {
 function show_math_vs_reading_regression(ndx) { // Establish correlation between x (math score) & y (reading score)
 
     var genderColors = d3.scale.ordinal() // Add colour to the scatter plot
-        .domain(["Female", "Male"])
+        .domain(["female", "male"])
         .range(["pink", "blue"]);
 
     var mathDim = ndx.dimension(dc.pluck("math_score")); // For x-axis
@@ -314,8 +316,8 @@ function show_math_vs_reading_regression(ndx) { // Establish correlation between
     var maxMath = mathDim.top(1)[0].math_score;
 
     dc.scatterPlot("#math-vs-reading-regression")
-        .width(350)
-        .height(250)
+        .width(600)
+        .height(400)
         .useViewBoxResizing(true)
         .x(d3.scale.linear().domain([minMath, maxMath]))
         .brushOn(false)
@@ -327,10 +329,12 @@ function show_math_vs_reading_regression(ndx) { // Establish correlation between
         .title(function(d) {
             return "This " + d.key[2] + " received " + d.key[0] + " in Math and " + d.key[1] + " in Reading.";
         })
-        .colorAccessor(function(d) {
-            return d.key[2];
-        })
-        .colors(genderColors)
+        .ordinalColors(genderColors)
+        // .colorAccessor(function(d) {
+        //    if (typeof d.key !== 'undefined') 
+        //    return d.key[2];
+        // })
+        //.colors(genderColors)
         .dimension(scoreDim)
         .group(scoreGroup)
         .margins({ top: 10, right: 50, bottom: 75, left: 75 });
@@ -341,7 +345,7 @@ function show_math_vs_reading_regression(ndx) { // Establish correlation between
 function show_reading_vs_writing_regression(ndx) { // Establish correlation between x (reading score) & y (writing score)
 
     var genderColors = d3.scale.ordinal() // Add colour to the scatter plot
-        .domain(["Female", "Male"])
+        .domain(["female", "male"])
         .range(["pink", "blue"]);
 
     var readingDim = ndx.dimension(dc.pluck("reading_score")); // For x-axis
@@ -349,14 +353,19 @@ function show_reading_vs_writing_regression(ndx) { // Establish correlation betw
         return [d.reading_score, d.writing_score, d.gender]; // Array =  readingscore =[0], writingscore = [1] & gender = [2]
     });
     
+    console.log(readingDim);
+    console.log(scoreDim);
+    
     var scoreGroup = scoreDim.group();
+    
+    console.log(scoreGroup);
 
     var minReading = readingDim.bottom(1)[0].reading_score;
     var maxReading = readingDim.top(1)[0].reading_score;
 
     dc.scatterPlot("#reading-vs-writing-regression")
-        .width(350)
-        .height(250)
+        .width(600)
+        .height(400)
         .useViewBoxResizing(true)
         .x(d3.scale.linear().domain([minReading, maxReading]))
         .brushOn(false)
@@ -368,52 +377,84 @@ function show_reading_vs_writing_regression(ndx) { // Establish correlation betw
         .title(function(d) {
             return "This " + d.key[2] + " received " + d.key[0] + " in Reading and " + d.key[1] + " in Writing.";
         })
-        .colorAccessor(function(d) {
-            return d.key[2];
-        })
-        .colors(genderColors)
+        .ordinalColors(genderColors)
+        // .colorAccessor(function(d) {
+        //    if (typeof d.key !== 'undefined') 
+        //    return d.key[2];
+        // })
+        //.colors(genderColors)
         .dimension(scoreDim)
         .group(scoreGroup)
         .margins({ top: 10, right: 50, bottom: 75, left: 75 });
 }
 
-// ************ Regression Analysis via Scatter Plot - Writing vs Math *************
+// ************ Regression Analysis via Scatter Plot - Math vs Writing *************
 
-function show_writing_vs_math_regression(ndx) { // Establish correlation between x (writing score) & y (math score)
+function show_math_vs_writing_regression(ndx) { // Establish correlation between x (math score) & y (writing score)
 
     var genderColors = d3.scale.ordinal() // Add colour to the scatter plot
-        .domain(["Female", "Male"])
+        .domain(["female", "male"])
         .range(["pink", "blue"]);
 
-    var writingDim = ndx.dimension(dc.pluck("writing_score")); // For x-axis
+    var mathDim = ndx.dimension(dc.pluck("math_score")); // For x-axis
     var scoreDim = ndx.dimension(function(d) { // For y-axis
-        return [d.writing_score, d.math_score, d.gender]; // Array =  writingscore =[0], mathscore = [1] & gender = [2]
+        return [d.math_score, d.writing_score, d.gender]; // Array =  mathscore =[0], writingscore = [1] & gender = [2]
     });
     
     var scoreGroup = scoreDim.group();
 
-    var minWriting = writingDim.bottom(1)[0].writing_score;
-    var maxWriting = writingDim.top(1)[0].writing_score;
+    var minMath = mathDim.bottom(1)[0].math_score;
+    var maxMath = mathDim.top(1)[0].math_score;
 
-    dc.scatterPlot("#writing-vs-math-regression")
-        .width(350)
-        .height(250)
+    dc.scatterPlot("#math-vs-writing-regression")
+        .width(600)
+        .height(400)
         .useViewBoxResizing(true)
-        .x(d3.scale.linear().domain([minWriting, maxWriting]))
+        .x(d3.scale.linear().domain([minMath, maxMath]))
         .brushOn(false)
         .symbolSize(8)
         .clipPadding(10)
-        .yAxisLabel("Math Score")
-        .xAxisLabel("Writing Score")
+        .yAxisLabel("Writing Score")
+        .xAxisLabel("Math Score")
         .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5)) 
         .title(function(d) {
-            return "This " + d.key[2] + " received " + d.key[0] + " in Writing and " + d.key[1] + " in Math.";
+            return "This " + d.key[2] + " received " + d.key[0] + " in Math and " + d.key[1] + " in Writing.";
         })
-        .colorAccessor(function(d) {
-            return d.key[2];
-        })
-        .colors(genderColors)
+        .ordinalColors(genderColors)
+        // .colorAccessor(function(d) {
+        //     if (typeof d.key !== 'undefined') 
+        //    return d.key[2];
+        // })
+        //.colors(genderColors)
         .dimension(scoreDim)
         .group(scoreGroup)
         .margins({ top: 10, right: 50, bottom: 75, left: 75 });
+}
+
+// ************ Bar Chart - Ethnicity Distribution *************
+
+function show_ethnicity_distribution(ndx) {
+    var ethnicOrigin = d3.scale.ordinal()
+        .domain(["A", "B", "C", "D", "E"])
+        .range(["#091834", "#0A337F", "#1258DC", "#6395F2", "#DEE9FC"]);
+    var ethnicityDim = ndx.dimension(function(d) {
+        return [d.ethnicity];
+    });
+    var ethnicityCluster = ethnicityDim.group();
+
+    dc.barChart("#ethnicity-distribution")
+        .width(350)
+        .height(300)
+        .useViewBoxResizing(true)
+        .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+        .colorAccessor(function(d, i) { return i; })
+        .colors(ethnicOrigin)
+        .dimension(ethnicityDim)
+        .group(ethnicityCluster)
+        .transitionDuration(500)
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal)
+        .elasticY(true)
+        .xAxisLabel("Ethnic Origin")
+        .yAxis().ticks(5);
 }
