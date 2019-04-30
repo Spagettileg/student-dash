@@ -31,6 +31,7 @@ function createAnalysis(error, studentsperformanceData) {
     show_math_vs_writing_regression(ndx); // Scatter Plot for math vs writing
     
     show_ethnicity_distribution(ndx); // Bar chart displaying multiple ethnic groups
+    show_parents_education_distribution(ndx); // Bar chart displaying levels of parent academia
 
     dc.renderAll(); // Essential command for Chart/Data to appear
 }
@@ -280,6 +281,7 @@ function show_stats_all_subjects(ndx) {
             .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5)) 
             .renderHorizontalGridLines(true)
             .brushOn(false)
+            .elasticY(true)
             .compose([  // x3 lines created for each exam subject in scope
                 dc.lineChart(compositeChart)
                     .dimension(mathDim)
@@ -431,20 +433,20 @@ function show_math_vs_writing_regression(ndx) { // Establish correlation between
         .margins({ top: 10, right: 50, bottom: 75, left: 75 });
 }
 
-// ************ Bar Chart - Ethnicity Distribution *************
+//************ Bar Chart - Ethnicity Distribution *************
 
 function show_ethnicity_distribution(ndx) {
-    var ethnicOrigin = d3.scale.ordinal()
-        .domain(["A", "B", "C", "D", "E"])
+    var ethnicOrigin = d3.scale.ordinal() // x-axis
+        .domain(["group A", "group B", "group C", "group D", "group E"])
         .range(["#091834", "#0A337F", "#1258DC", "#6395F2", "#DEE9FC"]);
-    var ethnicityDim = ndx.dimension(function(d) {
+    var ethnicityDim = ndx.dimension(function(d) { // y-axis
         return [d.ethnicity];
     });
     var ethnicityCluster = ethnicityDim.group();
 
     dc.barChart("#ethnicity-distribution")
-        .width(350)
-        .height(300)
+        .width(600)
+        .height(400)
         .useViewBoxResizing(true)
         .margins({ top: 10, right: 50, bottom: 30, left: 50 })
         .colorAccessor(function(d, i) { return i; })
@@ -456,5 +458,30 @@ function show_ethnicity_distribution(ndx) {
         .xUnits(dc.units.ordinal)
         .elasticY(true)
         .xAxisLabel("Ethnic Origin")
+        .yAxisLabel("Student Count")
         .yAxis().ticks(5);
 }
+
+// ************ Bar Chart - Parents Education Distribution *************
+
+function show_parents_education_distribution(ndx) {
+    var parental_educationDim = ndx.dimension(dc.pluck('parental.education'))
+    var parental_educationCluster = parental_educationDim.group()
+   
+    dc.barChart("#parents-education-distribution")
+        .width(600)
+        .height(400)
+        .useViewBoxResizing(true)
+        .margins({top: 10, right: 50, bottom: 30, left: 50})
+        .dimension(parental_educationDim)
+        .group(parental_educationCluster)
+        .transitionDuration(500)
+        .x(d3.scale.ordinal()) // Ordinal scale used as units are levels of academia
+        .xUnits(dc.units.ordinal)
+        .xAxisLabel("Parents Education")
+        .yAxisLabel("Frequency")
+        .elasticY(true)
+        .yAxis().ticks(5);
+   
+}
+
