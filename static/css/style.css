@@ -17,8 +17,12 @@ hr {
     background-color: #6395F2;
 }
 
-.bg-color-blue-middle {
-    background-color: #1258DC;
+.bg-color-blue-medium-one {
+    background-color: #1258DC; 
+}
+
+.bg-color-blue-medium-two {
+    background-color: #236AB9;
 }
 
 .bg-color-blue-middark {
