@@ -32,6 +32,9 @@ function createAnalysis(error, studentsperformanceData) {
     
     show_ethnicity_distribution(ndx); // Bar chart displaying multiple ethnic groups
     show_parents_education_distribution(ndx); // Bar chart displaying levels of parent academia
+    
+    show_source_student_nutrition(ndx); // Pie chart to view source of student nutrition
+    show_exam_preparation(ndx); // Pie chart to view level of student exam preparation
 
     dc.renderAll(); // Essential command for Chart/Data to appear
 }
@@ -466,7 +469,7 @@ function show_ethnicity_distribution(ndx) {
 
 function show_parents_education_distribution(ndx) {
     var parental_educationDim = ndx.dimension(dc.pluck('parental.education'))
-    var parental_educationCluster = parental_educationDim.group()
+    var parental_educationCluster = parental_educationDim.group();
    
     dc.barChart("#parents-education-distribution")
         .width(600)
@@ -483,5 +486,37 @@ function show_parents_education_distribution(ndx) {
         .elasticY(true)
         .yAxis().ticks(5);
    
+}
+
+// ******** Pie chart - Source of Students Nutrition ********
+
+function show_source_student_nutrition(ndx) {
+    
+     var lunch_Dim = ndx.dimension(dc.pluck('lunch')) 
+            var total_lunch_per_student = lunch_Dim.group();
+            dc.pieChart('#nutrition-analysis')
+                .height(450)
+                .radius(300)
+                .useViewBoxResizing(true)
+                .transitionDuration(1500)
+                .dimension(lunch_Dim)
+                .group(total_lunch_per_student);
+
+}
+
+// ******** Pie chart - Exam Preparation ********
+
+function show_exam_preparation(ndx) {
+    
+     var examPrep_Dim = ndx.dimension(dc.pluck('test.prep.course')) 
+            var total_prep_per_student = examPrep_Dim.group();
+            dc.pieChart('#test-preparation-analysis')
+                .height(450)
+                .radius(300)
+                .useViewBoxResizing(true)
+                .transitionDuration(1500)
+                .dimension(examPrep_Dim)
+                .group(total_prep_per_student);
+
 }
 
