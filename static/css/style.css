@@ -100,10 +100,21 @@ hr {
 
 .intro-container {
     margin-top: 70px;
+    padding-left:  40px;
 }
 
 .gender-container {
     margin-top: 70px;
+    padding-right: 30px;
+    
+}
+
+.exam-performance-container {
+    padding-left: 40px;
+}
+
+.line-graph-container {
+    padding-left: 40px;
 }
 
 .content-wrapper {
@@ -278,6 +289,14 @@ hr {
     }
 }
 
-/***************************************************************/
+/******** Closure of excessive space on Gender article *********/
+
+@media (max-width: 768px) { /*tablet*/
+    .gender-container {
+        margin-top: 0px;
+        margin-left: 25px;
+    }
+}
+
 
 
