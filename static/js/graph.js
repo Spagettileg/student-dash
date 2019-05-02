@@ -12,13 +12,13 @@ function createAnalysis(error, studentsperformanceData) {
                 d.math_score = parseInt(d["math.score"]);  // Converts string data to Integers. 
                 d.reading_score = parseInt(d["reading.score"]);  // As above
                 d.writing_score = parseInt(d["writing.score"]);  // As above
-            }); 
+            });
     
     show_student_selector(ndx);
     show_gender_selector(ndx);
     
-    show_gender_percentage(ndx, "female", "#female-student-percentage"); 
-    show_gender_percentage(ndx, "male", "#male-student-percentage"); 
+    show_gender_percentage(ndx, "female", "#female-student-percentage");
+    show_gender_percentage(ndx, "male", "#male-student-percentage");
     
     show_average_math_score(ndx);
     show_average_reading_score(ndx);
@@ -39,7 +39,7 @@ function createAnalysis(error, studentsperformanceData) {
     dc.renderAll(); // Essential command for Chart/Data to appear
 }
 
-// ************ Introduction - Student Filter *************
+// ************ Introduction *************
 
 function show_student_selector(ndx) {
     var studentDim = ndx.dimension(dc.pluck('student')); // Both dimension & group created and passed back to dimensional charting select menu
@@ -59,16 +59,20 @@ function show_student_selector(ndx) {
         order = order;
         return show_student_selector;
     };
+        console.log(studentGroup.all);
 }
+
+// ************ Student Filter *************
 
 function show_gender_selector(ndx) {
     var genderDim = ndx.dimension(dc.pluck('gender'));
     var genderGroup = genderDim.group();
 
-     dc.selectMenu('#gender-selector') // x2 properties only
+    dc.selectMenu('#gender-selector') // x2 properties only
         .dimension(genderDim)
         .group(genderGroup);
-        
+     
+    console.log(genderGroup.all); 
 }
 
 // ************ Gender % Split *************
@@ -142,7 +146,7 @@ function show_average_math_score(ndx, math_score, element) {
     console.log(averageMathScore.all());  // Console test is good
     
     dc.numberDisplay("#average-math-score")
-        .formatNumber(d3.format('')) 
+        .formatNumber(d3.format(''))
         .valueAccessor(function(d) {
             if (d.math_score_count / d.total) {
                 return 0;
@@ -184,12 +188,12 @@ function show_average_reading_score(ndx, reading_score, element) {
         return {count: 0, total: 0, average: 0};
     }
     
-    var averageReadingScore = dim.group().reduce(add_item, remove_item, initialise); 
+    var averageReadingScore = dim.group().reduce(add_item, remove_item, initialise);
     
-    console.log(averageReadingScore.all());  // Console test is good
+    console.log(averageReadingScore.all()); // Console test is good
     
     dc.numberDisplay("#average-reading-score")
-        .formatNumber(d3.format('')) 
+        .formatNumber(d3.format(''))
         .valueAccessor(function(d) {
             if (d.reading_score_count / d.total) {
                 return 0;
@@ -231,12 +235,12 @@ function show_average_writing_score(ndx, writing_score, element) {
         return {count: 0, total: 0, average: 0};
     }
     
-    var averageWritingScore = dim.group().reduce(add_item, remove_item, initialise); 
+    var averageWritingScore = dim.group().reduce(add_item, remove_item, initialise);
     
-    console.log(averageWritingScore.all());  // Console test is good
+    console.log(averageWritingScore.all()); // Console test is good
     
     dc.numberDisplay("#average-writing-score")
-        .formatNumber(d3.format('')) 
+        .formatNumber(d3.format(''))
         .valueAccessor(function(d) {
             if (d.writing_score_count / d.total) {
                 return 0;
@@ -247,7 +251,7 @@ function show_average_writing_score(ndx, writing_score, element) {
         })
         .group(averageWritingScore);
         
-}   
+}
 
 // ************ Composite Chart All Subjects *************
 
@@ -262,7 +266,7 @@ function show_stats_all_subjects(ndx) {
                     return 0;  
                 } else {
                     return d.math_score, d.reading_score, d.writing_score;
-                }
+                  }
             };
         }
        
@@ -281,22 +285,22 @@ function show_stats_all_subjects(ndx) {
             .x(d3.scale.linear().domain([0, 100]))
             .xAxisLabel("Exam Score")
             .yAxisLabel("Frequency")
-            .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5)) 
+            .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
             .renderHorizontalGridLines(true)
             .brushOn(false)
             .elasticY(true)
             .compose([  // x3 lines created for each exam subject in scope
                 dc.lineChart(compositeChart)
                     .dimension(mathDim)
-                    .colors('#6395F2') 
+                    .colors('#6395F2')
                     .group(mathStudent, 'math_score'),
                 dc.lineChart(compositeChart)
                     .dimension(readingDim)
-                    .colors('#1258DC') 
+                    .colors('#1258DC')
                     .group(readingStudent, 'reading_score'),
                 dc.lineChart(compositeChart)
                     .dimension(writingDim)
-                    .colors('#091834') 
+                    .colors('#091834')
                     .group(writingStudent, 'writing_score'),
             ]);
      
@@ -330,7 +334,7 @@ function show_math_vs_reading_regression(ndx) { // Establish correlation between
         .clipPadding(10)
         .yAxisLabel("Reading Score")
         .xAxisLabel("Math Score")
-        .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5)) 
+        .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
         .title(function(d) {
             return "This " + d.key[2] + " received " + d.key[0] + " in Math and " + d.key[1] + " in Reading.";
         })
