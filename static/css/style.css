@@ -117,6 +117,10 @@ hr {
     padding-left: 40px;
 }
 
+.math-vs-reading .reading-vs-writing .math-vs-writing .bar-chart-one .bar-chart-two .pie-chart-one .pie-chart-two {
+    padding-left: 24px;
+}
+
 .content-wrapper {
     width: 92%;
     padding: 15px 10px;
