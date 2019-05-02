@@ -8,16 +8,21 @@
     <title>Dashboard on Student Exam Performance</title>
 
     <!-- CSS Libraries-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
-    <!--Personal CSS-->
-    <link rel="stylesheet" href="static/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/spacelab/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/3.0.12/dc.min.css" type="text/css" />
     <!--Font Awesome-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!--Favicon-->
     <link rel="shortcut icon" type="image/png" href="static/images/DashBPic.png">
-    
-
+    <!--Personal CSS-->
+    <link rel="stylesheet" href="static/css/style.css" type="text/css" />
+    <!-- JS Libraries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/3.0.12/dc.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
+    <!-- Dashboard JS -->
+    <script src="static/js/graph.js"></script>
 
 </head>
 
@@ -60,10 +65,10 @@
                         <div class="hide-content-toggle">
                             <hr>
                             <div class="col-xs-6">
-                                <i class="fa fa-female fa-gender color-pink" aria-hidden="true"></i> <span class="gender-box" id="female-student-percentage"></span>
+                                <i class="fas fa-female fa-gender color-pink" aria-hidden="true"></i> <span class="gender-box" id="female-student-percentage"></span>
                             </div>
                             <div class="col-xs-6">
-                                <i class="fa fa-male fa-gender color-blue" aria-hidden="true"></i> <span class="gender-box" id="male-student-percentage"></span>
+                                <i class="fas fa-male fa-gender color-blue" aria-hidden="true"></i> <span class="gender-box" id="male-student-percentage"></span>
                             </div>
                             <p>The data sample shows there is almost a 50/50 split of female vs male students. </p>
                             <p>A sample size of 1,000 is significant and the detailed analysis below is designed to understand the examination success of all students.
@@ -80,7 +85,7 @@
                 </div>
             </article>
             <!--Overall Exam Performance Summary-->
-            <article class="container-fluid col-xs-12">
+            <article class="container-fluid col-xs-12 exam-performance-container">
                 <div class="row">
                     <div class="content-wrapper">
                         <div><i class="fa fa-angle-up hide-content-btn"></i></div>
@@ -112,7 +117,7 @@
                 </div>
             </article>
             <!--Line Graph Analysis-->
-            <article class="container-fluid col-xs-12">
+            <article class="container-fluid col-xs-12 line-graph-container">
                 <div class="row">
                     <div class="content-wrapper">
                         <div><i class="fa fa-angle-up hide-content-btn"></i></div>
@@ -230,8 +235,8 @@
         <div class="container-fluid bg-color-social-container">
             <div class="col-12-xs text-center">
                 <ul class="list-inline social-links-footer">
-                    <li><a href="https://github.com/Spagettileg" target="_blank"><i class="fa icon-footer fa-github"></i></a><span> GitHub</span></li>
-                    <li><a href="https://www.linkedin.com/in/paul-friel-a0821b43/" target="_blank"><i class="fa icon-footer fa-linkedin"></i></a><span> LinkedIn</span></li>
+                    <li><a href="https://github.com/Spagettileg" target="_blank"><i class="fab fa-github fa-github"></i></a><span> GitHub</span></li>
+                    <li><a href="https://www.linkedin.com/in/paul-friel-a0821b43/" target="_blank"><i class="fab fa-linkedin fa-linkedin"></i></a><span> LinkedIn</span></li>
                     <hr>
                     <p>Dashboard - Website design Paul Friel - </p>
                 </ul>
@@ -244,11 +249,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!--JS Libraries-->
-    <script src="static/js/d3.min.js"></script>
-    <script src="static/js/crossfilter.min.js"></script>
-    <script src="static/js/dc.min.js"></script>
-    <script src="static/js/queue.min.js"></script>
-    <script src="static/js/graph.js"></script>
     <script src="static/js/helper.js"></script>
 
 </body>
