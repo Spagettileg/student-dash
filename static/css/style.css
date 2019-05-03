@@ -2,6 +2,8 @@
 
 /*----------Special Padding / Margin / Text----------*/
 
+div.dc-chart { float: none!important; }
+
 hr {
     margin: 15px auto 10px;
     border-color: #6395F2;
@@ -40,6 +42,7 @@ hr {
     width: 100%;
     min-height: 50px;
     background: linear-gradient(#091834, #0A337F, #1258DC, #0A337F, #091834);
+    border-color: #091834;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
