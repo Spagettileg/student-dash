@@ -28,7 +28,16 @@ This software has been designed to run on Chrome, Edge, Firefox, Safari, Opera &
 
 ### Design
 
-##### Colour palette used:
+##### Colour palette (Graphs & reset button):
+
+A monochromatic scheme with blue as the base colour:
+
+Lightest =  #DEE9FC, #6395F2, #1258DC, #236AB9, #0A337F & #091834 = darkest
+
+Navbar & Footer text - #E6E6E6 (light grey)
+
+Gender icons – Female  #FF99FF (pink) & Male #004D99 (blue)
+
 
 *** 
 
@@ -108,6 +117,48 @@ My wireframe designs have been appended as both .bmpr and .pdf files on GitHub. 
 ***
 ### Technologies Used
 
+The following technologies were used in the design and build of this project.
+
+##### HTML5 
+HTML5 was used to create basic structure
+
+##### CSS3 
+Cascading Style Sheets provided support with formatting, positioning, coloring and styling. dc.min.css was used to support a multi-dimensional charting library built to work natively with crossfilter and rendered using d3.js - https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css
+
+##### AWS Cloud 9 
+Cloud9 IDE editor used to write the HTML, CSS and JavaScript
+
+##### Balsamiq 
+Dashboard mock up design was created on 3 levels (Mobile, Tablet & Desktop) and made available in both .bmpr & .pdf versions  
+
+##### Bootstrap - https://www.bootstrapcdn.com/
+Bootstrap 3.3.7 is used to create frameworks of a mobile-first design, it was used for navigation and page grid layout in the website
+
+##### Bootswatch 
+Bootswatch 3.4.0 used to assist in the creation of the responsive grid structure for the site and also to provide some basic CSS styling
+
+##### JQuery - https://jquery.com/
+JQuery is added to the site to assist the implementation of JavaScript and Bootstrap.
+
+##### Google Fonts - https://fonts.google.com/
+Google fonts are used to create an impact to the web-design and uphold a styling theme.
+
+•	'Open+Sans, Sans-serif'
+
+##### Font Awesome - https://www.bootstrapcdn.com/fontawesome/
+Font Awesome is used to add social links font (images) to the website. These fonts were GitHub & LinkedIn
+
+##### Git & GitHub - https://github.com/
+Git is used as a command line tool to support version control, through moving files to a staging area prior to adding to a local repository. For safe storage and to allow other users to view my deployed website, all relevant files were then pushed from Git to GitHub. 
+
+##### Javascript 
+The following Javascript libraries and quality check tools were used heavily in the development of the data visualisation dashboard  
+-	D3.js - https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js
+-	DC.js - https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.js
+-	Crossfilter.js -  Helped enable dynamic interaction of charts and data. https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js
+-	D3-queue.js – Primarily used to load the dataset fully before running any other files. https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js  
+-	JS Hint – Used for quality check and error detection of Javascript code
+-	jQuery - Support with DOM manipulation when resetting filters and collapse / re-opening of articles
 
 ***
 
