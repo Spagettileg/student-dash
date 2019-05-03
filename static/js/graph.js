@@ -8,7 +8,7 @@ function createAnalysis(error, studentsperformanceData) {
     var ndx = crossfilter(studentsperformanceData); //Crossfilter gets passed to the function that will draw the graph
     
             studentsperformanceData.forEach(function(d){ 
-                d.student = parseInt(d["student"]);  // Converts string to numbers
+                d.student = parseInt(d.student);  // Converts string to numbers
                 d.math_score = parseInt(d["math.score"]);  // Converts string data to Integers. 
                 d.reading_score = parseInt(d["reading.score"]);  // As above
                 d.writing_score = parseInt(d["writing.score"]);  // As above
@@ -472,7 +472,7 @@ function show_ethnicity_distribution(ndx) {
 // ************ Bar Chart - Parents Education Distribution *************
 
 function show_parents_education_distribution(ndx) {
-    var parental_educationDim = ndx.dimension(dc.pluck('parental.education'))
+    var parental_educationDim = ndx.dimension(dc.pluck('parental.education'));
     var parental_educationCluster = parental_educationDim.group();
    
     dc.barChart("#parents-education-distribution")
@@ -496,7 +496,7 @@ function show_parents_education_distribution(ndx) {
 
 function show_source_student_nutrition(ndx) {
     
-     var lunch_Dim = ndx.dimension(dc.pluck('lunch')) 
+     var lunch_Dim = ndx.dimension(dc.pluck('lunch')); 
             var total_lunch_per_student = lunch_Dim.group();
             dc.pieChart('#nutrition-analysis')
                 .height(350)
@@ -512,7 +512,7 @@ function show_source_student_nutrition(ndx) {
 
 function show_exam_preparation(ndx) {
     
-     var examPrep_Dim = ndx.dimension(dc.pluck('test.prep.course')) 
+     var examPrep_Dim = ndx.dimension(dc.pluck('test.prep.course')); 
             var total_prep_per_student = examPrep_Dim.group();
             dc.pieChart('#test-preparation-analysis')
                 .height(350)
