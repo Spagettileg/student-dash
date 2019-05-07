@@ -2,7 +2,7 @@
 
 /*----------Special Padding / Margin / Text----------*/
 
-div.dc-chart { float: none!important; }
+div.dc-chart { float: none!important; } /* Fix to a 'float-left' bug in Chrome */
 
 hr {
     margin: 15px auto 10px;
