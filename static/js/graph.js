@@ -6,33 +6,33 @@ queue()
 
 function createAnalysis(error, studentsperformanceData) {
     var ndx = crossfilter(studentsperformanceData); //Crossfilter gets passed to the function that will draw the graph
-    
-            studentsperformanceData.forEach(function(d){ 
-                d.student = parseInt(d.student);  // Converts string to numbers
-                d.math_score = parseInt(d["math.score"]);  // Converts string data to Integers. 
-                d.reading_score = parseInt(d["reading.score"]);  // As above
-                d.writing_score = parseInt(d["writing.score"]);  // As above
-            });
-    
+
+    studentsperformanceData.forEach(function(d) {
+        d.student = parseInt(d.student); // Converts string to numbers
+        d.math_score = parseInt(d["math.score"]); // Converts string data to Integers. 
+        d.reading_score = parseInt(d["reading.score"]); // As above
+        d.writing_score = parseInt(d["writing.score"]); // As above
+    });
+
     show_student_selector(ndx);
     show_gender_selector(ndx);
-    
+
     show_gender_percentage(ndx, "female", "#female-student-percentage");
     show_gender_percentage(ndx, "male", "#male-student-percentage");
-    
+
     show_average_math_score(ndx);
     show_average_reading_score(ndx);
     show_average_writing_score(ndx);
-    
+
     show_stats_all_subjects(ndx); // Composite Line chart 
-    
+
     show_math_vs_reading_regression(ndx); // Scatter Plot for math vs reading
     show_reading_vs_writing_regression(ndx); // Scatter Plot for reading vs writing
     show_math_vs_writing_regression(ndx); // Scatter Plot for math vs writing
-    
+
     show_ethnicity_distribution(ndx); // Bar chart displaying multiple ethnic groups
     show_parents_education_distribution(ndx); // Bar chart displaying levels of parent academia
-    
+
     show_source_student_nutrition(ndx); // Pie chart to view source of student nutrition
     show_exam_preparation(ndx); // Pie chart to view level of student exam preparation
 
@@ -51,8 +51,8 @@ function show_student_selector(ndx) {
         .title(function(d) {
             return d.key;
         });
-        
-        show_student_selector.order = function (order) { // Student data now re-ordered to allow view from 1-1,000 in 'intro' dropdown box
+
+    show_student_selector.order = function(order) { // Student data now re-ordered to allow view from 1-1,000 in 'intro' dropdown box
         if (!arguments.length) {
             return order;
         }
@@ -70,7 +70,7 @@ function show_gender_selector(ndx) {
     dc.selectMenu('#gender-selector') // x2 properties only
         .dimension(genderDim)
         .group(genderGroup);
-     
+
 }
 
 // ************ Gender % Split *************
@@ -112,143 +112,152 @@ function show_gender_percentage(ndx, gender, element) {
 
 // ************ Maths Average Performance *************
 
-function show_average_math_score(ndx, math_score, element) {
-    var dim = ndx.dimension(dc.pluck('math_score'));
-    
-    
-    function add_item(p, v) { // p is an accumulator and keeps track of the total count
-        p.count++; // Increment the count in our p object  
-        p.total += v.math_score; // We increment our total by the value of the maths score we're looking at
-        p.average = p.total / p.count; // Average maths score calculation
-        return p; // Important command. Absence will create errors 
-    }
-    
-    function remove_item(p, v) { // v represents each of the data items being added or removed 
-        p.count--; // Reduce the count in our p object  
-            if(p.count == 0) { // Count value will not be less than Zero & avoid a DIV#0 error
+function show_average_math_score(ndx) {
+    var mathDim = ndx.dimension(dc.pluck('math.score'));
+
+    var averageMathScore = mathDim.group().reduce(
+
+        // Add
+        function(p, v) { // p is an accumulator and keeps track of the total count
+            p.count++; // Increment the count in our p object  
+            p.total += v.math_score; // We increment our total by the value of the maths score we're looking at
+            return p; // Important command. Absence will create errors 
+        },
+
+        //Remove
+        function(p, v) { // v represents each of the data items being added or removed 
+            p.count--; // Reduce the count in our p object  
+            if (p.count == 0) { // Count value will not be less than Zero & avoid a DIV#0 error
                 p.total = 0;
-                p.average = 0;
-            }else {
-                p.total -= v.math_score; // We reduce our total by the value of the math score we're looking at
-                p.average = p.total / p.count; // Average score calculation
             }
-        return p;
-    }
-    
-    function initialise() { // Creates an initial value for p
-        return {count: 0, total: 0, average: 0};
-    }
-    
-    var averageMathScore = dim.group().reduce(add_item, remove_item, initialise); 
-    
-    console.log(averageMathScore.all());  // Console test is good
-    
-    dc.numberDisplay("#average-math-score")
+            else {
+                p.total -= v.math_score; // We reduce our total by the value of the math score we're looking at
+            }
+            return p;
+        },
+
+        //Initialise
+        function() { // Creates an initial value for p
+            return { count: 0, total: 0 };
+        }
+    );
+
+    var numberDisplay = dc.numberDisplay("#average-math-score");
+
+    numberDisplay
         .formatNumber(d3.format(''))
+        .dimension(mathDim)
+        .group(averageMathScore)
+        // Value Accessor to get average
         .valueAccessor(function(d) {
-            if (d.math_score_count / d.total) {
+            if (d.value.count == 0) {
                 return 0;
             }
             else {
-                return d.value.average.toFixed(2);
+                // Rounding to a whole number
+                return Math.round(d.value.total / d.value.count);
             }
-        })
-        .group(averageMathScore);
-        
+        });
 }
 
 // ************ Reading Average Performance *************
 
-function show_average_reading_score(ndx, reading_score, element) {
-    var dim = ndx.dimension(dc.pluck('reading_score'));
-    
-    
-    function add_item(p, v) { // p is an accumulator and keeps track of the total count
-        p.count++; // Increment the count in our p object  
-        p.total += v.reading_score; // We increment our total by the value of the reading score we're looking at
-        p.average = p.total / p.count; // Average reading score calculation
-        return p; // Important command. Absence will create errors 
-    }
-    
-    function remove_item(p, v) { // v represents each of the data items being added or removed 
-        p.count--; // Reduce the count in our p object  
-            if(p.count == 0) { // Count value will not be less than Zero & avoid a DIV#0 error
+function show_average_reading_score(ndx) {
+    var readingDim = ndx.dimension(dc.pluck('reading.score'));
+
+    var averageReadingScore = readingDim.group().reduce(
+
+        // Add
+        function(p, v) { // p is an accumulator and keeps track of the total count
+            p.count++; // Increment the count in our p object  
+            p.total += v.reading_score; // We increment our total by the value of the reading score we're looking at
+            return p; // Important command. Absence will create errors 
+        },
+
+        //Remove
+        function(p, v) { // v represents each of the data items being added or removed 
+            p.count--; // Reduce the count in our p object  
+            if (p.count == 0) { // Count value will not be less than Zero & avoid a DIV#0 error
                 p.total = 0;
-                p.average = 0;
-            }else {
-                p.total -= v.reading_score; // We reduce our total by the value of the reading score we're looking at
-                p.average = p.total / p.count; // Average score calculation
             }
-        return p;
-    }
-    
-    function initialise() { // Creates an initial value for p
-        return {count: 0, total: 0, average: 0};
-    }
-    
-    var averageReadingScore = dim.group().reduce(add_item, remove_item, initialise);
-    
-    console.log(averageReadingScore.all()); // Console test is good
-    
-    dc.numberDisplay("#average-reading-score")
+            else {
+                p.total -= v.reading_score; // We reduce our total by the value of the reading score we're looking at
+            }
+            return p;
+        },
+
+        //Initialise
+        function() { // Creates an initial value for p
+            return { count: 0, total: 0 };
+        }
+    );
+
+    var numberDisplay = dc.numberDisplay("#average-reading-score");
+
+    numberDisplay
         .formatNumber(d3.format(''))
+        .dimension(readingDim)
+        .group(averageReadingScore)
+        // Value Accessor to get average
         .valueAccessor(function(d) {
-            if (d.reading_score_count / d.total) {
+            if (d.value.count == 0) {
                 return 0;
             }
             else {
-                return d.value.average.toFixed(2);
+                // Rounding to a whole number
+                return Math.round(d.value.total / d.value.count);
             }
-        })
-                .group(averageReadingScore);
-        
-}   
-    
+        });
+}
+
 // ************ Writing Average Performance *************
 
-function show_average_writing_score(ndx, writing_score, element) {
-    var dim = ndx.dimension(dc.pluck('writing_score'));
-    
-    
-    function add_item(p, v) { // p is an accumulator and keeps track of the total count
-        p.count++; // Increment the count in our p object  
-        p.total += v.writing_score; // We increment our total by the value of the writing score we're looking at
-        p.average = p.total / p.count; // Average writing score calculation
-        return p; // Important command. Absence will create errors 
-    }
-    
-    function remove_item(p, v) { // v represents each of the data items being added or removed 
-        p.count--; // Reduce the count in our p object  
-            if(p.count == 0) { // Count value will not be less than Zero & avoid a DIV#0 error
+function show_average_writing_score(ndx) {
+    var writingDim = ndx.dimension(dc.pluck('writing.score'));
+
+    var averageWritingScore = writingDim.group().reduce(
+
+        // Add
+        function(p, v) { // p is an accumulator and keeps track of the total count
+            p.count++; // Increment the count in our p object  
+            p.total += v.writing_score; // We increment our total by the value of the writing score we're looking at
+            return p; // Important command. Absence will create errors 
+        },
+
+        //Remove
+        function(p, v) { // v represents each of the data items being added or removed 
+            p.count--; // Reduce the count in our p object  
+            if (p.count == 0) { // Count value will not be less than Zero & avoid a DIV#0 error
                 p.total = 0;
-                p.average = 0;
-            }else {
-                p.total -= v.writing_score; // We reduce our total by the value of the writing score we're looking at
-                p.average = p.total / p.count; // Average score calculation
             }
-        return p;
-    }
-    
-    function initialise() { // Creates an initial value for p
-        return {count: 0, total: 0, average: 0};
-    }
-    
-    var averageWritingScore = dim.group().reduce(add_item, remove_item, initialise);
-    
-    console.log(averageWritingScore.all()); // Console test is good
-    
-    dc.numberDisplay("#average-writing-score")
+            else {
+                p.total -= v.writing_score; // We reduce our total by the value of the writing score we're looking at
+            }
+            return p;
+        },
+
+        //Initialise
+        function() { // Creates an initial value for p
+            return { count: 0, total: 0 };
+        }
+    );
+
+    var numberDisplay = dc.numberDisplay("#average-writing-score");
+
+    numberDisplay
         .formatNumber(d3.format(''))
+        .dimension(writingDim)
+        .group(averageWritingScore)
+        // Value Accessor to get average
         .valueAccessor(function(d) {
-            if (d.writing_score_count / d.total) {
+            if (d.value.count == 0) {
                 return 0;
             }
             else {
-                return d.value.average.toFixed(2);
+                // Rounding to a whole number
+                return Math.round(d.value.total / d.value.count);
             }
-        })
-        .group(averageWritingScore);
-        
+        });
 }
 
 // ************ Composite Chart All Subjects *************
@@ -257,51 +266,52 @@ function show_stats_all_subjects(ndx) {
     var mathDim = ndx.dimension(dc.pluck('math_score'));
     var readingDim = ndx.dimension(dc.pluck('reading_score'));
     var writingDim = ndx.dimension(dc.pluck('writing_score'));
-    
+
     function student_id(student) { // A check on students exam score
-            return function(d) {
-                if (d.student === student) {
-                    return 0;  
-                } else {
-                    return d.math_score, d.reading_score, d.writing_score;
-                  }
-            };
-        }
-       
-        var mathStudent = mathDim.group().reduceCount(student_id('math_score')); // reduceCount helps to determine frequency on y-axis
-        var readingStudent = readingDim.group().reduceCount(student_id('reading_score'));
-        var writingStudent = writingDim.group().reduceCount(student_id('writing_score'));
-        console.log(mathStudent.all());
-        console.log(readingStudent.all());
-        console.log(writingStudent.all());
-        
-        var compositeChart = dc.compositeChart('#composite-chart-exam-score');
-        compositeChart
-            .width(900)
-            .height(400)
-            .useViewBoxResizing(true)
-            .x(d3.scale.linear().domain([0, 100]))
-            .xAxisLabel("Exam Score")
-            .yAxisLabel("Frequency")
-            .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
-            .renderHorizontalGridLines(true)
-            .brushOn(false)
-            .elasticY(true)
-            .compose([  // x3 lines created for each exam subject in scope
-                dc.lineChart(compositeChart)
-                    .dimension(mathDim)
-                    .colors('#6395F2')
-                    .group(mathStudent, 'math_score'),
-                dc.lineChart(compositeChart)
-                    .dimension(readingDim)
-                    .colors('#1258DC')
-                    .group(readingStudent, 'reading_score'),
-                dc.lineChart(compositeChart)
-                    .dimension(writingDim)
-                    .colors('#091834')
-                    .group(writingStudent, 'writing_score'),
-            ]);
-     
+        return function(d) {
+            if (d.student === student) {
+                return 0;
+            }
+            else {
+                return d.math_score, d.reading_score, d.writing_score;
+            }
+        };
+    }
+
+    var mathStudent = mathDim.group().reduceCount(student_id('math_score')); // reduceCount helps to determine frequency on y-axis
+    var readingStudent = readingDim.group().reduceCount(student_id('reading_score'));
+    var writingStudent = writingDim.group().reduceCount(student_id('writing_score'));
+    console.log(mathStudent.all());
+    console.log(readingStudent.all());
+    console.log(writingStudent.all());
+
+    var compositeChart = dc.compositeChart('#composite-chart-exam-score');
+    compositeChart
+        .width(900)
+        .height(400)
+        .useViewBoxResizing(true)
+        .x(d3.scale.linear().domain([0, 100]))
+        .xAxisLabel("Exam Score")
+        .yAxisLabel("Frequency")
+        .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
+        .renderHorizontalGridLines(true)
+        .brushOn(false)
+        .elasticY(true)
+        .compose([ // x3 lines created for each exam subject in scope
+            dc.lineChart(compositeChart)
+            .dimension(mathDim)
+            .colors('#6395F2')
+            .group(mathStudent, 'math_score'),
+            dc.lineChart(compositeChart)
+            .dimension(readingDim)
+            .colors('#1258DC')
+            .group(readingStudent, 'reading_score'),
+            dc.lineChart(compositeChart)
+            .dimension(writingDim)
+            .colors('#091834')
+            .group(writingStudent, 'writing_score'),
+        ]);
+
 }
 
 // ************ Regression Analysis via Scatter Plot - Maths vs Reading *************
@@ -316,7 +326,7 @@ function show_math_vs_reading_regression(ndx) { // Establish correlation between
     var scoreDim = ndx.dimension(function(d) { // For y-axis
         return [d.math_score, d.reading_score, d.gender]; // Array =  mathscore =[0], readingscore = [1] & gender = [2]
     });
-    
+
     var scoreGroup = scoreDim.group();
 
     var minMath = mathDim.bottom(1)[0].math_score;
@@ -359,13 +369,8 @@ function show_reading_vs_writing_regression(ndx) { // Establish correlation betw
     var scoreDim = ndx.dimension(function(d) { // For y-axis
         return [d.reading_score, d.writing_score, d.gender]; // Array =  readingscore =[0], writingscore = [1] & gender = [2]
     });
-    
-    console.log(readingDim);
-    console.log(scoreDim);
-    
+
     var scoreGroup = scoreDim.group();
-    
-    console.log(scoreGroup);
 
     var minReading = readingDim.bottom(1)[0].reading_score;
     var maxReading = readingDim.top(1)[0].reading_score;
@@ -380,7 +385,7 @@ function show_reading_vs_writing_regression(ndx) { // Establish correlation betw
         .clipPadding(10)
         .yAxisLabel("Writing Score")
         .xAxisLabel("Reading Score")
-        .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5)) 
+        .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
         .title(function(d) {
             return "This " + d.key[2] + " received " + d.key[0] + " in Reading and " + d.key[1] + " in Writing.";
         })
@@ -407,7 +412,7 @@ function show_math_vs_writing_regression(ndx) { // Establish correlation between
     var scoreDim = ndx.dimension(function(d) { // For y-axis
         return [d.math_score, d.writing_score, d.gender]; // Array =  mathscore =[0], writingscore = [1] & gender = [2]
     });
-    
+
     var scoreGroup = scoreDim.group();
 
     var minMath = mathDim.bottom(1)[0].math_score;
@@ -423,7 +428,7 @@ function show_math_vs_writing_regression(ndx) { // Establish correlation between
         .clipPadding(10)
         .yAxisLabel("Writing Score")
         .xAxisLabel("Math Score")
-        .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5)) 
+        .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
         .title(function(d) {
             return "This " + d.key[2] + " received " + d.key[0] + " in Math and " + d.key[1] + " in Writing.";
         })
@@ -472,12 +477,12 @@ function show_ethnicity_distribution(ndx) {
 function show_parents_education_distribution(ndx) {
     var parental_educationDim = ndx.dimension(dc.pluck('parental.education'));
     var parental_educationCluster = parental_educationDim.group();
-   
+
     dc.barChart("#parents-education-distribution")
         .width(600)
         .height(400)
         .useViewBoxResizing(true)
-        .margins({top: 10, right: 50, bottom: 30, left: 50})
+        .margins({ top: 10, right: 50, bottom: 30, left: 50 })
         .dimension(parental_educationDim)
         .group(parental_educationCluster)
         .transitionDuration(500)
@@ -487,38 +492,37 @@ function show_parents_education_distribution(ndx) {
         .yAxisLabel("Frequency")
         .elasticY(true)
         .yAxis().ticks(5);
-   
+
 }
 
 // ******** Pie chart - Source of Students Nutrition ********
 
 function show_source_student_nutrition(ndx) {
-    
-     var lunch_Dim = ndx.dimension(dc.pluck('lunch')); 
-            var total_lunch_per_student = lunch_Dim.group();
-            dc.pieChart('#nutrition-analysis')
-                .height(350)
-                .radius(150)
-                .useViewBoxResizing(true)
-                .transitionDuration(1500)
-                .dimension(lunch_Dim)
-                .group(total_lunch_per_student);
+
+    var lunch_Dim = ndx.dimension(dc.pluck('lunch'));
+    var total_lunch_per_student = lunch_Dim.group();
+    dc.pieChart('#nutrition-analysis')
+        .height(350)
+        .radius(150)
+        .useViewBoxResizing(true)
+        .transitionDuration(1500)
+        .dimension(lunch_Dim)
+        .group(total_lunch_per_student);
 
 }
 
 // ******** Pie chart - Exam Preparation ********
 
 function show_exam_preparation(ndx) {
-    
-     var examPrep_Dim = ndx.dimension(dc.pluck('test.prep.course')); 
-            var total_prep_per_student = examPrep_Dim.group();
-            dc.pieChart('#test-preparation-analysis')
-                .height(350)
-                .radius(150)
-                .useViewBoxResizing(true)
-                .transitionDuration(1500)
-                .dimension(examPrep_Dim)
-                .group(total_prep_per_student);
+
+    var examPrep_Dim = ndx.dimension(dc.pluck('test.prep.course'));
+    var total_prep_per_student = examPrep_Dim.group();
+    dc.pieChart('#test-preparation-analysis')
+        .height(350)
+        .radius(150)
+        .useViewBoxResizing(true)
+        .transitionDuration(1500)
+        .dimension(examPrep_Dim)
+        .group(total_prep_per_student);
 
 }
-
