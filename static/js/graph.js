@@ -59,7 +59,6 @@ function show_student_selector(ndx) {
         order = order;
         return show_student_selector;
     };
-        console.log(studentGroup.all);
 }
 
 // ************ Student Filter *************
@@ -72,7 +71,6 @@ function show_gender_selector(ndx) {
         .dimension(genderDim)
         .group(genderGroup);
      
-    console.log(genderGroup.all); 
 }
 
 // ************ Gender % Split *************

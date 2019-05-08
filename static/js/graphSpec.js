@@ -1,4 +1,4 @@
-// Tests to see if the data set is working
+// ***Tests to see if the data set is working***
 
 describe('Data test', function(){
   it('Shows data is there', function(){
@@ -16,10 +16,10 @@ function progress(loading, id) {
   return 'loading';
 }
 
-// Global Variable for tests
+// ***Global Variable for tests***
     var ndx = crossfilter();
 
-// Bar chart 1 - Ethnicity Distribution
+// ***Bar chart 1 - Ethnicity Distribution***
 
   function createBarChart(id) {
     var barChart = dc.barChart('#' + id);
@@ -28,6 +28,7 @@ function progress(loading, id) {
       .group(ethnicityCluster)
       .width(600)
       .height(400)
+      .useViewBoxResizing(true)
       .x(d3.scale.ordinal());
     barChart.render();
     return barChart;
@@ -76,4 +77,17 @@ function progress(loading, id) {
     it('should have a group', function() {
       expect(barChart.group()).toBe(ethnicityCluster);
     });
+});
+
+// ***Data Filters***
+
+describe('Selector Tests', function() {
+  it('Student selector should exist', function() {
+    expect(show_student_selector(ndx)).not.toBeNull();
+  });
+
+  it('Gender selector should exist', function() {
+    expect(show_gender_selector(ndx)).not.toBeNull();
+  });
+  
 });
