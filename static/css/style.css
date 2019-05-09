@@ -262,14 +262,14 @@ hr {
     padding-right: 5px;
 }
 
-.reset-data-top {
+.reset-filters-top {
     margin: 0 20px 0px 5px;
     background-color: #DEE9FC;
     border-color: #DEE9FC;
 
 }
 
-.reset-data-top:hover {
+.reset-filters-top:hover {
     background-color: #6395F2;
     /*purple*/
     border-color: #6395F2;
