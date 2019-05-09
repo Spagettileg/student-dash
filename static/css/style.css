@@ -167,33 +167,6 @@ hr {
 	font-size: 40px;
 }
 
-/*----------Performance Article-------------*/
-
-.flex-container {
-    display: flex;
-    width: 100%;
-}
-
-.dot {
-    cursor: none;
-    height: 6vw;
-    width: 6vw;
-    margin: 0 2px;
-    font-size: 4.2vw;
-    background-color: #091834;
-    color: #DEE9FC;
-    border-radius: 50%;
-    text-align: center;
-    display: inline-block;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.maths-label {
-    margin-left: 10px;
-}
-
-
-
 /*---------------Social Media---------------*/
 
 /* To include styling for social media fonts > font awesome */
