@@ -20,10 +20,6 @@ function createAnalysis(error, studentsperformanceData) {
     show_gender_percentage(ndx, "female", "#female-student-percentage");
     show_gender_percentage(ndx, "male", "#male-student-percentage");
 
-    show_average_math_score(ndx);
-    show_average_reading_score(ndx);
-    show_average_writing_score(ndx);
-
     show_stats_all_subjects(ndx); // Composite Line chart 
 
     show_math_vs_reading_regression(ndx); // Scatter Plot for math vs reading
