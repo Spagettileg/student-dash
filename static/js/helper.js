@@ -1,6 +1,6 @@
-// Reset data
+// Reset filters
 
-$('#reset-data').click(function() {
+$('#reset-filters').click(function() {
     dc.filterAll();
     dc.renderAll();
 });
