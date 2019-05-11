@@ -2,6 +2,10 @@
 
 /*----------Special Padding / Margin / Text----------*/
 
+section {
+    padding-bottom: 10px;
+}
+
 div.dc-chart { float: none!important; } /* Fix to a 'float-left' bug in Chrome */
 
 hr {
@@ -45,7 +49,7 @@ hr {
     border-color: #091834;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     border-bottom: 1px solid #091834;
     margin-bottom: 0px;
@@ -102,31 +106,28 @@ hr {
 /* To include tailoring for Introduction / Gender / Summary / Events & Tickets */
 
 .intro-container {
-    margin-top: 70px;
-    padding-left:  40px;
+    margin-top: 60px;
+    padding-left: 15px;
 }
 
 .gender-container {
-    margin-top: 70px;
-    padding-right: 30px;
+    margin-top: 0px;
+    margin-left: 0px;
     
 }
 
-.exam-performance-container {
-    padding-left: 40px;
-}
-
 .line-graph-container {
-    padding-left: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .math-vs-reading .reading-vs-writing .math-vs-writing .bar-chart-one .bar-chart-two .pie-chart-one .pie-chart-two {
-    padding-left: 24px;
+    padding-left: 0px;
 }
 
 .content-wrapper {
-    width: 92%;
-    padding: 15px 10px;
+    width: 95%;
+    padding: 10px 10px;
     border-radius: 10px;
     background-color: #fafafa;
     opacity: 0.8;
@@ -197,6 +198,7 @@ hr {
     line-height: 7px;
     text-align: center;
     color: #000;
+    border-color: #000;
     /*Black*/
     background: #e6e6e6;
     /*Light Grey*/
@@ -236,7 +238,7 @@ hr {
 }
 
 .reset-filters-top {
-    margin: 0 20px 0px 5px;
+    margin: 0 20px 0px 35px;
     background-color: #DEE9FC;
     border-color: #DEE9FC;
 
@@ -258,30 +260,105 @@ hr {
 
 /*--------------Media Queries---------*/
 
-/********** Preserves consistent position of reset button ********/ 
-
-@media (max-width: 320px) { /*mobile*/
-    .reset-data-top {
-        margin-top: 10px;
-        margin-bottom: 10px;
+@media (max-width: 490px) { /*mobile*/
+    .reset-filters-top {
+        display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    
+        
     }
 }
 
-@media (max-width: 768px) { /*tablet*/
-    .reset-data-top {
-        margin-top: 10px;
-        margin-bottom: 10px;
+@media (max-width: 490px) { /*mobile*/
+    .intro-container {
+        margin-top: 70px;
+        
     }
 }
 
-/******** Closure of excessive space on Gender article *********/
-
-@media (max-width: 768px) { /*tablet*/
+@media (min-width: 768px) { /*tablet*/
     .gender-container {
-        margin-top: 0px;
-        margin-left: 25px;
+        margin-top: 60px;
+        padding-right: 33px;
+        
     }
 }
 
+@media (min-width: 768px) { /*tablet*/
+    .line-graph-container {
+        padding-right: 30px;
+        
+    }
+}
 
+@media (min-width: 768px) { /*tablet*/
+    .math-vs-reading .reading-vs-writing .math-vs-writing .bar-chart-one .bar-chart-two .pie-chart-one .pie-chart-two {
+        padding-right: 0px;
+        
+    }
+}
 
+@media (min-width: 1200px) { /*desktop*/
+    .gender-container {
+        padding-right: 15px;
+        
+    }
+}
+
+@media (min-width: 1200px) { /*desktop*/
+    .line-graph-container {
+        padding-right: 0px;
+        
+    }
+}
+
+@media (min-width: 1200px) { /*desktop*/
+    .math-vs-reading {
+        
+    }
+}
+
+@media (min-width: 1200px) { /*desktop*/
+    .reading-vs-writing {
+        padding-left: 0px;
+        
+    }
+}
+
+@media (min-width: 1200px) { /*desktop*/
+    .math-vs-writing {
+        padding-left: 5px;
+        padding-right: 28px;
+        
+    }
+}
+
+@media (min-width: 1200px) { /*desktop*/
+    .bar-chart-one  {
+        padding-right: 10px;
+    }
+}
+
+@media (min-width: 1200px) { /*desktop*/
+    .bar-chart-two  {
+        padding-left: 0px;
+        padding-right: 10px;
+    }
+}
+
+@media (min-width: 1200px) { /*desktop*/
+    .pie-chart-one  {
+        padding-left: 0px;
+        padding-right: 10px;
+    }
+}
+
+@media (min-width: 1200px) { /*desktop*/
+    .pie-chart-two  {
+        padding-left: 0px;
+        padding-right: 35px;
+    }
+}
