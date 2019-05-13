@@ -50,7 +50,7 @@ In summary, the user will have a good understanding of how all 1,000 students pe
 #### Wireframes
 
 3 wireframe mock up’s (mobile, tablet & desktop) were created in Balsamiq. 
-My wireframe designs have been appended as both .bmpr and .pdf files on GitHub. The mock up design has stayed consistent with the original planning and I sought to avoid an over-engineered design by removing non-value add elements i.e. minimum and maximum exam results, that could be identified in regression analysis.  A less complicated design supports a good UXD.    
+My wireframe designs have been appended as both .bmpr and .pdf files on GitHub. The mock up design has stayed consistent with the original planning and I sought to avoid an over-engineered design by removing non-value add elements i.e. average, minimum and maximum exam results, that could be identified in regression analysis.  A less complicated design supports a good UXD.    
 
 *** 
 
@@ -72,47 +72,43 @@ My wireframe designs have been appended as both .bmpr and .pdf files on GitHub. 
 
 •	Total student population contained within data sample can be viewed via a female / male lens. A dropdown box has been designed to create a filter on gender type, together with a total gender count. Furthermore, the user will receive an instant percentage split on gender activity, on both unfiltered and filtered data analysis    
 
-#### Feature 5 - Exam performance summary
-
-•	Automated UXD where the overall average exam score for Math, reading and writing can be instantly viewed, the scores have taken directly from the original data sample. The purpose of this summary is to view the overall average student result per subject only. There is scope to enhance the design to view individual student performance  
-
-#### Feature 6 - Composite line graph 
+#### Feature 5 - Composite line graph 
 
 •	Math, reading and writing exam results for 1,000 students appear in the form of a line graph. This chart can be viewed in multiple dimensions, depending on how the user has configured dropdown boxes and data filters. By hovering the cursor over the legend, the user will receive a bespoke view of a single subject. Furthermore, the user can hover over the data plot to understand an individual student exam score 
 
-#### Feature 7 - Scatter chart x3 
+#### Feature 6 - Scatter chart x3 
 
 •	3 scatter plot charts have been designed to initiate regression analysis of all exam subjects. Combinations include math vs reading, reading vs writing & math vs writing. Again, these charts can be viewed in multiple dimensions, depending on how the user has configured dropdown boxes and data filters. The user will certainly get a quick and clear view of how the exam subjects correlate with each other 
 
-#### Feature 8 - Bar chart x2 
+#### Feature 7 - Bar chart x2 
 
 •	Ethnicity origin and the distribution over 5 groups’ is the focus of the 1st bar chart. The view of the chart can be altered by either clicking on a selected bar(s) &/or the user can configure the bar chart through work completed to configure other dropdown boxes and data filters
 •	Parents educational background distributed over 6 levels of academia is the focus of the 2nd bar chart. The same functionality exists, as with 1st bar chart. The user can look to create some interesting data configurations to see if either ethnicity &/or students parental education has any bearing upon the students’ exam results  
 
-#### Feature 9 - Pie chart x2 
+#### Feature 8 - Pie chart x2 
 
 •	Lunch funding is the focus of the 1st pie chart. The influence of a standard lunch allowance or reduced/free lunch allowance can be evaluated by either clicking on a selected pie section(s) &/or the user can configure the pie chart through work completed to configure other dropdown boxes and data filters
 •	Student preparation for their exams is the focus of the 2nd pie chart. The options are binary, either the student did or did not prepare for their exams. The same functionality exists, as with 1st pie chart. The user can look to create further interesting data configurations to see if either lunch funding &/or students exam preparation has any bearing upon the students’ exam results  
 
-#### Feature 10 - Collapse / re-open articles 
+#### Feature 9 - Collapse / re-open articles 
 
 •	All articles can collapse and re-open, by clicking a blue chevron icon positioned at the top right corner of each article. The chevron becomes inverted upon collapse of the article 
 •	Valuable screen space is freed up by closing articles that may not feature in a given data analysis configuration
 
-#### Feature 11 - Footer 
+#### Feature 10 - Footer 
 
 •	Provides a social media link to Linkedin and a link to my GitHub page too 
 
 ***
 ### Features left to implement
 
-###### Enhance exam performance summary
-
-•	Presently, the exam summary is limited by only publishing an overall average exam score, per subject. Going forwards, the scope can be increased by publishing individual student results, once the student selector dropdown box had been clicked 
-
 ###### Amalgamate graphs
 
 •	Scatter plots to move from 3 to 1 by creating a dropdown box to control data plots on show, per exam subject. Bar chart & Pie Chart data to possible merge by creating bar charts with multiple axis. This will provide the user an increased richness of data analysis, through reduced number of graphs
+
+##### Exam Performance Summary
+
+•   Automated UXD where the overall average exam score for Math, reading and writing can be instantly viewed, the scores have taken directly from the original data sample. The purpose of this summary is to view the overall average student result per subject only. There is scope to enhance the design to view individual student performance
 
 ***
 ### Technologies Used
@@ -164,9 +160,44 @@ The following Javascript libraries and quality check tools were used heavily in 
 
 ### Testing
 
-#### Compatibility
+A combination of automated and manual testing processes were applied to this project to ensure the UXD
+was supported in making sure the data was correctly loaded, graphical charts would successfully be deployed
+and data filters would accurately enable the user to navigate through student and gender data attributes.  
 
-#### Test Observations
+#### 1. Jasmine Testing
+
+Jasmine was used to test 3 things in particular for this project:
+
+•	That the data loaded for the project
+
+•	Data filters to show selected source data only
+
+•	Exam score data was verified 
+
+#### 2. Manual Testing
+
+Testing for this project was completed on Chrome, Edge, Firefox, Safari, Opera & Internet Explorer browsers.
+Responsiveness and correct displaying of all elements has been tested on a number of device and resolutions.
+All display without issue.
+
+Devices:
+
+•	iPhone 6/7/8
+
+•	iPhone X
+
+•	Galaxy S5
+
+•	Microsoft Lumia 550
+
+•	iPad
+
+•	iPad Pro
+
+•	Desktop >1200px
+
+#### Manual Test Observations
+
 	
 
 ***
