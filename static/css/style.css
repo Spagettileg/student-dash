@@ -260,7 +260,7 @@ hr {
 
 /*--------------Media Queries---------*/
 
-@media (max-width: 490px) { /*mobile*/
+@media (max-width: 490px) { /*mobile - Enables reset button to be centered in mobile device view*/
     .reset-filters-top {
         display: flex;
     flex-wrap: wrap;
@@ -283,6 +283,7 @@ hr {
     .gender-container {
         margin-top: 60px;
         padding-right: 33px;
+        height: 45vh;
         
     }
 }
@@ -297,14 +298,19 @@ hr {
 @media (min-width: 768px) { /*tablet*/
     .math-vs-reading .reading-vs-writing .math-vs-writing .bar-chart-one .bar-chart-two .pie-chart-one .pie-chart-two {
         padding-right: 0px;
-        
+    }
+}
+
+@media (min-width: 1200px) { /*desktop*/
+    .intro-container {
+       height: 56vh;
     }
 }
 
 @media (min-width: 1200px) { /*desktop*/
     .gender-container {
         padding-right: 15px;
-        
+        height: 56vh;
     }
 }
 
@@ -317,14 +323,14 @@ hr {
 
 @media (min-width: 1200px) { /*desktop*/
     .math-vs-reading {
-        
+        height: 62vh;
     }
 }
 
 @media (min-width: 1200px) { /*desktop*/
     .reading-vs-writing {
         padding-left: 0px;
-        
+        height: 62vh;
     }
 }
 
@@ -332,13 +338,14 @@ hr {
     .math-vs-writing {
         padding-left: 5px;
         padding-right: 28px;
-        
+        height: 62vh;
     }
 }
 
 @media (min-width: 1200px) { /*desktop*/
     .bar-chart-one  {
         padding-right: 10px;
+        height: 94vh;
     }
 }
 
@@ -346,6 +353,7 @@ hr {
     .bar-chart-two  {
         padding-left: 0px;
         padding-right: 10px;
+        height: 94vh;
     }
 }
 
@@ -353,6 +361,7 @@ hr {
     .pie-chart-one  {
         padding-left: 0px;
         padding-right: 10px;
+        height: 94vh;
     }
 }
 
@@ -360,5 +369,7 @@ hr {
     .pie-chart-two  {
         padding-left: 0px;
         padding-right: 35px;
+        height: 94vh;
     }
 }
+
