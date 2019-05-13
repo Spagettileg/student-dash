@@ -35,7 +35,7 @@ function createAnalysis(error, studentsperformanceData) {
     dc.renderAll(); // Essential command for Chart/Data to appear
 }
 
-// ************ Introduction *************
+// ************ Introduction & Student Selector *************
 
 function show_student_selector(ndx) {
     var studentDim = ndx.dimension(dc.pluck('student')); // Both dimension & group created and passed back to dimensional charting select menu
@@ -57,7 +57,7 @@ function show_student_selector(ndx) {
     };
 }
 
-// ************ Student Filter *************
+// ************ Gender Filter *************
 
 function show_gender_selector(ndx) {
     var genderDim = ndx.dimension(dc.pluck('gender'));
@@ -164,7 +164,7 @@ function show_stats_all_subjects(ndx) {
 
 function show_math_vs_reading_regression(ndx) { // Establish correlation between x (math score) & y (reading score)
 
-    var genderColors = d3.scale.ordinal() // Add colour to the scatter plot
+     var genderColors = d3.scale.ordinal() // Add colour to the scatter plot
         .domain(["female", "male"])
         .range(["pink", "blue"]);
 
@@ -193,11 +193,6 @@ function show_math_vs_reading_regression(ndx) { // Establish correlation between
             return "This " + d.key[2] + " received " + d.key[0] + " in Math and " + d.key[1] + " in Reading.";
         })
         .ordinalColors(genderColors)
-        // .colorAccessor(function(d) {
-        //    if (typeof d.key !== 'undefined') 
-        //    return d.key[2];
-        // })
-        //.colors(genderColors)
         .dimension(scoreDim)
         .group(scoreGroup)
         .margins({ top: 10, right: 50, bottom: 75, left: 75 });
@@ -351,7 +346,7 @@ function show_source_student_nutrition(ndx) {
         .height(350)
         .radius(150)
         .useViewBoxResizing(true)
-        .transitionDuration(1500)
+        .transitionDuration(750)
         .dimension(lunch_Dim)
         .group(total_lunch_per_student);
 
@@ -367,8 +362,9 @@ function show_exam_preparation(ndx) {
         .height(350)
         .radius(150)
         .useViewBoxResizing(true)
-        .transitionDuration(1500)
+        .transitionDuration(750)
         .dimension(examPrep_Dim)
         .group(total_prep_per_student);
-
 }
+
+
