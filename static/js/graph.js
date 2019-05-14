@@ -164,16 +164,12 @@ function show_stats_all_subjects(ndx) {
 
 function show_math_vs_reading_regression(ndx) { // Establish correlation between x (math score) & y (reading score)
 
-     var genderColors = d3.scale.ordinal() // Add colour to the scatter plot
-        .domain(["female", "male"])
-        .range(["pink", "blue"]);
-
     var mathDim = ndx.dimension(dc.pluck("math_score")); // For x-axis
     var scoreDim = ndx.dimension(function(d) { // For y-axis
         return [d.math_score, d.reading_score, d.gender]; // Array =  mathscore =[0], readingscore = [1] & gender = [2]
     });
 
-    var scoreGroup = scoreDim.group();
+    var scoreGroup = scoreDim.group().reduceCount();
 
     var minMath = mathDim.bottom(1)[0].math_score;
     var maxMath = mathDim.top(1)[0].math_score;
@@ -192,7 +188,7 @@ function show_math_vs_reading_regression(ndx) { // Establish correlation between
         .title(function(d) {
             return "This " + d.key[2] + " received " + d.key[0] + " in Math and " + d.key[1] + " in Reading.";
         })
-        .ordinalColors(genderColors)
+        .ordinalColors(['purple'])
         .dimension(scoreDim)
         .group(scoreGroup)
         .margins({ top: 10, right: 50, bottom: 75, left: 75 });
@@ -201,10 +197,6 @@ function show_math_vs_reading_regression(ndx) { // Establish correlation between
 // ************ Regression Analysis via Scatter Plot - Reading vs Writing *************
 
 function show_reading_vs_writing_regression(ndx) { // Establish correlation between x (reading score) & y (writing score)
-
-    var genderColors = d3.scale.ordinal() // Add colour to the scatter plot
-        .domain(["female", "male"])
-        .range(["pink", "blue"]);
 
     var readingDim = ndx.dimension(dc.pluck("reading_score")); // For x-axis
     var scoreDim = ndx.dimension(function(d) { // For y-axis
@@ -230,12 +222,7 @@ function show_reading_vs_writing_regression(ndx) { // Establish correlation betw
         .title(function(d) {
             return "This " + d.key[2] + " received " + d.key[0] + " in Reading and " + d.key[1] + " in Writing.";
         })
-        .ordinalColors(genderColors)
-        // .colorAccessor(function(d) {
-        //    if (typeof d.key !== 'undefined') 
-        //    return d.key[2];
-        // })
-        //.colors(genderColors)
+        .ordinalColors(['purple'])
         .dimension(scoreDim)
         .group(scoreGroup)
         .margins({ top: 10, right: 50, bottom: 75, left: 75 });
@@ -244,10 +231,6 @@ function show_reading_vs_writing_regression(ndx) { // Establish correlation betw
 // ************ Regression Analysis via Scatter Plot - Math vs Writing *************
 
 function show_math_vs_writing_regression(ndx) { // Establish correlation between x (math score) & y (writing score)
-
-    var genderColors = d3.scale.ordinal() // Add colour to the scatter plot
-        .domain(["female", "male"])
-        .range(["pink", "blue"]);
 
     var mathDim = ndx.dimension(dc.pluck("math_score")); // For x-axis
     var scoreDim = ndx.dimension(function(d) { // For y-axis
@@ -273,12 +256,7 @@ function show_math_vs_writing_regression(ndx) { // Establish correlation between
         .title(function(d) {
             return "This " + d.key[2] + " received " + d.key[0] + " in Math and " + d.key[1] + " in Writing.";
         })
-        .ordinalColors(genderColors)
-        // .colorAccessor(function(d) {
-        //     if (typeof d.key !== 'undefined') 
-        //    return d.key[2];
-        // })
-        //.colors(genderColors)
+        .ordinalColors(['purple'])
         .dimension(scoreDim)
         .group(scoreGroup)
         .margins({ top: 10, right: 50, bottom: 75, left: 75 });
