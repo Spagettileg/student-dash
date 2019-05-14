@@ -40,3 +40,35 @@ describe('Exam Score Tests', function() {
     expect(show_stats_all_subjects(ndx)).not.toBeNull();
   });
 });
+
+// *** Defensive Programming - SpyOn() ***
+
+var examPrep = function() { 
+    //defaults
+    var _lazy  =  'none',
+        _focused = 'completed';
+ 
+    this.initialize = function(focused, lazy) {
+      _focused = focused || _focused;
+      _lazy  = lazy  || _lazy;
+    };
+    if (arguments.length) this.initialize();
+      
+    //getters and setters
+    this.getFocused     = function()      { return _focused; };
+    this.setFocused     = function (focused) { _focused = focused; };
+ 
+    //public methods
+    this.addNoprep = function()      { _lazy++; };
+    this.toString    = function()      { return 'Successful students will " + this.getFocused() + " and poor results show " + _lazy + " preparation completed.'; };
+}; 
+
+describe("examPrep toString() Test", function() {
+    it("calls the getFocused() function", function() {
+        var testexamPrep = new examPrep();
+        spyOn(testexamPrep, "getFocused");
+        testexamPrep.getFocused();
+        expect(testexamPrep.getFocused).toHaveBeenCalled();
+    });
+});
+
