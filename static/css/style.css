@@ -80,7 +80,7 @@ hr {
 .dash-background {
     
     position: relative;
-    background: url(../images/Passion.jpg) no-repeat center center fixed;
+    background: url(../images/Cogs.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -317,7 +317,6 @@ hr {
 @media (min-width: 1200px) { /*desktop*/
     .line-graph-container {
         padding-right: 0px;
-        
     }
 }
 
