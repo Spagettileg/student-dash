@@ -22,7 +22,7 @@ Intriguingly, the user can opt to adapt their view of student data by all, indiv
 ***
 
 ### Prerequisite
-This software has been designed to run on Chrome, Edge, Firefox, Safari, Opera & Internet Explorer.
+This software has been designed to run on Chrome, Edge, Firefox, Safari & Opera. Internet Explorer is no longer a preferred web browser and is out of scope for this project.
 
 ***
 
@@ -57,7 +57,8 @@ My wireframe designs have been appended as both .bmpr and .pdf files on GitHub. 
 ### Features
 #### Feature 1 - Headline title bar with reset data button
 
-•	Headline bar informs signposts user to the dashboard and when clicked, the user will return to the top of the dashboard. In addition, a reset button is available for the user to click to return all data & charts to their default values.
+•	Headline bar informs signposts user to the dashboard and when clicked, the user will return to the top of the dashboard. In addition, a reset button is available for the user to click to return all data & charts to their default values
+
 •	For ease of navigation, the headline bar is fixed at the dashboard top to help the user quickly find the rest button or automatically move to the top, whilst scrolling through to the bottom  
 
 #### Feature 2 - Introduction
@@ -83,21 +84,28 @@ My wireframe designs have been appended as both .bmpr and .pdf files on GitHub. 
 #### Feature 7 - Bar chart x2 
 
 •	Ethnicity origin and the distribution over 5 groups’ is the focus of the 1st bar chart. The view of the chart can be altered by either clicking on a selected bar(s) &/or the user can configure the bar chart through work completed to configure other dropdown boxes and data filters
+
 •	Parents educational background distributed over 6 levels of academia is the focus of the 2nd bar chart. The same functionality exists, as with 1st bar chart. The user can look to create some interesting data configurations to see if either ethnicity &/or students parental education has any bearing upon the students’ exam results  
 
 #### Feature 8 - Pie chart x2 
 
 •	Lunch funding is the focus of the 1st pie chart. The influence of a standard lunch allowance or reduced/free lunch allowance can be evaluated by either clicking on a selected pie section(s) &/or the user can configure the pie chart through work completed to configure other dropdown boxes and data filters
+
 •	Student preparation for their exams is the focus of the 2nd pie chart. The options are binary, either the student did or did not prepare for their exams. The same functionality exists, as with 1st pie chart. The user can look to create further interesting data configurations to see if either lunch funding &/or students exam preparation has any bearing upon the students’ exam results  
 
 #### Feature 9 - Collapse / re-open articles 
 
 •	All articles can collapse and re-open, by clicking a blue chevron icon positioned at the top right corner of each article. The chevron becomes inverted upon collapse of the article 
+
 •	Valuable screen space is freed up by closing articles that may not feature in a given data analysis configuration
 
 #### Feature 10 - Footer 
 
-•	Provides a social media link to Linkedin and a link to my GitHub page too 
+•	Provides a social media link to LinkedIn and a link to my GitHub page. Fonts (glythicons) secured from bootstrap / font awesome. The links are wired to the website designers’ respective social media sites. A .hover pseudo class has been used to provide a background colour change (white to corporate colour code) and font colour change too.   
+
+#### Feature 11 - 404 alert page
+
+•	Provides a friendly sign post for the user in the event an incorrect link has been clicked and the user has the option to click back into a correct link
 
 ***
 ### Features left to implement
@@ -108,7 +116,7 @@ My wireframe designs have been appended as both .bmpr and .pdf files on GitHub. 
 
 ##### Exam Performance Summary
 
-•   Automated UXD where the overall average exam score for Math, reading and writing can be instantly viewed, the scores have taken directly from the original data sample. The purpose of this summary is to view the overall average student result per subject only. There is scope to enhance the design to view individual student performance
+•  	Automate an exam performance summary by publishing an overall average exam score, per subject and a score range, per subject. The scope can be increased by publishing individual student results, once the student selector dropdown box had been clicked and with crossfilter, the exam summary data could be viewed at a demographic level i.e. ethnicity, exam preparations, etc 
 
 ***
 ### Technologies Used
@@ -160,13 +168,20 @@ The following Javascript libraries and quality check tools were used heavily in 
 
 ### Testing
 
-A combination of automated and manual testing processes were applied to this project to ensure the UXD
-was supported in making sure the data was correctly loaded, graphical charts would successfully be deployed
-and data filters would accurately enable the user to navigate through student and gender data attributes.  
+A combination of automated and manual testing processes was applied to this project
+to ensure the UXD was upheld by making sure the data was correctly loaded, graphical
+charts would be successfully rendered and data filters would accurately enable the user
+to navigate through student and gender data attributes.  
+
+The software has been thoroughly tested in many ways. JavaScript and its associated functions have all undergone extensive manual testing.  JS hint was used to help validate the Javascript code. 
+
+Chrome dev tools provided one issue where all charts were not being rendered. The dc.min.css file included a default coding position of ‘float: left. To fix this bug, ‘float: none!important’ was added to style.css file. 
+
+Furthermore, the software has been tested against all user expectations that were set out in UX section above. All possible user actions were mimicked to put the tester in the shoes of the user.  Data was compared by minimizing certain sections, filter the specific data and reset all the filters. The whole data manipulation experience was intuitive and enables both the tester and user to efficiently analyse the data and draw meaningful conclusions. 
 
 #### 1. Jasmine Testing
 
-Jasmine was used to test 3 things in particular for this project:
+Jasmine was used to test 4 things in particular for this project:
 
 •	That the data loaded for the project
 
@@ -174,9 +189,13 @@ Jasmine was used to test 3 things in particular for this project:
 
 •	Exam score data was verified 
 
+•	Defensive programming using SpyOn() to see if getFocused method gets called. The Spyon() was used as the method() already exists on the object
+
+•	All tests passed in Jasmine
+
 #### 2. Manual Testing
 
-Testing for this project was completed on Chrome, Edge, Firefox, Safari, Opera & Internet Explorer browsers.
+Testing for this project was completed on Chrome, Edge, Firefox, Safari & Opera browsers.
 Responsiveness and correct displaying of all elements has been tested on a number of device and resolutions.
 All display without issue.
 
@@ -194,16 +213,112 @@ Devices:
 
 •	iPad Pro
 
-•	Desktop >1200px
+•	Desktop 1200px
 
 #### Manual Test Observations
 
+##### Selectors Testing
+###### •	Student Selector
+1.	Go to Introduction section
+2.	Go to ‘Filter by student’
+3.	Leave filter as ‘select all’
+4.	Check all charts for overall summary of 1,000 students’ exam results
+5.	Click a student ID number
+6.	Check charts to see filter applied
+
+###### •	Gender Selector
+1.	Go to Gender section
+2.	Go to ‘Filter by gender’
+3.	Leave filter as ‘select all’
+4.	Check all charts for overall summary of 1,000 students’ exam results
+5.	Click a gender attribute (female or male)
+6.	Check charts to see filter applied
 	
+###### •	Reset Filters
+1.	Click a filter &/or a chart element for a tailored view of data 
+2.	Go to top navigation bar
+3.	Click Reset All
+4.	See chart filters reset to original default position
+	
+##### Charts Testing
+###### •	All subjects’ exam scores – Line Graph
+1.	Click Legend item 
+2.	Check charts to see filter applied
+3.	Go to ‘Filter by student’ or ‘Filter by gender’ to refine data search
+4.	Check charts to see filter applied
+5.	Click reset button to return to original default position 
+
+###### •	Correlation observations – Scatter plot chart x3
+1.	Go to ‘Math vs Reading’, ‘Reading vs Writing’ or ‘Math vs Writing’ scatter plot chart
+2.	Hover over dot plot to see gender, x2 student exam scores i.e. Math & Reading 
+3.	Click a filter &/or a chart element for a tailored view of data 
+4.	Check charts to see filter applied
+	
+###### •	Category Statistics - Bar chart x2
+1.	Go to ‘Ethnicity Distribution’ &/or ‘Parents Education’ bar chart 
+2.	Hover over bar to see data category and total count of the same category
+3.	Click category bar
+4.	Check charts to see filter applied
+	
+###### •	Student conditioning data – Pie chart x2
+1.	Go to ‘Lunch Analysis’ &/or ‘Exam Preparation’ pie chart
+2.	Hover over pie segment to see data category and total count of the same category
+3.	Click pie chart segment 
+4.	Check charts to see filter applied
+	
+##### Navigation Testing
+###### •	Navbar tests
+1.	Go to home page
+2.	Click on ‘Student Exam Results Dashboard’ header
+3.	See page scroll to top
+	
+###### •	Introduction links
+1.	Go to home page
+2.	Click on ‘SERD’ link
+3.	User is passed through to www.kaggle.com site and specifically to source data
+	
+###### •	Footer links tests
+1.	Go to footer section
+2.	Click social media icons (LinkedIn & GitHub)
+3.	User is passed through to website authors’ actual live pages
+	
+###### •	Button / Icon functionality tests
+1.	Scroll to nav bar (top of page)
+2.	Click on reset button
+3.	Button & text change colour with fractional timing delay to confirm button has been clicked  
+4.	Scroll to footer
+5.	Hover on social media icons
+6.	For LinkedIn, colour change from light grey to LinkedIn corporate colour (blue # 0077B5). Text colour changes from black to light grey
+7.	For GitHub, colour change from light grey to GitHub corporate colour (purple # 6e5494). Test colour changes from black to light grey
+8.	Both social media icons contain a fractional timing delay to help user understand icon is active, prior to being clicked 
+
+***
+
+### Code Validation Testing
+•	HTML Validator (https://validator.w3.org/) used and shows the html document to be valid. Slight issue on hr tag being used in footer, but no detrimental effect upon web page performance
+
+•	CSS Validator (https://jigsaw.w3.org/css-validator/) used and shows the stylesheet to be valid CSS level 3 + SVG
 
 ***
 
 ### Deployment
 
+The site was developed using the cloud9 IDE and uses git for version control which is then pushed to GitHub. The site is hosted on GitHub Pages and deployed there from the master branch on GitHub. There is no difference between the development version of this site, and the final version hosted on GitHub Pages.
+To deploy this project, I took the following initial steps:
+
+•	From my GitHub page I clicked on 'Repositories' and selected the required repository, in this case 'second-milestone-project'
+
+•	I then clicked on the 'settings' option, located on the top horizontal menu bar
+
+•	Next, I scrolled down the page to the GitHub Pages section and located the dropdown box under 'Source'
+
+•	From there I selected the 'master branch'
+
+•	GitHub takes you back to the top of the page to allow you to rename the repository if desired. I kept it the same
+
+•	These steps resulted in the finished site being deployed at https://spagettileg.github.io/second-milestone-project/
+
+•	Every subsequent push to GitHub on the master branch updates the deployed site to match
 
 ***
 
@@ -211,17 +326,35 @@ Devices:
 
 #### Content
 
+•	All HTML, CSS and most of JS code was written by myself. The site was designed and built in full by myself and can be viewed via the wireframe 
+
+•	The source dataset was obtained from kaggle website user and the specific link can be found here SERD (https://www.kaggle.com/spscientist/students-performance-in-exams#StudentsPerformance.csv). The process of selecting data was mainly based upon making sure the raw data was as complete as possible, with no gaps that had the potential to skew data analysis. Furthermore, the sample size of 1,000 students was considered significant in supporting meaningful analysis 
+
+•	SpyOn() function was developed with help of Rob Gravelle's source code (https://www.htmlgoodies.com/html5/javascript/spy-on-javascript-methods-using-the-jasmine-testing-framework.html)
 
 #### Media
-##### Project Assets
 
+•	Favicon image was sourced from iconsdb.com
+
+•	404 image – codepen.io
+
+•	Cogs Background image – vectorstock.com
 
 ***
 
 ### Acknowledgements 
 Theo Despoudis (Mentor) - For his guidance with the process of delivering my project and reminders for keeping the code simple, yet effective. 
-Slack Community and the following experts to keep me honest.
-@JoWings_Lead – Joke Heyndels
+
+Slack Community and the following experts to keep me honest and focused.
+
+Haley Schafer - Tutor,
+Niel Mcewen - Tutor,
+@JoWings_Lead – Joke Heyndels,
+@Robinz_alumni - Robin Zigmond,
+@Sean - Sean Murphy,
+@Eventyret_mentor - Simen Daehlin,
+@2BN-Tim - Tim Nelson,
+@JohnL3_Alumni - Johnlonggately
 
 Special thanks to Matt Rudge, Timmy O'Mahony & Brian O'Grady (all Code Institute) for their time, training delivery and generating good confidence to coding.
 
