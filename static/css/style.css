@@ -13,6 +13,7 @@ hr {
     border-color: #6395F2;
 }
 
+
 /*---------------Colours - MonoChromatic Scheme--------------*/
 
 .bg-color-blue-lightest {
@@ -211,6 +212,10 @@ hr {
     /*Apple*/
 }
 
+.social-links-footer img { /* link provided by www.jigsaw.w3.org not working, however, they confirmed css code is flawless */
+    cursor: none;
+}
+
 .fa-github:hover {
     background: #6e5494;
     /*GitHub Purple*/
@@ -222,10 +227,6 @@ hr {
     /*LinkedIn Blue*/
     color: #fff;
 }
-
-
-/*-------------Block Dividers---------*/
-
 
 /*---------------Buttons--------------*/
 
