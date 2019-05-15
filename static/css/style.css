@@ -6,7 +6,11 @@ section {
     padding-bottom: 10px;
 }
 
-div.dc-chart { float: none!important; } /* Fix to a 'float-left' bug in Chrome */
+div.dc-chart {
+    float: none!important;
+}
+
+/* Fix to a 'float-left' bug in Chrome */
 
 hr {
     margin: 15px auto 10px;
@@ -25,7 +29,7 @@ hr {
 }
 
 .bg-color-blue-medium-one {
-    background-color: #1258DC; 
+    background-color: #1258DC;
 }
 
 .bg-color-blue-medium-two {
@@ -79,7 +83,7 @@ hr {
 /*-------------Images------*/
 
 .dash-background {
-    
+
     position: relative;
     background: url(../images/Cogs.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -114,7 +118,7 @@ hr {
 .gender-container {
     margin-top: 0px;
     margin-left: 0px;
-    
+
 }
 
 .line-graph-container {
@@ -154,19 +158,20 @@ hr {
 }
 
 .gender-box {
-	margin-right: 0px;
-	font-size: 1.4em;
+    margin-right: 0px;
+    font-size: 1.4em;
     display: flex;
 }
 
-.gender-box, .fa.fa-gender {
+.gender-box,
+.fa.fa-gender {
     font-size: 30px;
     font-weight: 500;
 }
 
 .fa-gender {
-	margin-right: 10px;
-	font-size: 40px;
+    margin-right: 10px;
+    font-size: 40px;
 }
 
 /*---------------Social Media---------------*/
@@ -181,11 +186,13 @@ hr {
 }
 
 .social-links-footer p {
-    color: #e6e6e6; /*Light Grey*/
+    color: #e6e6e6;
+    /*Light Grey*/
 }
 
 .social-links-footer li {
-    color: #e6e6e6; /*Light Grey*/
+    color: #e6e6e6;
+    /*Light Grey*/
 }
 
 .social-links-footer li a i {
@@ -212,7 +219,8 @@ hr {
     /*Apple*/
 }
 
-.social-links-footer img { /* link provided by www.jigsaw.w3.org not working, however, they confirmed css code is flawless */
+.social-links-footer img {
+    /* link provided by www.jigsaw.w3.org not working, however, they confirmed css code is flawless */
     cursor: none;
 }
 
@@ -249,7 +257,8 @@ hr {
     background-color: #6395F2;
     /*purple*/
     border-color: #6395F2;
-    color: #e6e6e6; /*Light Grey*/
+    color: #e6e6e6;
+    /*Light Grey*/
     transition: all 0.15s ease-in-out;
     -o-transition: all 0.15s ease-in-out;
     /*Opera*/
@@ -261,80 +270,91 @@ hr {
 
 /*--------------Media Queries---------*/
 
-@media (max-width: 490px) { /*mobile - Enables reset button to be centered in mobile device view*/
+@media (max-width: 490px) {
+    /*mobile - Enables reset button to be centered in mobile device view*/
     .reset-filters-top {
         display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5px;
-    
-        
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+
+
     }
 }
 
-@media (max-width: 490px) { /*mobile*/
+@media (max-width: 490px) {
+    /*mobile*/
     .intro-container {
         margin-top: 70px;
-        
+
     }
 }
 
-@media (min-width: 768px) { /*tablet*/
+@media (min-width: 768px) {
+    /*tablet*/
     .gender-container {
         margin-top: 60px;
         padding-right: 33px;
         height: 45vh;
-        
+
     }
 }
 
-@media (min-width: 768px) { /*tablet*/
+@media (min-width: 768px) {
+    /*tablet*/
     .line-graph-container {
         padding-right: 30px;
-        
+
     }
 }
 
-@media (min-width: 768px) { /*tablet*/
+@media (min-width: 768px) {
+    /*tablet*/
     .math-vs-reading .reading-vs-writing .math-vs-writing .bar-chart-one .bar-chart-two .pie-chart-one .pie-chart-two {
         padding-right: 0px;
     }
 }
 
-@media (min-width: 1200px) { /*desktop*/
+@media (min-width: 1200px) {
+    /*desktop*/
     .intro-container {
-       height: 56vh;
+        height: 56vh;
     }
 }
 
-@media (min-width: 1200px) { /*desktop*/
+@media (min-width: 1200px) {
+    /*desktop*/
     .gender-container {
         padding-right: 15px;
         height: 56vh;
     }
 }
 
-@media (min-width: 1200px) { /*desktop*/
+@media (min-width: 1200px) {
+    /*desktop*/
     .line-graph-container {
         padding-right: 0px;
     }
 }
 
-@media (min-width: 1200px) { /*desktop*/
+@media (min-width: 1200px) {
+    /*desktop*/
     .math-vs-reading {
         height: 62vh;
     }
 }
 
-@media (min-width: 1200px) { /*desktop*/
+@media (min-width: 1200px) {
+    /*desktop*/
     .reading-vs-writing {
         padding-left: 0px;
         height: 62vh;
     }
 }
 
-@media (min-width: 1200px) { /*desktop*/
+@media (min-width: 1200px) {
+    /*desktop*/
     .math-vs-writing {
         padding-left: 5px;
         padding-right: 28px;
@@ -342,34 +362,37 @@ hr {
     }
 }
 
-@media (min-width: 1200px) { /*desktop*/
-    .bar-chart-one  {
+@media (min-width: 1200px) {
+    /*desktop*/
+    .bar-chart-one {
         padding-right: 10px;
         height: 94vh;
     }
 }
 
-@media (min-width: 1200px) { /*desktop*/
-    .bar-chart-two  {
+@media (min-width: 1200px) {
+    /*desktop*/
+    .bar-chart-two {
         padding-left: 0px;
         padding-right: 10px;
         height: 94vh;
     }
 }
 
-@media (min-width: 1200px) { /*desktop*/
-    .pie-chart-one  {
+@media (min-width: 1200px) {
+    /*desktop*/
+    .pie-chart-one {
         padding-left: 0px;
         padding-right: 10px;
         height: 94vh;
     }
 }
 
-@media (min-width: 1200px) { /*desktop*/
-    .pie-chart-two  {
+@media (min-width: 1200px) {
+    /*desktop*/
+    .pie-chart-two {
         padding-left: 0px;
         padding-right: 35px;
         height: 94vh;
     }
 }
-
