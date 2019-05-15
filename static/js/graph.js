@@ -344,5 +344,3 @@ function show_exam_preparation(ndx) {
         .dimension(examPrep_Dim)
         .group(total_prep_per_student);
 }
-
-
