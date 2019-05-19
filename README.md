@@ -239,6 +239,8 @@ Devices:
 2.	Go to top navigation bar
 3.	Click Reset All
 4.	See chart filters reset to original default position
+5.	Multiple clicks of reset button in quick succession temporarily paused the software
+6.	A Debounce function was created to limit the rate at which the function gets invoked 
 	
 ##### Charts Testing
 ###### •	All subjects’ exam scores – Line Graph
