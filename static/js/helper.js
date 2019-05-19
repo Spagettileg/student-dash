@@ -5,6 +5,7 @@ $('#reset-filters').click(function() {
     dc.renderAll();
 });
 
+
 // Hide article content
 
 $('.hide-content-btn').click(function() {
