@@ -223,6 +223,24 @@
 
     <script src="static/js/graph.js"></script>
     <script src="static/js/helper.js"></script>
+    <script>
+        var button = document.getElementById("reset-filters");
+        const debounce = (func, delay) => {
+            let debounceTimer;
+            return function() {
+                const context = this;
+                const args = arguments;
+                clearTimeout(debounceTimer);
+                debounceTimer
+                    = setTimeout(() => func.apply(context, args), delay);
+            };
+        };
+        button.addEventListener('click', debounce(function() {
+            alert("Hello,\nNo matter how many times you " +
+                "click the debounce button, I get " +
+                "executed once every 2 seconds!!");
+        }, 2000));
+    </script>
 
 </body>
 
