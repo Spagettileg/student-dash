@@ -211,9 +211,9 @@ Devices:
 
 •	iPad
 
-•	iPad Pro
+•	Desktop >1200px
 
-•	Desktop 1200px
+•	Larger Desktop >1440px
 
 #### Manual Test Observations
 
