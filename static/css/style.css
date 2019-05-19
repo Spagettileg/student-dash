@@ -72,7 +72,7 @@ hr {
 
 /*----------Dropdown Navigation------*/
 
-.dropdown-box {
+.dropdown-box { /* For student & gender dropdown data filters */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -83,7 +83,7 @@ hr {
 /*-------------Images------*/
 
 .dash-background {
-
+    
     position: relative;
     background: url(../images/Cogs.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -130,7 +130,7 @@ hr {
     padding-left: 0px;
 }
 
-.content-wrapper {
+.content-wrapper { /* Consistent formatting of containers holding charts & information */ 
     width: 95%;
     padding: 10px 10px;
     border-radius: 10px;
@@ -149,11 +149,11 @@ hr {
 
 /*------------Gender Article------------*/
 
-.color-pink {
+.color-pink { /*female*/
     color: #ff99ff;
 }
 
-.color-blue {
+.color-blue { /*male*/
     color: #004d99;
 }
 
@@ -238,7 +238,7 @@ hr {
 
 /*---------------Buttons--------------*/
 
-.hide-content-btn {
+.hide-content-btn { /* Supporting the collapse/re-open of all charts and data help within the dashboard */
     float: right;
     color: #1258DC;
     cursor: pointer;
@@ -253,9 +253,9 @@ hr {
 
 }
 
-.reset-filters-top:hover {
+.reset-filters-top:hover { /* reset button changes colour when hovered & clicked */
     background-color: #6395F2;
-    /*purple*/
+    /*blue*/
     border-color: #6395F2;
     color: #e6e6e6;
     /*Light Grey*/
@@ -270,6 +270,8 @@ hr {
 
 /*--------------Media Queries---------*/
 
+/* Media queries have set set at 490px, 768px, 1200 px & 1440px to help manage good responsiveness for this software */ 
+
 @media (max-width: 490px) {
     /*mobile - Enables reset button to be centered in mobile device view*/
     .reset-filters-top {
@@ -278,8 +280,6 @@ hr {
         justify-content: center;
         align-items: center;
         margin-bottom: 5px;
-
-
     }
 }
 
@@ -287,7 +287,6 @@ hr {
     /*mobile*/
     .intro-container {
         margin-top: 70px;
-
     }
 }
 
@@ -297,7 +296,6 @@ hr {
         margin-top: 60px;
         padding-right: 33px;
         height: 45vh;
-
     }
 }
 
@@ -305,7 +303,6 @@ hr {
     /*tablet*/
     .line-graph-container {
         padding-right: 30px;
-
     }
 }
 
@@ -372,15 +369,7 @@ hr {
 
 @media (min-width: 1200px) {
     /*desktop*/
-    .bar-chart-two {
-        padding-left: 0px;
-        padding-right: 10px;
-        height: 94vh;
-    }
-}
-
-@media (min-width: 1200px) {
-    /*desktop*/
+    .bar-chart-two,
     .pie-chart-one {
         padding-left: 0px;
         padding-right: 10px;
@@ -394,5 +383,63 @@ hr {
         padding-left: 0px;
         padding-right: 35px;
         height: 94vh;
+    }
+}
+
+@media (min-width: 1440px) {
+    /*large desktop*/
+    .intro-container {
+        padding-left: 100px;
+        padding-bottom: 40px;
+    }
+}
+
+@media (min-width: 1440px) {
+    /*large desktop*/
+    .gender-container {
+        padding-right: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+@media (min-width: 1440px) {
+    /*large desktop*/
+    .line-graph-container {
+        padding-top: 0px;
+        padding-right: 0px;
+    }
+}
+
+@media (min-width: 1440px) {
+    /*large desktop*/
+    .line-graph-container {
+        padding-left: 112px;
+        padding-right: 82px;
+    }
+}
+
+@media (min-width: 1440px) {
+    /*large desktop*/
+    .math-vs-reading,
+    .math-vs-writing {
+        padding-top: 38px;
+    }
+}
+
+@media (min-width: 1440px) {
+    /*large desktop*/
+    .reading-vs-writing {
+        padding-top: 38px;
+        padding-left: 12px;
+    }
+}
+
+@media (min-width: 1440px) {
+    /*large desktop*/
+    .bar-chart-one,
+    .bar-chart-two,
+    .pie-chart-one,
+    .pie-chart-two {
+        padding-top: 48px;
     }
 }
