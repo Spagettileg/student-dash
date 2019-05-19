@@ -6,8 +6,8 @@ Welcome!
 Link to the website (via GitHub Pages) 
 https://spagettileg.github.io/second-milestone-project/ 
 
-Link to Cloud9 Development
-https://ide.c9.io/spagettileg/second-milestone-project
+Link to GitHub Repo
+https://github.com/Spagettileg/second-milestone-project
 
 ***
 
