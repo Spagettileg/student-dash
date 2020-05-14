@@ -79,7 +79,6 @@ My wireframe mock-up design have been created in [Balsamiq](https://balsamiq.com
 * To understand the normal distribution curve through a plotted line graph for Math, Reading & Writing
 * A reset filter button made available to return charts and graphs back to orignal position, following bespoke analysis activity
 
-
 ### CSS Framework
 Bootstrap was the chosen framework for styling my project. I used the Bootstrap grid extensively to support responsiveness on mobile, tablet and desktop devices.
 
@@ -98,8 +97,8 @@ Light Grey     | #E6E6E6   | Data container background colour
 Pink           | #FF99FF   | Female gender icon
 Blue           | #004D99   | Male gender icon
 
-
 ### Typography
+[Open+Sans](https://fonts.google.com/) & [Sans Serif](https://fonts.google.com/) fonts were used throughout this project.
 
 ### Icon Graphics
 
