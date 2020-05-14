@@ -1,13 +1,13 @@
-# 2nd Milestone project 
+# Data-Dashboard 
 
 Welcome!
 
 ***
 Link to the website (via GitHub Pages) 
-https://spagettileg.github.io/second-milestone-project/ 
+https://spagettileg.github.io/data-dashbaord/ 
 
 Link to GitHub Repo
-https://github.com/Spagettileg/second-milestone-project
+https://github.com/Spagettileg/data-dashboard
 
 ***
 
