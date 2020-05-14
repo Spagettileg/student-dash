@@ -69,6 +69,16 @@ My wireframe mock-up design have been created in [Balsamiq](https://balsamiq.com
 
 
 ### User Stories
+* It's important for a data set of 1,000 line items to be viewed from within a dashboard design
+* The dashboard must be simple in design and intuitive to help with site navigation
+* The dashboard to be viewed on a single page only
+* A link to the source data is important
+* User should be able to filter data with the use of a dropdown box tool
+* View of analysis by gender, ethnicity, parents education, funded lunches and exam preparation is required
+* Regression analysis on Math, Reading & Writing required to understand correlation in these subjects, when compared
+* To understand the normal distribution curve through a plotted line graph for Math, Reading & Writing
+* A reset filter button made available to return charts and graphs back to orignal position, following bespoke analysis activity
+
 
 ### CSS Framework
 Bootstrap was the chosen framework for styling my project. I used the Bootstrap grid extensively to support responsiveness on mobile, tablet and desktop devices.
