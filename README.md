@@ -1,6 +1,9 @@
 # Data-Dashboard 
+A single page website has been built to showcase a data dashboard that analyses 1,000 students exam performance in Math, Reading & Writing. The dashboard is very important to understand how the students are performing, to determine best practices that can be shared with new students about to take the same exam and for teachers to help plan future curriculum. 
 
-Welcome!
+The page uses the D3.js library with the DC.js and crossfilter.js libraries to present the data via a series of scatter plots, pie charts, bar charts and line charts. The graphical arrangement has been designed allow the user to quickly understand a summary of student performance and then backed up with interesting data analysis to reach meaningful hypothesis. Furthermore, there is sufficient data to perform correlation testing to further understand the significance of the exam results.
+ 
+Intriguingly, the user can opt to adapt their view of student data by all, individual or custom data element selection via dropdown list function. 
 
 ***
 Link to the website (via GitHub Pages) 
@@ -11,48 +14,122 @@ https://github.com/Spagettileg/data-dashboard
 
 ***
 
-### Introduction
+## Table of Contents
 
-A single page website has been built to showcase a data dashboard that analyses 1,000 students exam performance in Math, Reading & Writing. 
+1. [UXD Considerations](#uxd-considerations)
+    * [User & Business Objectives](#user-&-business-objectives) 
+    * [Wireframes](#wireframes)
+    * [User Stories](#user-stories)
+    * [CSS Framework](#css-framework)
+    * [Colour Palette](#colour-palette)
+    * [Typography](#typography)
+    * [Icon Graphics](#icon-graphics)
+    * [Navbar Design](#navbar-design)
 
-The page uses the D3.js library with the DC.js and crossfilter.js libraries to present the data via a series of scatter plots, pie charts, bar charts and line charts. The graphical arrangement has been designed allow the user to quickly understand a summary of student performance and then backed up with interesting data analysis to reach meaningful hypothesis.
- 
-Intriguingly, the user can opt to adapt their view of student data by all, individual or custom data element selection via dropdown list function. 
+2. [Technologies Applied](#technologies-applied)
+    * [Languages](#languages)
+    * [Libraries](#libraries)
+    * [Tools](#tools)
 
-***
+3. [Features](#features)
+    * [Features left to implement](#features-left-to-implement)  
 
-### Prerequisite
-This software has been designed to run on Chrome, Edge, Firefox, Safari & Opera. Internet Explorer is no longer a preferred web browser and is out of scope for this project.
+4. [Tests](#tests)
+    * [Compatibility](#compatibility)
+    * [Test Observations](#test-observations)
 
-***
+5. [Deployment](#deployment)
+    * [How to run this project locally](#how-to-run-this-project-locally) 
 
-### Design
+6. [Credits](#credits)
+    * [Content](#content)
+    * [Media](#media)
+    * [Assets](#assets)
+    * [Acknowledgements](#acknowledgements)
 
-##### Colour palette (Graphs & reset button):
-
-A monochromatic scheme with blue as the base colour:
-
-Lightest =  #DEE9FC, #6395F2, #1258DC, #236AB9, #0A337F & #091834 = darkest
-
-Navbar & Footer text - #E6E6E6 (light grey)
-
-Gender icons – Female  #FF99FF (pink) & Male #004D99 (blue)
-
-
-*** 
-
-#### UXD Considerations
-
+## UXD Considerations
 The dashboard has been designed to allow the user to analyse student exam results data through selecting dropdown box options, hovering their cursor over data legend, clicking on charts or just observing the default data summary. 
-Furthermore, the user is able to understand potential influences on exam results, such as gender participation, parental education, ethnic groupings, food consumption habits and students’ exam preparation.    
-In summary, the user will have a good understanding of how all 1,000 students performed in their respective exams for Maths, Reading and Writing. The dashboard is both intuitive and interactive,  enabling the user to take full control of the source data via the carefully selected manual and automated navigation functions.   
 
-#### Wireframes
+Furthermore, the user is able to understand potential influences on exam results, such as gender participation, parental education, ethnic groupings, food consumption habits and students’ exam preparation.  
 
-3 wireframe mock up’s (mobile, tablet & desktop) were created in Balsamiq. 
-My wireframe designs have been appended as both .bmpr and .pdf files on GitHub. The mock up design has stayed consistent with the original planning and I sought to avoid an over-engineered design by removing non-value add elements i.e. average, minimum and maximum exam results, that could be identified in regression analysis.  A less complicated design supports a good UXD.    
+In summary, the user will have a good understanding of how all 1,000 students performed in their respective exams for Maths, Reading and Writing. The dashboard is both intuitive and interactive,  enabling the user to take full control of the source data via the carefully selected manual and automated navigation functions. 
 
-*** 
+### User & Business Objectives
+
+#### User
+
+#### Business
+
+#### Next Stage Generation 
+
+### Wireframes
+My wireframe mock-up design have been created in [Balsamiq](https://balsamiq.com/) to showcase the 'data-dashboard' website responsiveness on mobile, tablet and desktop devices.
+
+•	[data-dashboard](https://github.com/Spagettileg/music-promotion-pbf/blob/master/wireframe/music-promotions-pbf_final.zip)
+
+
+### User Stories
+
+### CSS Framework
+Bootstrap was the chosen framework for styling my project. I used the Bootstrap grid extensively to support responsiveness on mobile, tablet and desktop devices.
+
+### Colour Palette
+Colours used in this project were sourced from [Colour Hunt](https://colorhunt.co/). Essentially, the colours are seeking to capture key attributes of The Monkees through energy, intelligence, country rock and psychedelia
+
+Colour         | Hex Code  | Colour Function
+---------------|-----------|------------------
+Light Blue     | #DEE9FC   | Navbar scroll appearance
+Powder Blue    | #6395F2   | Navbar scroll appearance
+Royal Blue     | #1258DC   | Navbar scroll appearance
+Grey Blue      | #236AB9   | Navbar scroll appearance
+Blue Ink       | #0A337F   | Navbar scroll appearance
+Dark Blue      | #091834   | Navbar scroll appearance
+Light Grey     | #E6E6E6   | Data container background colour
+Pink           | #FF99FF   | Female gender icon
+Blue           | #004D99   | Male gender icon
+
+
+### Typography
+
+### Icon Graphics
+
+### Navbar Design
+
+## Technologies Applied
+
+### Languages
+
+### Libraries
+
+### Tools
+
+## Features
+
+### Features left to implement
+
+## Tests
+
+### Compatibility
+
+### Test Observations
+
+## Deployment
+
+### How to run this project locally  
+
+## Credits
+
+### Content
+
+### Media
+
+### Assets
+
+### Acknowledgements
+
+
+
+
 
 ### Features
 #### Feature 1 - Headline title bar with reset data button
