@@ -114,6 +114,14 @@ Blue           | #004D99   | Male gender icon
 [Open+Sans](https://fonts.google.com/) & [Sans Serif](https://fonts.google.com/) fonts were used throughout this project.
 
 ### Icon Graphics
+Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primarily to support information page footer & student gender population summary
+
+Page                   | Function                | Font  
+-----------------------|-------------------------|-------
+index.html             | gender summary          | `fas fa-female`
+index.html             | gender summary          | `fas fa-male`
+index.html             | social media - footer   | `fab fa-github`
+index.html             | social media - footer   | `fab fa-linkedin`    
 
 ### Navbar Design
 
