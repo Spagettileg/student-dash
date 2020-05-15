@@ -57,10 +57,23 @@ In summary, the user will have a good understanding of how all 1,000 students pe
 ### User & Business Objectives
 
 #### User
+- The user can access all the data via a single data dashboard
+- To be able to view all data at the same time, across different graphical representations
+- Commentary of the overall analysis to be clear and insightful
+- Require the ability to drill down into the detail of the sample data through use of data filters
+- To quickly establish any correlation in exam results for Math, Reading & Writing subjects
 
 #### Business
+- Produce a data dashboard that is generic in design and applies to diverse sample data sets 
+- Dashboard must render on all available software platforms 
+- Background imagery to support brand of business &/or learning organisations
+- Dashboard has capability to work with API data
+- Social media links access to further promote 'data-dashboard' products
 
-#### Next Stage Generation 
+#### Next Stage Generation
+- Increase graphics density through creating a menu bar to allow user to select preferred graphical view
+- Increase volume of API source data to increase data analysis capability and have results of analysis in a single view 
+- Explore new social media channels to promote 'data-dashboard'
 
 ### Wireframes
 My wireframe mock-up design have been created in [Balsamiq](https://balsamiq.com/) to showcase the 'data-dashboard' website responsiveness on mobile, tablet and desktop devices.
