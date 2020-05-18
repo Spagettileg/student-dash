@@ -269,22 +269,22 @@ To deploy this project, I took the following initial steps:
 
 •	All HTML, CSS and most of JS code was written by myself. The site was designed and built in full by myself and can be viewed via the wireframe 
 
-•	The source dataset was obtained from kaggle website user and the specific link can be found here SERD (https://www.kaggle.com/spscientist/students-performance-in-exams#StudentsPerformance.csv). The process of selecting data was mainly based upon making sure the raw data was as complete as possible, with no gaps that had the potential to skew data analysis. Furthermore, the sample size of 1,000 students was considered significant in supporting meaningful analysis 
+•	The source dataset was obtained from kaggle website user and the specific link can be found here [SERD](https://www.kaggle.com/spscientist/students-performance-in-exams#StudentsPerformance.csv). The process of selecting data was mainly based upon making sure the raw data was as complete as possible, with no gaps that had the potential to skew data analysis. Furthermore, the sample size of 1,000 students was considered significant in supporting meaningful analysis 
 
-•	SpyOn() function was developed with help of Rob Gravelle's source code (https://www.htmlgoodies.com/html5/javascript/spy-on-javascript-methods-using-the-jasmine-testing-framework.html)
+•	SpyOn() function was developed with help of [Rob Gravelle's](https://www.htmlgoodies.com/html5/javascript/spy-on-javascript-methods-using-the-jasmine-testing-framework.html) source code 
 
 ### Media
 
-•	Favicon image was sourced from iconsdb.com
+•	Favicon image was sourced from [iconsdb.com](www.iconsdb.com)
 
-•	404 image – codepen.io
+•	404 image – [codepen.io](www.codpen.io)
 
-•	Cogs Background image – vectorstock.com
+•	Cogs Background image – [vectorstock.com](www.vectorstock.com)
 
 ### Assets
 
 ### Acknowledgements 
-Theo Despoudis (Mentor) - For his guidance with the process of delivering my project and reminders for keeping the code simple, yet effective. 
+[Theo Despoudis](https://www.linkedin.com/in/theofanis-despoudis-7bb30913/) Mentor - For his guidance with the process of delivering my project and reminders for keeping the code simple, yet effective. 
 
 Slack Community and the following experts to keep me honest and focused.
 
