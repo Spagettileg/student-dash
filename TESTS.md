@@ -1,0 +1,159 @@
+# Data-Dashboard | Test Analysis & Report 
+
+Access main [READEME](https://github.com/Spagettileg/data-dashboard/blob/master/README.md) file
+
+View [Data-Dashboard](https://spagettileg.github.io/data-dashbaord/) as a deployed project in GitHub Pages
+
+## Table of Contents
+1. [Introduction](#introduction) 
+2. [Systems Based Testing](#systems-based-testing)
+    * [Python3](#python3)
+    * [Javascript](#javascript)
+    * [Coverage](#coverage)
+    * [Travis CI](#travis-ci)
+3. [Manual Testing](#manual-testing)
+    * [Registration Testing](#registration-testing)
+    * [Password reset testing](#password-reset-testing)
+    * [Product Testing](#product-testing)
+    * [Navigation Testing](#navigation-testing)
+4. [Code Validation](#code-validation)
+    * [Responsiveness and Rendering](#responsiveness-and-rendering)
+    * [Browser Compatability](#browser-compatability)
+    * [Known Bugs](#known-bugs)
+
+ 
+## Introduction
+
+A combination of automated and manual testing processes was applied to this project
+to ensure the UXD was upheld by making sure the data was correctly loaded, graphical
+charts would be successfully rendered and data filters would accurately enable the user
+to navigate through student and gender data attributes.  
+
+The software has been thoroughly tested in many ways. JavaScript and its associated functions have all undergone extensive manual testing.  JS hint was used to help validate the Javascript code. 
+
+Chrome dev tools provided one issue where all charts were not being rendered. The dc.min.css file included a default coding position of ‘float: left. To fix this bug, ‘float: none!important’ was added to style.css file. 
+
+Furthermore, the software has been tested against all user expectations that were set out in UX section above. All possible user actions were mimicked to put the tester in the shoes of the user.  Data was compared by minimizing certain sections, filter the specific data and reset all the filters. The whole data manipulation experience was intuitive and enables both the tester and user to efficiently analyse the data and draw meaningful conclusions. 
+
+#### 1. Jasmine Testing
+
+Jasmine was used to test 4 things in particular for this project:
+
+•	That the data loaded for the project
+
+•	Data filters to show selected source data only
+
+•	Exam score data was verified 
+
+•	Defensive programming using SpyOn() to see if getFocused method gets called. The Spyon() was used as the method() already exists on the object
+
+•	All tests passed in Jasmine
+
+#### 2. Manual Testing
+
+Testing for this project was completed on Chrome, Edge, Firefox, Safari & Opera browsers.
+Responsiveness and correct displaying of all elements has been tested on a number of device and resolutions.
+All display without issue.
+
+Devices:
+
+•	iPhone 6/7/8
+
+•	iPhone X
+
+•	Galaxy S5
+
+•	Microsoft Lumia 550
+
+•	iPad
+
+•	Desktop >1200px
+
+•	Larger Desktop >1440px
+
+#### Manual Test Observations
+
+##### Selectors Testing
+###### •	Student Selector
+1.	Go to Introduction section
+2.	Go to ‘Filter by student’
+3.	Leave filter as ‘select all’
+4.	Check all charts for overall summary of 1,000 students’ exam results
+5.	Click a student ID number
+6.	Check charts to see filter applied
+
+###### •	Gender Selector
+1.	Go to Gender section
+2.	Go to ‘Filter by gender’
+3.	Leave filter as ‘select all’
+4.	Check all charts for overall summary of 1,000 students’ exam results
+5.	Click a gender attribute (female or male)
+6.	Check charts to see filter applied
+	
+###### •	Reset Filters
+1.	Click a filter &/or a chart element for a tailored view of data 
+2.	Go to top navigation bar
+3.	Click Reset All
+4.	See chart filters reset to original default position
+5.	Multiple clicks of reset button in quick succession temporarily paused the software
+6.	A Debounce function was created to limit the rate at which the function gets invoked 
+	
+##### Charts Testing
+###### •	All subjects’ exam scores – Line Graph
+1.	Click Legend item 
+2.	Check charts to see filter applied
+3.	Go to ‘Filter by student’ or ‘Filter by gender’ to refine data search
+4.	Check charts to see filter applied
+5.	Click reset button to return to original default position 
+
+###### •	Correlation observations – Scatter plot chart x3
+1.	Go to ‘Math vs Reading’, ‘Reading vs Writing’ or ‘Math vs Writing’ scatter plot chart
+2.	Hover over dot plot to see gender, x2 student exam scores i.e. Math & Reading 
+3.	Click a filter &/or a chart element for a tailored view of data 
+4.	Check charts to see filter applied
+	
+###### •	Category Statistics - Bar chart x2
+1.	Go to ‘Ethnicity Distribution’ &/or ‘Parents Education’ bar chart 
+2.	Hover over bar to see data category and total count of the same category
+3.	Click category bar
+4.	Check charts to see filter applied
+	
+###### •	Student conditioning data – Pie chart x2
+1.	Go to ‘Lunch Analysis’ &/or ‘Exam Preparation’ pie chart
+2.	Hover over pie segment to see data category and total count of the same category
+3.	Click pie chart segment 
+4.	Check charts to see filter applied
+	
+##### Navigation Testing
+###### •	Navbar tests
+1.	Go to home page
+2.	Click on ‘Student Exam Results Dashboard’ header
+3.	See page scroll to top
+	
+###### •	Introduction links
+1.	Go to home page
+2.	Click on ‘SERD’ link
+3.	User is passed through to www.kaggle.com site and specifically to source data
+	
+###### •	Footer links tests
+1.	Go to footer section
+2.	Click social media icons (LinkedIn & GitHub)
+3.	User is passed through to website authors’ actual live pages
+	
+###### •	Button / Icon functionality tests
+1.	Scroll to nav bar (top of page)
+2.	Click on reset button
+3.	Button & text change colour with fractional timing delay to confirm button has been clicked  
+4.	Scroll to footer
+5.	Hover on social media icons
+6.	For LinkedIn, colour change from light grey to LinkedIn corporate colour (blue # 0077B5). Text colour changes from black to light grey
+7.	For GitHub, colour change from light grey to GitHub corporate colour (purple # 6e5494). Test colour changes from black to light grey
+8.	Both social media icons contain a fractional timing delay to help user understand icon is active, prior to being clicked 
+
+***
+
+### Code Validation Testing
+•	HTML Validator (https://validator.w3.org/) used and shows the html document to be valid. Slight issue on hr tag being used in footer, but no detrimental effect upon web page performance
+
+•	CSS Validator (https://jigsaw.w3.org/css-validator/) used and shows the stylesheet to be valid CSS level 3 + SVG
+  
