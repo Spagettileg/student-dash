@@ -15,6 +15,7 @@ View [Data-Dashboard](https://spagettileg.github.io/data-dashbaord/) as a deploy
 4. [Code Validation](#code-validation)
     * [Responsiveness and Rendering](#responsiveness-and-rendering)
     * [Browser Compatability](#browser-compatability)
+    * [Known Bugs](#known-bugs)
 
 ## Introduction
 
@@ -163,4 +164,12 @@ Edge     |44.18362.449.0
 Firefox  |73.0
 Safari   |12.4.6
 Opera    |68.0.3618.63
+
+### Known Bugs
+
+•   Chrome has a bug where all graphical chart images auto float-left. Bug fixed by adding the following oce in CSS file:
+
+`div.dc-chart {
+    float: none!important;
+}`
 
