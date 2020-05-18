@@ -28,54 +28,57 @@
         <button id="reset-filters" class="btn btn-sm reset-filters-top"><strong>Reset Filters</strong></button>
     </nav>
     <main class="dash-background">
-        <section class="container-fluid">
-            <!--Introduction-->
-            <section class="col-xs-12 col-sm-6 col-lg-6 intro-container eq-column-height">
-                <div class="content-wrapper">
-                    <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                    <h4 class="section-heading">Introduction</h4>
-                    <div class="hide-content-toggle">
-                        <hr>
-                        <p>This dashboard contains data sourced from <a href="https://www.kaggle.com/spscientist/students-performance-in-exams#StudentsPerformance.csv" target="_blank" class="inline-link" title="Student Exam Results Database">SERD</a> covering
-                            1,000 students.</p>
-                        <p>The graphical visualizations are created to provide an executive summary of student exam performance, together with detailed data analysis through clicking on the individual charts. </p>
-                        <p>Individual student exam peformance in Maths, Reading and Writing can be viewed through clicking on 'Filter by student' dropdown box. </p>
-                        <p>Alternatively, combinations of data can be configured through the use of options contained in dropdown boxes. </p>
-                        <hr>
-                        <div class="dropdown-box">
-                            <div>Filter by student:</div>
-                            <div id="student-selector"></div>
+        <div class="container-fluid">
+            <!-- Introduction & Student Gender Sumamry -->
+            <div class="container">
+                <div class="row">
+                    <!--Introduction-->
+                    <div class="col-sm-6 intro-container eq-column-height">
+                        <div class="content-wrapper">
+                            <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                            <h4 class="section-heading">Introduction</h4>
+                            <div class="hide-content-toggle">
+                                <hr>
+                                <p>This dashboard contains data sourced from <a href="https://www.kaggle.com/spscientist/students-performance-in-exams#StudentsPerformance.csv" target="_blank" class="inline-link" title="Student Exam Results Database">SERD</a> covering
+                                    1,000 students.</p>
+                                <p>The graphical visualizations are created to provide an executive summary of student exam performance, together with detailed data analysis through clicking on the individual charts. </p>
+                                <p>Individual student exam peformance in Maths, Reading and Writing can be viewed through clicking on 'Filter by student' dropdown box. </p>
+                                <p>Alternatively, combinations of data can be configured through the use of options contained in dropdown boxes. </p>
+                                <hr>
+                                <div class="dropdown-box">
+                                    <div>Filter by student:</div>
+                                    <div id="student-selector"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Gender Summary-->
+                    <div class="col-sm-6 gender-container eq-column-height">
+                        <div class="content-wrapper">
+                            <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                            <h4 class="section-heading">Gender</h4>
+                            <div class="hide-content-toggle">
+                                <hr>
+                                <div class="col-xs-6">
+                                    <i class="fas fa-female fa-gender color-pink" aria-hidden="true"></i> <span class="gender-box" id="female-student-percentage"></span>
+                                </div>
+                                <div class="col-xs-6">
+                                    <i class="fas fa-male fa-gender color-blue" aria-hidden="true"></i> <span class="gender-box" id="male-student-percentage"></span>
+                                </div>
+                                <p>The data sample shows there is almost a 50/50 split of female vs male students. </p>
+                                <p>A sample size of 1,000 is significant and the detailed analysis below is designed to understand the examination success of all students.
+                                </p>
+                                <p>This takes into account factors that may have influenced the students respective learning journeys.</p>
+                                <hr>
+                                <div class="dropdown-box">
+                                    <div>Filter by gender:</div>
+                                    <div id="gender-selector"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-            </section>
-            <!--Gender Summary-->
-            <section class="col-xs-12 col-sm-6 col-lg-6 gender-container eq-column-height">
-                <div class="content-wrapper">
-                    <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                    <h4 class="section-heading">Gender</h4>
-                    <div class="hide-content-toggle">
-                        <hr>
-                        <div class="col-xs-6">
-                            <i class="fas fa-female fa-gender color-pink" aria-hidden="true"></i> <span class="gender-box" id="female-student-percentage"></span>
-                        </div>
-                        <div class="col-xs-6">
-                            <i class="fas fa-male fa-gender color-blue" aria-hidden="true"></i> <span class="gender-box" id="male-student-percentage"></span>
-                        </div>
-                        <p>The data sample shows there is almost a 50/50 split of female vs male students. </p>
-                        <p>A sample size of 1,000 is significant and the detailed analysis below is designed to understand the examination success of all students.
-                        </p>
-                        <p>This takes into account factors that may have influenced the students respective learning journeys.</p>
-                        <hr>
-                        <div class="dropdown-box">
-                            <div>Filter by gender:</div>
-                            <div id="gender-selector"></div>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
+            </div>
             <!--Line Graph Analysis-->
             <section class="container-fluid col-xs-12 line-graph-container">
                 <div class="row">
@@ -130,7 +133,7 @@
                 </div>
             </section>
             <!--Bar Chart & Pie Chart Analysis-->
-            <section class="col-sm-3 bar-chart-one eq-column-height">
+            <section class="col col-sm-3 bar-chart-one eq-column-height">
                 <div class="content-wrapper">
                     <div><i class="fa fa-angle-up hide-content-btn"></i></div>
                     <h4 class="section-heading">Bar Chart1 - Ethnicity Overview </h4>
@@ -145,7 +148,7 @@
                     </div>
                 </div>
             </section>
-            <section class="col-sm-3 bar-chart-two eq-column-height">
+            <section class="col col-sm-3 bar-chart-two eq-column-height">
                 <div class="content-wrapper">
                     <div><i class="fa fa-angle-up hide-content-btn"></i></div>
                     <h4 class="section-heading">Bar Chart2 - Parents Education </h4>
@@ -161,7 +164,7 @@
                     </div>
                 </div>
             </section>
-            <section class="col-sm-3 pie-chart-one eq-column-height">
+            <section class="col col-sm-3 pie-chart-one eq-column-height">
                 <div class="content-wrapper">
                     <div><i class="fa fa-angle-up hide-content-btn"></i></div>
                     <h4 class="section-heading">Pie Chart1 - Lunch Analysis </h4>
@@ -176,7 +179,7 @@
                     </div>
                 </div>
             </section>
-            <section class="col-sm-3 pie-chart-two eq-column-height">
+            <section class="col col-sm-3 pie-chart-two eq-column-height">
                 <div class="content-wrapper">
                     <div><i class="fa fa-angle-up hide-content-btn"></i></div>
                     <h4 class="section-heading">Pie Chart2 - Exam Preparation </h4>
@@ -191,7 +194,7 @@
                     </div>
                 </div>
             </section>
-        </section>
+        </div>
     </main>
     <footer>
         <!-- Social Media -->
