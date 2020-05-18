@@ -7,10 +7,7 @@ View [Data-Dashboard](https://spagettileg.github.io/data-dashbaord/) as a deploy
 ## Table of Contents
 1. [Introduction](#introduction) 
 2. [Systems Based Testing](#systems-based-testing)
-    * [Python3](#python3)
-    * [Javascript](#javascript)
-    * [Coverage](#coverage)
-    * [Travis CI](#travis-ci)
+    * [Jasmine](#jasmine)
 3. [Manual Testing](#manual-testing)
     * [Registration Testing](#registration-testing)
     * [Password reset testing](#password-reset-testing)
@@ -21,7 +18,6 @@ View [Data-Dashboard](https://spagettileg.github.io/data-dashbaord/) as a deploy
     * [Browser Compatability](#browser-compatability)
     * [Known Bugs](#known-bugs)
 
- 
 ## Introduction
 
 A combination of automated and manual testing processes was applied to this project
@@ -35,7 +31,8 @@ Chrome dev tools provided one issue where all charts were not being rendered. Th
 
 Furthermore, the software has been tested against all user expectations that were set out in UX section above. All possible user actions were mimicked to put the tester in the shoes of the user.  Data was compared by minimizing certain sections, filter the specific data and reset all the filters. The whole data manipulation experience was intuitive and enables both the tester and user to efficiently analyse the data and draw meaningful conclusions. 
 
-#### 1. Jasmine Testing
+## Systems Based Testing
+### Jasmine
 
 Jasmine was used to test 4 things in particular for this project:
 
@@ -49,7 +46,7 @@ Jasmine was used to test 4 things in particular for this project:
 
 •	All tests passed in Jasmine
 
-#### 2. Manual Testing
+### Manual Testing
 
 Testing for this project was completed on Chrome, Edge, Firefox, Safari & Opera browsers.
 Responsiveness and correct displaying of all elements has been tested on a number of device and resolutions.
@@ -150,9 +147,15 @@ Devices:
 7.	For GitHub, colour change from light grey to GitHub corporate colour (purple # 6e5494). Test colour changes from black to light grey
 8.	Both social media icons contain a fractional timing delay to help user understand icon is active, prior to being clicked 
 
-***
 
-### Code Validation Testing
+## Code Validation
+
+### Responsiveness and Rendering
+
+### Browser Compatability
+
+### Known Bugs
+
 •	HTML Validator (https://validator.w3.org/) used and shows the html document to be valid. Slight issue on hr tag being used in footer, but no detrimental effect upon web page performance
 
 •	CSS Validator (https://jigsaw.w3.org/css-validator/) used and shows the stylesheet to be valid CSS level 3 + SVG
