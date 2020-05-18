@@ -286,7 +286,7 @@ Further reading and troubleshooting on cloning a repository from [GitHub](https:
 
 •	404 image – [codepen.io](www.codpen.io)
 
-•	Cogs Background image – [vectorstock.com](www.vectorstock.com)
+•	Cogs Background image – [pling.com](https://www.pling.com/p/1216758/)
 
 ### Assets
 
