@@ -2,10 +2,6 @@
 
 /*----------Special Padding / Margin / Text----------*/
 
-section {
-    padding-bottom: 10px;
-}
-
 div.dc-chart {
     float: none!important;
 }
@@ -82,70 +78,26 @@ hr {
 
 /*-------------Images------*/
 
-.dash-background {
+/*.dash-background { */
     
-    position: relative;
-    background: url(../images/cogs-background.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /*required to manage the horixontal centering of the 
-    group image design*/
-}
-
-.opaque-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-}
+/*    position: relative; */
+/*    background: url(../images/cogs-background.jpg) no-repeat center center fixed; */
+/*    -webkit-background-size: cover; */
+/*    -moz-background-size: cover; */
+/*    -o-background-size: cover; */
+/*    background-size: cover; */
+/*    display: flex; */
+/*    align-items: center; */
+/*    justify-content: center; */
+/*    /*required to manage the horixontal centering of the  */
+/*    group image design*/
+/*} */
 
 /*-------------Containers-------------*/
 
 /* To include tailoring for Introduction / Gender / Summary / Events & Tickets */
 
-.intro-container {
-    margin-top: 60px;
-    padding-left: 15px;
-}
 
-.gender-container {
-    margin-top: 0px;
-    margin-left: 0px;
-
-}
-
-.line-graph-container {
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-.math-vs-reading .reading-vs-writing .math-vs-writing .bar-chart-one .bar-chart-two .pie-chart-one .pie-chart-two {
-    padding-left: 0px;
-}
-
-.content-wrapper { /* Consistent formatting of containers holding charts & information */ 
-    width: 95%;
-    padding: 10px 10px;
-    border-radius: 10px;
-    background-color: #fafafa;
-    opacity: 0.8;
-    margin: 8px 0;
-    margin-left: 10px;
-    text-align: justify;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.eq-column-height {
-    display: flex;
-    flex-wrap: wrap;
-}
 
 /*------------Gender Article------------*/
 
@@ -272,174 +224,4 @@ hr {
 
 /* Media queries have set set at 490px, 768px, 1200 px & 1440px to help manage good responsiveness for this software */ 
 
-@media (max-width: 490px) {
-    /*mobile - Enables reset button to be centered in mobile device view*/
-    .reset-filters-top {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 5px;
-    }
-}
 
-@media (max-width: 490px) {
-    /*mobile*/
-    .intro-container {
-        margin-top: 70px;
-    }
-}
-
-@media (min-width: 768px) {
-    /*tablet*/
-    .gender-container {
-        margin-top: 60px;
-        padding-right: 33px;
-        height: 45vh;
-    }
-}
-
-@media (min-width: 768px) {
-    /*tablet*/
-    .line-graph-container {
-        padding-right: 30px;
-    }
-}
-
-@media (min-width: 768px) {
-    /*tablet*/
-    .math-vs-reading .reading-vs-writing .math-vs-writing .bar-chart-one .bar-chart-two .pie-chart-one .pie-chart-two {
-        padding-right: 0px;
-    }
-}
-
-@media (min-width: 1200px) {
-    /*desktop*/
-    .intro-container {
-        height: 56vh;
-    }
-}
-
-@media (min-width: 1200px) {
-    /*desktop*/
-    .gender-container {
-        padding-right: 15px;
-        height: 56vh;
-    }
-}
-
-@media (min-width: 1200px) {
-    /*desktop*/
-    .line-graph-container {
-        padding-right: 0px;
-    }
-}
-
-@media (min-width: 1200px) {
-    /*desktop*/
-    .math-vs-reading {
-        height: 62vh;
-    }
-}
-
-@media (min-width: 1200px) {
-    /*desktop*/
-    .reading-vs-writing {
-        padding-left: 0px;
-        height: 62vh;
-    }
-}
-
-@media (min-width: 1200px) {
-    /*desktop*/
-    .math-vs-writing {
-        padding-left: 5px;
-        padding-right: 28px;
-        height: 62vh;
-    }
-}
-
-@media (min-width: 1200px) {
-    /*desktop*/
-    .bar-chart-one {
-        padding-right: 10px;
-        height: 94vh;
-    }
-}
-
-@media (min-width: 1200px) {
-    /*desktop*/
-    .bar-chart-two,
-    .pie-chart-one {
-        padding-left: 0px;
-        padding-right: 10px;
-        height: 94vh;
-    }
-}
-
-@media (min-width: 1200px) {
-    /*desktop*/
-    .pie-chart-two {
-        padding-left: 0px;
-        padding-right: 35px;
-        height: 94vh;
-    }
-}
-
-@media (min-width: 1440px) {
-    /*large desktop*/
-    .intro-container {
-        padding-left: 100px;
-        padding-bottom: 40px;
-    }
-}
-
-@media (min-width: 1440px) {
-    /*large desktop*/
-    .gender-container {
-        padding-right: 100px;
-        padding-bottom: 100px;
-    }
-}
-
-@media (min-width: 1440px) {
-    /*large desktop*/
-    .line-graph-container {
-        padding-top: 0px;
-        padding-right: 0px;
-    }
-}
-
-@media (min-width: 1440px) {
-    /*large desktop*/
-    .line-graph-container {
-        padding-left: 112px;
-        padding-right: 82px;
-    }
-}
-
-@media (min-width: 1440px) {
-    /*large desktop*/
-    .math-vs-reading,
-    .math-vs-writing {
-        padding-top: 38px;
-    }
-}
-
-@media (min-width: 1440px) {
-    /*large desktop*/
-    .reading-vs-writing {
-        padding-top: 38px;
-        padding-left: 12px;
-    }
-}
-
-@media (min-width: 1440px) {
-    /*large desktop*/
-    .bar-chart-one,
-    .bar-chart-two,
-    .pie-chart-one,
-    .pie-chart-two {
-        padding-top: 48px;
-    }
-}
