@@ -33,7 +33,7 @@
             <div class="container">
                 <div class="row">
                     <!--Introduction-->
-                    <div class="col-sm-6 intro-container eq-column-height">
+                    <div class="col-sm-6 intro-container">
                         <div class="content-wrapper">
                             <div><i class="fa fa-angle-up hide-content-btn"></i></div>
                             <h4 class="section-heading">Introduction</h4>
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <!--Gender Summary-->
-                    <div class="col-sm-6 gender-container eq-column-height">
+                    <div class="col-sm-6 gender-container">
                         <div class="content-wrapper">
                             <div><i class="fa fa-angle-up hide-content-btn"></i></div>
                             <h4 class="section-heading">Gender</h4>
@@ -80,7 +80,7 @@
                 </div>
             </div>
             <!--Line Graph Analysis-->
-            <section class="container-fluid col-xs-12 line-graph-container">
+            <div class="container-fluid col-xs-12 line-graph-container">
                 <div class="row">
                     <div class="content-wrapper">
                         <div><i class="fa fa-angle-up hide-content-btn"></i></div>
@@ -97,103 +97,111 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
             <!--Scatter Plot Analysis-->
-            <section class="col-xs-12 col-sm-12 col-lg-4 math-vs-reading eq-column-height">
-                <div class="content-wrapper">
-                    <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                    <h4 class="section-heading">Math vs Reading Regression Analysis</h4>
-                    <div class="hide-content-toggle">
-                        <hr>
-                        <div id="math-vs-reading-regression"></div>
-                        <p>Female students appear to have stronger results in reading, whereas male students appear to be stonger in maths</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="content-wrapper">
+                            <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                            <h4 class="section-heading">Math vs Reading Regression Analysis</h4>
+                            <div class="hide-content-toggle">
+                                <hr>
+                                <div id="math-vs-reading-regression"></div>
+                                <p>Female students appear to have stronger results in reading, whereas male students appear to be stonger in maths</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="content-wrapper">
+                            <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                            <h4 class="section-heading">Reading vs Writing Regression Analysis</h4>
+                            <div class="hide-content-toggle">
+                                <hr>
+                                <div id="reading-vs-writing-regression"></div>
+                                <p>Both female and male students are equally consistent when comparing reading & writing exam results.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="content-wrapper">
+                            <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                            <h4 class="section-heading">Math vs Writing Regression Analysis</h4>
+                            <div class="hide-content-toggle">
+                                <hr>
+                                <div id="math-vs-writing-regression"></div>
+                                <p>Female students appear to have stronger results in writing, whereas male students appear to be stronger in maths</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
-            <section class="col-xs-12 col-sm-12 col-lg-4 reading-vs-writing eq-column-height">
-                <div class="content-wrapper">
-                    <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                    <h4 class="section-heading">Reading vs Writing Regression Analysis</h4>
-                    <div class="hide-content-toggle">
-                        <hr>
-                        <div id="reading-vs-writing-regression"></div>
-                        <p>Both female and male students are equally consistent when comparing reading & writing exam results.</p>
-                    </div>
-                </div>
-            </section>
-            <section class="col-xs-12 col-sm-12 col-lg-4 math-vs-writing eq-column-height">
-                <div class="content-wrapper">
-                    <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                    <h4 class="section-heading">Math vs Writing Regression Analysis</h4>
-                    <div class="hide-content-toggle">
-                        <hr>
-                        <div id="math-vs-writing-regression"></div>
-                        <p>Female students appear to have stronger results in writing, whereas male students appear to be stronger in maths</p>
-                    </div>
-                </div>
-            </section>
+            </div>
             <!--Bar Chart & Pie Chart Analysis-->
-            <section class="col col-sm-3 bar-chart-one eq-column-height">
-                <div class="content-wrapper">
-                    <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                    <h4 class="section-heading">Bar Chart1 - Ethnicity Overview </h4>
-                    <div class="hide-content-toggle">
-                        <hr>
-                        <div id="ethnicity-distribution"></div>
-                        <p>Total student population comprises of 5 ethnic groups</p>
-                        <p>35% of female & 29% of male students come from ethnic group C</p>
-                        <p>28% of male & 25% of female students come from ethnic group D </p>
-                        <p>Group A is least populated overall, but is mostly dominated by male students at nearly 60%, with their best performance in maths, whereas female students in this group fair much better in reading and writing.</p>
-                        <hr>
+            <div class="container">
+                <div class="row">
+                    <div class="col col-sm-3 bar-chart-one eq-column-height">
+                        <div class="content-wrapper">
+                            <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                            <h4 class="section-heading">Bar Chart1 - Ethnicity Overview </h4>
+                            <div class="hide-content-toggle">
+                                <hr>
+                                <div id="ethnicity-distribution"></div>
+                                <p>Total student population comprises of 5 ethnic groups</p>
+                                <p>35% of female & 29% of male students come from ethnic group C</p>
+                                <p>28% of male & 25% of female students come from ethnic group D </p>
+                                <p>Group A is least populated overall, but is mostly dominated by male students at nearly 60%, with their best performance in maths, whereas female students in this group fair much better in reading and writing.</p>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-sm-3 bar-chart-two eq-column-height">
+                        <div class="content-wrapper">
+                            <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                            <h4 class="section-heading">Bar Chart2 - Parents Education </h4>
+                            <div class="hide-content-toggle">
+                                <hr>
+                                <div id="parents-education-distribution"></div>
+                                <p>Irrespective of gender, 42% of the student parents experienced their education at high school & some college </p>
+                                <p>Upon closer inspection, the 'clever genes' appear to reside in both ethnic groups' C & D. Ethnic groups' C & D account for 58% of total sample size and was responsible for good upper quartile results in Maths, Reading & Writing.
+                                </p>
+                                <p>In addition, 81% of parents for these students have a masters degree education. </p>
+        
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-sm-3 pie-chart-one eq-column-height">
+                        <div class="content-wrapper">
+                            <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                            <h4 class="section-heading">Pie Chart1 - Lunch Analysis </h4>
+                            <div class="hide-content-toggle">
+                                <hr>
+                                <div id="nutrition-analysis"></div>
+                                <br>
+                                <p>There is roughly a 2/3 to 1/3 split on students access to a standard lunch. There appears to be an improvement in all exam subject areas where students can claim a standard lunch. </p>
+                                <p>Both female & male students follow the same overall ratio (1:3), although ethnic group A sees an increase in free/redeuced lunches at 40%. </p>
+                                <p>In summary, there may be a case that an impecunious student may struggle with achieving better exam results. </p>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-sm-3 pie-chart-two eq-column-height">
+                        <div class="content-wrapper">
+                            <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                            <h4 class="section-heading">Pie Chart2 - Exam Preparation </h4>
+                            <div class="hide-content-toggle">
+                                <hr>
+                                <div id="test-preparation-analysis"></div>
+                                <br>
+                                <p>36% of all students completed prepartions for their exams and the same ratio split applies to both female and male student groups too. </p>
+                                <p>Ethnic group C featured strongly in their exam results through students completing their exam preparations.</p>
+                                <p>In summary, there appears to be a trend of better exam results where students have committed their time to complete prepartions for their exams. </p>
+                                <hr>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
-            <section class="col col-sm-3 bar-chart-two eq-column-height">
-                <div class="content-wrapper">
-                    <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                    <h4 class="section-heading">Bar Chart2 - Parents Education </h4>
-                    <div class="hide-content-toggle">
-                        <hr>
-                        <div id="parents-education-distribution"></div>
-                        <p>Irrespective of gender, 42% of the student parents experienced their education at high school & some college </p>
-                        <p>Upon closer inspection, the 'clever genes' appear to reside in both ethnic groups' C & D. Ethnic groups' C & D account for 58% of total sample size and was responsible for good upper quartile results in Maths, Reading & Writing.
-                        </p>
-                        <p>In addition, 81% of parents for these students have a masters degree education. </p>
-
-                        <hr>
-                    </div>
-                </div>
-            </section>
-            <section class="col col-sm-3 pie-chart-one eq-column-height">
-                <div class="content-wrapper">
-                    <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                    <h4 class="section-heading">Pie Chart1 - Lunch Analysis </h4>
-                    <div class="hide-content-toggle">
-                        <hr>
-                        <div id="nutrition-analysis"></div>
-                        <br>
-                        <p>There is roughly a 2/3 to 1/3 split on students access to a standard lunch. There appears to be an improvement in all exam subject areas where students can claim a standard lunch. </p>
-                        <p>Both female & male students follow the same overall ratio (1:3), although ethnic group A sees an increase in free/redeuced lunches at 40%. </p>
-                        <p>In summary, there may be a case that an impecunious student may struggle with achieving better exam results. </p>
-                        <hr>
-                    </div>
-                </div>
-            </section>
-            <section class="col col-sm-3 pie-chart-two eq-column-height">
-                <div class="content-wrapper">
-                    <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                    <h4 class="section-heading">Pie Chart2 - Exam Preparation </h4>
-                    <div class="hide-content-toggle">
-                        <hr>
-                        <div id="test-preparation-analysis"></div>
-                        <br>
-                        <p>36% of all students completed prepartions for their exams and the same ratio split applies to both female and male student groups too. </p>
-                        <p>Ethnic group C featured strongly in their exam results through students completing their exam preparations.</p>
-                        <p>In summary, there appears to be a trend of better exam results where students have committed their time to complete prepartions for their exams. </p>
-                        <hr>
-                    </div>
-                </div>
-            </section>
+            </div>
         </div>
     </main>
     <footer>
