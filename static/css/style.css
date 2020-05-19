@@ -126,6 +126,21 @@ hr {
     font-size: 40px;
 }
 
+/*---------------Charts---------------------*/
+
+text.x-axis-label {
+    font-weight: 700;
+    margin-top: 2rem;
+}
+
+text.y-axis-label {
+    font-weight: 700;
+}
+
+.dc-chart g.axis text {
+    font-size: 1em;
+} 
+
 /*---------------Social Media---------------*/
 
 /* To include styling for social media fonts > font awesome */
