@@ -322,7 +322,7 @@ function show_source_student_nutrition(ndx) {
     var total_lunch_per_student = lunch_Dim.group();
     dc.pieChart('#nutrition-analysis')
         .height(300)
-        .radius(140)
+        .radius(130)
         .useViewBoxResizing(true)
         .transitionDuration(750)
         .dimension(lunch_Dim)
@@ -338,7 +338,7 @@ function show_exam_preparation(ndx) {
     var total_prep_per_student = examPrep_Dim.group();
     dc.pieChart('#test-preparation-analysis')
         .height(300)
-        .radius(140)
+        .radius(130)
         .useViewBoxResizing(true)
         .transitionDuration(750)
         .dimension(examPrep_Dim)
