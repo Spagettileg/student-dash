@@ -274,8 +274,8 @@ function show_ethnicity_distribution(ndx) {
     var ethnicityCluster = ethnicityDim.group();
 
     dc.barChart("#ethnicity-distribution")
-        .width(600)
-        .height(400)
+        .width(530)
+        .height(300)
         .useViewBoxResizing(true)
         .margins({ top: 10, right: 50, bottom: 30, left: 50 })
         .colorAccessor(function(d, i) { return i; })
@@ -298,8 +298,8 @@ function show_parents_education_distribution(ndx) {
     var parental_educationCluster = parental_educationDim.group();
 
     dc.barChart("#parents-education-distribution")
-        .width(600)
-        .height(400)
+        .width(530)
+        .height(300)
         .useViewBoxResizing(true)
         .margins({ top: 10, right: 50, bottom: 30, left: 50 })
         .dimension(parental_educationDim)
