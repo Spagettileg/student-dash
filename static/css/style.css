@@ -175,16 +175,18 @@ h5 {
 }
 
 text.x-axis-label {
+    /*Format text on x-axis or horizontal*/
     font-weight: 700;
-    margin-top: 2rem;
 }
 
 text.y-axis-label {
+    /*Format text on y-axis or vertical*/
     font-weight: 700;
 }
 
 .dc-chart g.axis text {
-    font-size: 1em;
+    font-size: 0.9em;
+    padding-bottom: 1rem;
 } 
 
 /*---------------Social Media---------------*/
