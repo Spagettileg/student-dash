@@ -27,7 +27,6 @@ Link to [GitHub](https://github.com/Spagettileg/data-dashboard) Repo
 2. [Technologies Applied](#technologies-applied)
     * [Languages](#languages)
     * [Libraries](#libraries)
-    * [Previous & Current JS Libraries Used](#previous-&-current-js-libraries-used)
     * [Tools](#tools)
 
 3. [Features](#features)
@@ -95,17 +94,36 @@ Bootstrap was the chosen framework for styling my project. I used the Bootstrap 
 ### Colour Palette
 Colours used in this project were sourced from [Colour Hunt](https://colorhunt.co/). Essentially, the colours are seeking to capture key attributes of The Monkees through energy, intelligence, country rock and psychedelia
 
-Colour         | Hex Code  | Colour Function
----------------|-----------|------------------
-Light Blue     | #DEE9FC   | Navbar scroll appearance
-Powder Blue    | #6395F2   | Navbar scroll appearance
-Royal Blue     | #1258DC   | Navbar scroll appearance
-Grey Blue      | #236AB9   | Navbar scroll appearance
-Blue Ink       | #0A337F   | Navbar scroll appearance
-Dark Blue      | #091834   | Navbar scroll appearance
-Light Grey     | #E6E6E6   | Data container background colour
-Pink           | #FF99FF   | Female gender icon
-Blue           | #004D99   | Male gender icon
+File | Colour         | Hex Code  | Colour Function
+-----|----------------|-----------|------------------
+CSS  | Light Blue     | #DEE9FC   | Navbar scroll appearance
+CSS  | Powder Blue    | #6395F2   | Navbar scroll appearance
+CSS  | Royal Blue     | #1258DC   | Navbar scroll appearance
+CSS  | Grey Blue      | #236AB9   | Navbar scroll appearance
+CSS  | Blue Ink       | #0A337F   | Navbar scroll appearance
+CSS  | Dark Blue      | #091834   | Navbar scroll appearance
+CSS  | Light Grey     | #E6E6E6   | Data container background colour
+CSS  | Pink           | #FF99FF   | Female gender icon
+CSS  | Blue           | #004D99   | Male gender icon
+
+File      | Colour    | Hex Code  | Colour Function
+----------|-----------|-----------|------------------
+graph.js  | Green     | #009900   | Composite line chart
+graph.js  | Blue      | #0066FF   | Composite line chart
+graph.js  | Red       | #CC0000   | Composite line chart
+graph.js  | Green     | #009900   | Math vs Writing - regression chart
+graph.js  | Blue      | #0066FF   | Reading vs Writing - regression chart
+graph.js  | Red       | #CC0000   | Math vs Reading - regression chart
+graph.js  | Blue      | #99CCFF   | Bar chart - Ethnicity Distribution
+graph.js  | Red       | #FF6666   | Bar chart - Ethnicity Distribution
+graph.js  | Yellow    | #FFFF66   | Bar chart - Ethnicity Distribution
+graph.js  | Green     | #99FF99   | Bar chart - Ethnicity Distribution
+graph.js  | Purple    | #CC99FF   | Bar chart - Ethnicity Distribution
+graph.js  | Orange    | #FF9933   | Bar chart - Parents Education
+graph.js  | Blue      | #3366CC   | Pie chart - Source of Student Nutrition
+graph.js  | Green     | #0099CC   | Pie chart - Source of Student Nutrition
+graph.js  | Blue      | #3366CC   | Pie chart - Exam Preparation
+graph.js  | Green     | #0099CC   | Pie chart - Exam Preparation
 
 ### Typography
 [Open+Sans](https://fonts.google.com/) & [Sans Serif](https://fonts.google.com/) fonts were used throughout this project.
@@ -151,12 +169,6 @@ The following technologies were used in the design and build of this project.
 •	[Bootstrap](https://www.bootstrapcdn.com/) to enable ease of website responsiveness and simplify coding structure
 
 •	[Bootswatch](https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/yeti/bootstrap.min.css) used to assist in the creation of the responsive grid structure for the site and also to provide some basic CSS styling
-
-### Previous & Current JS Libraries Used
-•	D3.js - https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js - https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js
-•	DC.js - https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.js - https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.0-beta.29/dc.min.js
-•	Crossfilter.js - https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js - https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js
-•	D3-queue.js – https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js - https://cdnjs.cloudflare.com/ajax/libs/d3-queue/3.0.7/d3-queue.min.js  
 
 ### Tools
 •	[AWS Cloud9](https://aws.amazon.com/cloud9/) a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser.
