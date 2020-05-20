@@ -102,7 +102,7 @@ CSS  | Royal Blue     | #1258DC   | Navbar scroll appearance
 CSS  | Grey Blue      | #236AB9   | Navbar scroll appearance
 CSS  | Blue Ink       | #0A337F   | Navbar scroll appearance
 CSS  | Dark Blue      | #091834   | Navbar scroll appearance
-CSS  | Light Grey     | #E6E6E6   | Data container background colour
+CSS  | Light Grey     | #E6E6E6   | Social Links
 CSS  | Pink           | #FF99FF   | Female gender icon
 CSS  | Blue           | #004D99   | Male gender icon
 CSS  | Pale Blue      | #E6EEFF   | Data dashbaord background colour

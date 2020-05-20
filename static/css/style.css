@@ -17,32 +17,35 @@ h5 {
     font-weight: 600;
 }
 
+/*---------------Colours--------------*/
 
-/*---------------Colours - MonoChromatic Scheme--------------*/
+/*--------- Navbar Scroll ----------- */
+/* #DEE9FC - Light Blue */
+/* #6395F2 - Powder Blue */
+/* #1258DC - Royal Blue */
+/* #236AB9 - Grey Blue */
+/* #0A337F - Blue Ink */
+/* #091834 - Dark Blue */
 
-.bg-color-blue-lightest {
-    background-color: #DEE9FC;
-}
+/*------------ Footer --------------- */
+/* #E6E6E6 - Light Grey */
 
-.bg-color-blue-midlight {
-    background-color: #6395F2;
-}
+/*--------- Gender Container -------- */
+/* #FF99FF - Pink */
+/* #004D99 - Blue */
 
-.bg-color-blue-medium-one {
-    background-color: #1258DC;
-}
+/*-------- Background Colours ------- */
+/* #E6EEFF - Pale Blue */
+/* #CCDDFF - Mid Blue */
+/* #236AB9 - Sky Blue */
 
-.bg-color-blue-medium-two {
-    background-color: #236AB9;
-}
-
-.bg-color-blue-middark {
-    background-color: #0A337F;
-}
-
-.bg-color-blue-darkest {
-    background-color: #091834;
-}
+/*-------------- Graphs ------------- */
+/* #009900, #99FF99, #0099CC - Green */
+/* #0066FF, #99CCFF, #3366CC - Blue */
+/* #CC0000, #FF6666 - Red */
+/* #FFFF66 - Yellow */
+/* #CC99FF - Purple */
+/* #FF9933 - Orange */
 
 /*------------Navbar----------------*/
 
@@ -67,8 +70,6 @@ h5 {
     font-weight: 200;
     text-decoration: none;
 }
-
-
 
 /*----------Dropdown Navigation------*/
 
@@ -102,7 +103,7 @@ h5 {
 /* To include tailoring for Introduction / Gender / Summary / Events & Tickets */
 
 #dash-background {
-    background-color: #e6eeff;
+    background-color: #E6EEFF;
 }
 
 .outer-container {
@@ -113,7 +114,7 @@ h5 {
 
 .content-wrapper { /* Consistent formatting of containers holding charts & information */ 
     border-radius: 0.5rem;
-    background-color: #ccddff;
+    background-color: #CCDDFF;
     /*Mid-Blue*/
     opacity: 0.8;
     margin: 1rem 0;
@@ -136,11 +137,11 @@ h5 {
 /*------------Gender Article------------*/
 
 .color-pink { /*female*/
-    color: #ff99ff;
+    color: FF99FF;
 }
 
 .color-blue { /*male*/
-    color: #004d99;
+    color: #004D99;
 }
 
 .gender-box {
@@ -213,12 +214,12 @@ h5 {
 }
 
 .social-links-footer p {
-    color: #e6e6e6;
+    color: #E6E6E6;
     /*Light Grey*/
 }
 
 .social-links-footer li {
-    color: #e6e6e6;
+    color: #E6E6E6;
     /*Light Grey*/
 }
 
@@ -265,7 +266,8 @@ h5 {
 
 /*---------------Buttons--------------*/
 
-.hide-content-btn { /* Supporting the collapse/re-open of all charts and data help within the dashboard */
+.hide-content-btn {
+    /* Supporting the collapse/re-open of all charts and data help within the dashboard */
     float: right;
     color: #1258DC;
     cursor: pointer;
@@ -280,7 +282,8 @@ h5 {
 
 }
 
-.reset-filters-top:hover { /* reset button changes colour when hovered & clicked */
+.reset-filters-top:hover {
+    /* reset button changes colour when hovered & clicked */
     background-color: #6395F2;
     /*blue*/
     border-color: #6395F2;
