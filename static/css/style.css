@@ -132,9 +132,6 @@ h5 {
     flex-wrap: wrap;
 }
 
-
-
-
 /*------------Gender Article------------*/
 
 .color-pink { /*female*/
@@ -178,20 +175,30 @@ h5 {
     padding-bottom: 2rem;
 }
 
-text.x-axis-label {
+.x-axis-label {
     /*Format text on x-axis or horizontal*/
     font-weight: 700;
 }
 
-text.y-axis-label {
+.y-axis-label {
     /*Format text on y-axis or vertical*/
     font-weight: 700;
 }
 
-.dc-chart g.axis text {
+.dc-chart .axis text {
     font-size: 0.9em;
     padding-bottom: 1rem;
 } 
+
+#student-selector.dc-chart,
+#gender-selector.dc-chart {
+    color: #FFF;
+}
+
+.dc-select-menu {
+    /*Mid-Blue*/
+    background-color: #236AB9;
+}
 
 /*---------------Social Media---------------*/
 
