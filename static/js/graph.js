@@ -146,15 +146,15 @@ function show_stats_all_subjects(ndx) {
         .compose([ // x3 lines created for each exam subject in scope
             dc.lineChart(compositeChart)
             .dimension(mathDim)
-            .colors('#6395F2')
+            .colors('#009900') // Green colour line
             .group(mathStudent, 'math_score'),
             dc.lineChart(compositeChart)
             .dimension(readingDim)
-            .colors('#1258DC')
+            .colors('#0066FF') // Blue colour line
             .group(readingStudent, 'reading_score'),
             dc.lineChart(compositeChart)
             .dimension(writingDim)
-            .colors('#091834')
+            .colors('#CC0000') // Red colour line
             .group(writingStudent, 'writing_score'),
         ]);
 
@@ -188,7 +188,7 @@ function show_math_vs_reading_regression(ndx) { // Establish correlation between
         .title(function(d) {
             return "This " + d.key[2] + " received " + d.key[0] + " in Math and " + d.key[1] + " in Reading.";
         })
-        .ordinalColors(['purple'])
+        .ordinalColors(['#CC0000']) // Red colour dot plots
         .dimension(scoreDim)
         .group(scoreGroup)
         .margins({ top: 10, right: 50, bottom: 75, left: 75 });
@@ -222,7 +222,7 @@ function show_reading_vs_writing_regression(ndx) { // Establish correlation betw
         .title(function(d) {
             return "This " + d.key[2] + " received " + d.key[0] + " in Reading and " + d.key[1] + " in Writing.";
         })
-        .ordinalColors(['purple'])
+        .ordinalColors(['#0066FF']) // Blue colour dot plots
         .dimension(scoreDim)
         .group(scoreGroup)
         .margins({ top: 10, right: 50, bottom: 75, left: 75 });
@@ -256,7 +256,7 @@ function show_math_vs_writing_regression(ndx) { // Establish correlation between
         .title(function(d) {
             return "This " + d.key[2] + " received " + d.key[0] + " in Math and " + d.key[1] + " in Writing.";
         })
-        .ordinalColors(['purple'])
+        .ordinalColors(['#009900']) // Green colour dot plots
         .dimension(scoreDim)
         .group(scoreGroup)
         .margins({ top: 10, right: 50, bottom: 75, left: 75 });
@@ -267,7 +267,8 @@ function show_math_vs_writing_regression(ndx) { // Establish correlation between
 function show_ethnicity_distribution(ndx) {
     var ethnicOrigin = d3.scale.ordinal() // x-axis
         .domain(["group A", "group B", "group C", "group D", "group E"])
-        .range(["#091834", "#0A337F", "#1258DC", "#6395F2", "#DEE9FC"]);
+        .range(["#99CCFF", "#FF6666", "#FFFF66", "#99FF99", "#CC99FF"]);
+        // colour range = blue, red, yellow, green & purple. All pale shades
     var ethnicityDim = ndx.dimension(function(d) { // y-axis
         return [d.ethnicity];
     });
@@ -296,7 +297,7 @@ function show_ethnicity_distribution(ndx) {
 function show_parents_education_distribution(ndx) {
     var parental_educationDim = ndx.dimension(dc.pluck('parental.education'));
     var parental_educationCluster = parental_educationDim.group();
-
+    
     dc.barChart("#parents-education-distribution")
         .width(530)
         .height(300)
@@ -307,6 +308,7 @@ function show_parents_education_distribution(ndx) {
         .transitionDuration(500)
         .x(d3.scale.ordinal()) // Ordinal scale used as units are levels of academia
         .xUnits(dc.units.ordinal)
+        .ordinalColors(['#ff9933']) // Orange colour charts bars
         .xAxisLabel("Parents Education")
         .yAxisLabel("Frequency")
         .elasticY(true)
@@ -325,6 +327,7 @@ function show_source_student_nutrition(ndx) {
         .radius(130)
         .useViewBoxResizing(true)
         .transitionDuration(750)
+        .ordinalColors(['#3366CC', '#0099CC']) // Blue & Green
         .dimension(lunch_Dim)
         .group(total_lunch_per_student);
 
@@ -341,6 +344,7 @@ function show_exam_preparation(ndx) {
         .radius(130)
         .useViewBoxResizing(true)
         .transitionDuration(750)
+        .ordinalColors(['#3366CC', '#0099CC']) // Blue & Green
         .dimension(examPrep_Dim)
         .group(total_prep_per_student);
 }
