@@ -101,6 +101,11 @@ h5 {
 
 /* To include tailoring for Introduction / Gender / Summary / Events & Tickets */
 
+#dash-background {
+    background-color: #e6eeff;
+}
+
+
 .outer-container {
     /* Creates spacing below navbar and above footer */
     padding-top: 8rem;
