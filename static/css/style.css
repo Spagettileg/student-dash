@@ -13,6 +13,10 @@ hr {
     border-color: #6395F2;
 }
 
+h5 {
+    font-weight: 600;
+}
+
 
 /*---------------Colours - MonoChromatic Scheme--------------*/
 
@@ -96,6 +100,28 @@ hr {
 /*-------------Containers-------------*/
 
 /* To include tailoring for Introduction / Gender / Summary / Events & Tickets */
+
+.outer-container {
+    /* Creates spacing below navbar and above footer */
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+}
+
+.content-wrapper { /* Consistent formatting of containers holding charts & information */ 
+    border-radius: 0.5rem;
+    background-color: #fafafa;
+    opacity: 0.8;
+    margin: 1rem 0;
+    padding: 1rem;
+    height: auto;
+    text-align: justify;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.line-graph-container {
+    padding-left: 30px;
+    padding-right: 30px;
+}
 
 
 
