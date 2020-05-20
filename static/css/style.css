@@ -114,6 +114,7 @@ h5 {
 .content-wrapper { /* Consistent formatting of containers holding charts & information */ 
     border-radius: 0.5rem;
     background-color: #ccddff;
+    /*Mid-Blue*/
     opacity: 0.8;
     margin: 1rem 0;
     padding: 1rem;
@@ -196,7 +197,7 @@ h5 {
 }
 
 .dc-select-menu {
-    /*Mid-Blue*/
+    /*Sky-Blue*/
     background-color: #236AB9;
 }
 
