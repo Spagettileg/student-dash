@@ -105,6 +105,9 @@ CSS  | Dark Blue      | #091834   | Navbar scroll appearance
 CSS  | Light Grey     | #E6E6E6   | Data container background colour
 CSS  | Pink           | #FF99FF   | Female gender icon
 CSS  | Blue           | #004D99   | Male gender icon
+CSS  | Pale Blue      | #E6EEFF   | Data dashbaord background colour
+CSS  | Mid Blue       | #CCDDFF   | Chart background colour
+CSS  | Sky Blue       | #236AB9   | DC Chart select menu
 
 File      | Colour    | Hex Code  | Colour Function
 ----------|-----------|-----------|------------------
