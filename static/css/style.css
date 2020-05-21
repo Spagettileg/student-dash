@@ -335,6 +335,9 @@ h5 {
         /*Aligns containers*/
         padding-bottom: 2rem;
     }
+    .bar-chart-2 {
+        padding-bottom: 4rem;
+    }
 }
 
 @media (min-width: 1024px) {
