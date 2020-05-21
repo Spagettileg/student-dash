@@ -346,9 +346,19 @@ h5 {
 @media (min-width: 1024px) {
     /* Tablet */
     .intro-base {
+        /*Aligns containers*/
         margin-bottom: 5.3rem;
     }
     .bar-chart-1 {
+        /*Aligns containers*/
         padding-bottom: 4.8rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* Desktop */
+    .bar-chart-2 {
+        /*Aligns containers*/
+        padding-bottom: 5.8rem;
     }
 }
