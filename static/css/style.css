@@ -331,9 +331,9 @@ h5 {
 
 @media (min-width: 768px) and (orientation: portrait) {
     /*Tablet view in portrait mode*/
-    .gender-base {
+    .intro-base {
         /*Aligns containers*/
-        padding-bottom: 2rem;
+        padding-bottom: 3.2rem;
     }
     .bar-chart-2 {
         padding-bottom: 4rem;
