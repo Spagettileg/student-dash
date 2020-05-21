@@ -13,6 +13,11 @@ hr {
     border-color: #6395F2;
 }
 
+ul {
+    /* removes bullet points from unordered list */
+    list-style-type: none;
+}
+
 h5 {
     font-weight: 600;
 }
@@ -202,66 +207,78 @@ h5 {
     background-color: #236AB9;
 }
 
+/*--------------Footer----------------------*/
+
+#footer {
+    background-color: #343A40;
+    /*Charcoal Grey*/
+    border-color: #343A40;
+    /*Charcoal Grey*/
+}
+
+.footer-text li a {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    /*White*/
+}
+
+.footer-heading,
+.lower-footer {
+    color: #FFFFFF;
+    /*White*/
+}
+
+.footer-text li a:hover {
+    color: #F7BA00;
+    /* Yellow */
+}
+
 /*---------------Social Media---------------*/
 
 /* To include styling for social media fonts > font awesome */
 
-.bg-color-social-container {
-    background-color: #000;
-    min-height: 20px;
-    margin: 0;
-    padding-top: 10px;
+.social-links {
+    padding-bottom: 0.9375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.social-links-footer p {
-    color: #E6E6E6;
-    /*Light Grey*/
-}
-
-.social-links-footer li {
-    color: #E6E6E6;
-    /*Light Grey*/
-}
-
-.social-links-footer li a i {
-    width: 30px;
-    height: 30px;
-    padding: 12px 0;
+.social-links li a i {
+    width: 4rem;
+    height: 4rem;
+    padding: 1.8rem 0;
     border-radius: 50%;
     /*Enables creation of circle where width & height of same value*/
-    font-size: 13px;
+    font-size: 2rem;
     /*Enables icon to sit within border*/
-    line-height: 7px;
+    line-height: 0.4375rem;
     text-align: center;
-    color: #000;
-    border-color: #000;
-    /*Black*/
-    background: #e6e6e6;
-    /*Light Grey*/
-    transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    /*Opera*/
-    -moz-transition: all 0.5s ease-in-out;
+    color: #fafafa;
+    /*off-white*/
+    background: #8f8f8f;
+    /*pale grey*/
+    transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
     /*Windows*/
-    -webkit-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
     /*Apple*/
 }
 
-.social-links-footer img {
-    /* link provided by www.jigsaw.w3.org not working, however, they confirmed css code is flawless */
-    cursor: none;
+.social-links li a i:hover {
+    background: #CCDDFF;
+    /*Yellow*/
+    color: #343A40;
+    /* Charcoal Grey */
+    transform: scale(1.15);
+    opacity: 0.9;
 }
 
-.fa-github:hover {
-    background: #6e5494;
-    /*GitHub Purple*/
-    color: #fff;
-}
-
-.fa-linkedin:hover {
-    background: #0077B5;
-    /*LinkedIn Blue*/
-    color: #fff;
+.social {
+    color: #FFFFFF;
+    /* White */
 }
 
 /*---------------Buttons--------------*/
