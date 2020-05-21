@@ -322,8 +322,16 @@ h5 {
 
 @media (min-width: 667px) and (orientation: landscape) {
     /*Mobile view in landscape mode*/
-    .gender-base {
-        /*Aligns select menu with intro select menu*/
+    .gender-base,
+    .bar-chart-2 {
+        /*Aligns containers*/
         padding-bottom: 3.8rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Tablet */
+    .intro-base {
+        margin-bottom: 5.3rem;
     }
 }
