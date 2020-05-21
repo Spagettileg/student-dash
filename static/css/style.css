@@ -372,3 +372,11 @@ h5 {
         padding-bottom: 5.8rem;
     }
 }
+
+@media (min-width: 1440px) {
+    /* Larger Desktop */
+    .pie-chart-1 {
+        /*Aligns containers*/
+        padding-bottom: 2rem;
+    }
+}
