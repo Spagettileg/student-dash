@@ -14,3 +14,11 @@ $('.hide-content-btn').click(function() {
     $(this).toggleClass('fa-angle-down');
     $(this).toggleClass('fa-angle-up');
 });
+
+// Website authors developer years appear in the footer
+
+$(document).ready(function () {
+     
+    $('#developer-years').text('2018 - ' + new Date().getFullYear());
+    
+});
