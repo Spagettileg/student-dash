@@ -329,6 +329,14 @@ h5 {
     }
 }
 
+@media (min-width: 768px) and (orientation: portrait) {
+    /*Tablet view in portrait mode*/
+    .gender-base {
+        /*Aligns containers*/
+        padding-bottom: 2rem;
+    }
+}
+
 @media (min-width: 1024px) {
     /* Tablet */
     .intro-base {
