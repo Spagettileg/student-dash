@@ -355,6 +355,13 @@ h5 {
     }
 }
 
+@media (min-width: 700px) and (orientation: portrait) {
+    /* Desktop view in landscape mode */
+    .gender-base {
+        padding-bottom: 4rem;
+    }
+}
+
 @media (min-width: 1200px) {
     /* Desktop */
     .bar-chart-2 {
