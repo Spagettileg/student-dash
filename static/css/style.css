@@ -34,6 +34,7 @@ h5 {
 
 /*------------ Footer --------------- */
 /* #E6E6E6 - Light Grey */
+/* #343A40 - Charcoal Grey */
 
 /*--------- Gender Container -------- */
 /* #FF99FF - Pink */
@@ -269,7 +270,7 @@ h5 {
 
 .social-links li a i:hover {
     background: #CCDDFF;
-    /*Yellow*/
+    /*Mid-Blue*/
     color: #343A40;
     /* Charcoal Grey */
     transform: scale(1.15);
@@ -319,4 +320,10 @@ h5 {
 
 /* Media queries have set set at 490px, 768px, 1200 px & 1440px to help manage good responsiveness for this software */ 
 
-
+@media (min-width: 667px) and (orientation: landscape) {
+    /*Mobile view in landscape mode*/
+    .gender-base {
+        /*Aligns select menu with intro select menu*/
+        padding-bottom: 3.8rem;
+    }
+}
