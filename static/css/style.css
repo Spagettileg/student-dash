@@ -89,20 +89,20 @@ h5 {
 
 /*-------------Images------*/
 
-/*.dash-background { */
-    
-/*    position: relative; */
-/*    background: url(../images/cogs-background.jpg) no-repeat center center fixed; */
-/*    -webkit-background-size: cover; */
-/*    -moz-background-size: cover; */
-/*    -o-background-size: cover; */
-/*    background-size: cover; */
-/*    display: flex; */
-/*    align-items: center; */
-/*    justify-content: center; */
-/*    /*required to manage the horixontal centering of the  */
-/*    group image design*/
-/*} */
+#intro-background { 
+    position: relative; 
+    background: url(../images/student-image.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh;
+    /*required to manage the horixontal centering of the*/
+    /*group image design*/
+} 
 
 /*-------------Containers-------------*/
 
