@@ -143,7 +143,7 @@ index.html             | social media - footer   | `fab fa-github`
 index.html             | social media - footer   | `fab fa-linkedin`    
 
 ### Navbar Design
-For all device views, the navbar offers a blue navbar design, built up with 5 shaed of blue to create a `linear-gradient` design, or tubuler effect. A reset button feature is positioned to the right of a headline narrative and is subject to a pseudo-hover class. The reset filter button changes colour upon the user hovering their cursor.   
+For all device views, the navbar offers a blue navbar design, built up with 5 shades of blue to create a `linear-gradient` design, or tubuler effect. A reset button feature is positioned to the right of a headline narrative and is subject to a pseudo-hover class. The reset filter button changes colour upon the user hovering their cursor.   
 
 ## Technologies Applied
 The following technologies were used in the design and build of this project.
@@ -259,10 +259,10 @@ Test analysis and reporting can be viewed in a separate [TESTS.md](https://githu
 ## Deployment
 This project was developed using the [AWS Cloud9 IDE](https://aws.amazon.com/cloud9/), committed to git and pushed to GitHub using the built in function within Cloud9.
 
-To deploy this page to GitHub Pages from its [GitHub repository](https://github.com/Spagettileg/Data-Dashboard), the following steps were taken:
+To deploy this page to GitHub Pages from its [GitHub repository](https://github.com/Spagettileg/student-dash), the following steps were taken:
 
 1. Log into GitHub
-2. From the list of repositories on the screen, select **Spagettileg/Data-Dashboard**
+2. From the list of repositories on the screen, select **Spagettileg/student-dash**
 3. From the menu items near the top of the page, select **Settings**
 4. Scroll down to the **GitHub Pages** section
 5. Under **Source** click the drop-down menu labelled **None** and select **Master Branch**
@@ -272,7 +272,7 @@ To deploy this page to GitHub Pages from its [GitHub repository](https://github.
 ### How to run this project locally  
 To clone this project from GitHub:
 
-1. Follow this link to the [Project GitHub repository](https://github.com/Spagettileg/Data-Dashboard)
+1. Follow this link to the [Project GitHub repository](https://github.com/Spagettileg/student-dash)
 2. Under the repository name, click **"Clone or download"**
 3. In the **Clone with HTTPs section**, copy the clone URL for the repository
 4. In your local IDE open **Ubuntu Bash**
@@ -299,6 +299,8 @@ Further reading and troubleshooting on cloning a repository from [GitHub](https:
 ### Media
 
 •	Favicon image was sourced from [iconsdb.com](www.iconsdb.com)
+
+•   Homepage [student image](https://wallpapersafari.com/w/dmirWc) background
 
 •	404 image – [codepen.io](www.codpen.io)
 
