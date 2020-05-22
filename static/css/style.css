@@ -305,6 +305,49 @@ h5 {
 
 /*---------------Buttons--------------*/
 
+/*Homepage button to access data dashbaord*/
+.button {
+  border-radius: 0.5rem;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  opacity: 0.9;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+    /*Content of button after hover produces >> arrows to user*/
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/* End of formatting for homepage button to data dashboard */
+
 .hide-content-btn {
     /* Supporting the collapse/re-open of all charts and data help within the dashboard */
     float: right;
