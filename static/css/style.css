@@ -119,7 +119,7 @@ h5 {
   width: 50%;
   text-align: center; /* Center text */
   position: absolute; /* Position text */
-  top: 10%; /* Position text in the middle */
+  top: 10%; /* Position text to the right */
   left: 50%; /* Position text in the middle */
   
   mix-blend-mode: screen; /* This makes the cutout text possible */
