@@ -314,8 +314,9 @@ h5 {
   opacity: 0.9;
   text-align: center;
   font-size: 1.75rem;
+  font-weight: 700;
   padding: 1.25rem;
-  width: 9.375rem;
+  width: 12rem;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
@@ -332,6 +333,7 @@ h5 {
     /*Content of button after hover produces >> arrows to user*/
   content: '\00bb';
   position: absolute;
+  color: #FFFFFF;
   opacity: 0;
   top: 0;
   right: -20px;
@@ -340,10 +342,12 @@ h5 {
 
 .button:hover span {
   padding-right: 1.5625rem;
+  color: #FFFFFF;
 }
 
 .button:hover span:after {
   opacity: 1;
+  color: #FFFFFF;
   right: 0;
 }
 /* End of formatting for homepage button to data dashboard */
