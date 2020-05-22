@@ -90,6 +90,7 @@ h5 {
 /*-------------Images------*/
 
 #intro-background { 
+    /*Homepage image of a student*/
     position: relative; 
     background: url(../images/student-image.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover; 
@@ -103,6 +104,26 @@ h5 {
     /*required to manage the horixontal centering of the*/
     /*group image design*/
 } 
+
+.text {
+    /*Homepage title text - 'Student-Dash'*/
+  background-color: #FFFFFF;
+  /*White*/
+  color: #000000;
+  /*Black*/
+  opacity: 1;
+  font-size: 5vw; /* Responsive font size */
+  font-weight: bold;
+  margin: 10px auto; /* Center the text container */
+  padding: 10px;
+  width: 50%;
+  text-align: center; /* Center text */
+  position: absolute; /* Position text */
+  top: 10%; /* Position text in the middle */
+  left: 50%; /* Position text in the middle */
+  
+  mix-blend-mode: screen; /* This makes the cutout text possible */
+}
 
 /*-------------Containers-------------*/
 
