@@ -1,4 +1,4 @@
-# Data-Dashboard 
+# Student-Dash 
 A single page website has been built to showcase a data dashboard that analyses 1,000 students exam performance in Math, Reading & Writing. The dashboard is very important to understand how the students are performing, to determine best practices that can be shared with new students about to take the same exam and for teachers to help plan future curriculum. 
 
 The page uses the D3.js library with the DC.js and crossfilter.js libraries to present the data via a series of scatter plots, pie charts, bar charts and line charts. The graphical arrangement has been designed allow the user to quickly understand a summary of student performance and then backed up with interesting data analysis to reach meaningful hypothesis. Furthermore, there is sufficient data to perform correlation testing to further understand the significance of the exam results.
@@ -6,9 +6,9 @@ The page uses the D3.js library with the DC.js and crossfilter.js libraries to p
 Intriguingly, the user can opt to adapt their view of student data by all, individual or custom data element selection via dropdown list function. 
 
 ***
-Link to the [live](https://spagettileg.github.io/data-dashbaord/ ) website hosted in GitHub Pages 
+Link to the [live](https://spagettileg.github.io/student-dash/ ) website hosted in GitHub Pages 
 
-Link to [GitHub](https://github.com/Spagettileg/data-dashboard) Repo
+Link to [GitHub](https://github.com/Spagettileg/student-dash) Repo
 
 ***
 
@@ -44,7 +44,7 @@ Link to [GitHub](https://github.com/Spagettileg/data-dashboard) Repo
     * [Acknowledgements](#acknowledgements)
 
 ## UXD Considerations
-The dashboard has been designed to allow the user to analyse student exam results data through selecting dropdown box options, hovering their cursor over data legend, clicking on charts or just observing the default data summary. 
+Student-Dash has been designed to allow the user to analyse student exam results data through selecting dropdown box options, hovering their cursor over data legend, clicking on charts or just observing the default data summary. 
 
 Furthermore, the user is able to understand potential influences on exam results, such as gender participation, parental education, ethnic groupings, food consumption habits and students’ exam preparation.  
 
@@ -74,7 +74,7 @@ In summary, the user will have a good understanding of how all 1,000 students pe
 ### Wireframes
 My wireframe mock-up design have been created in [Balsamiq](https://balsamiq.com/) to showcase the 'data-dashboard' website responsiveness on mobile, tablet and desktop devices.
 
-•	[data-dashboard](https://github.com/Spagettileg/music-promotion-pbf/blob/master/wireframe/music-promotions-pbf_final.zip)
+•	[Student-Dash](https://github.com/Spagettileg/music-promotion-pbf/blob/master/wireframe/music-promotions-pbf_final.zip)
 
 
 ### User Stories
@@ -92,7 +92,7 @@ My wireframe mock-up design have been created in [Balsamiq](https://balsamiq.com
 Bootstrap was the chosen framework for styling my project. I used the Bootstrap grid extensively to support responsiveness on mobile, tablet and desktop devices.
 
 ### Colour Palette
-Colours used in this project were sourced from [Colour Hunt](https://colorhunt.co/). Essentially, the colours are seeking to capture key attributes of The Monkees through energy, intelligence, country rock and psychedelia
+Colours used in this project were sourced from [Colour Hunt](https://colorhunt.co/). Essentially, the colours are seeking to capture key attributes of Student-Dash through energy, intelligence, pretention and curiosity
 
 File | Colour         | Hex Code  | Colour Function
 -----|----------------|-----------|------------------
