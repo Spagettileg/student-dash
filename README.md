@@ -191,57 +191,61 @@ The following technologies were used in the design and build of this project.
 •	[W3C - HTML validation](https://validator.w3.org/) this validator checks the markup validity of HTML web documents
 
 ## Features
-### Feature 1 - Headline title bar with reset data button
+### Feature 1 - Enter button on homepage `index.html`
+
+•   User is presented with an enter click button on homepage to enable navigation to the data dashboard
+
+### Feature 2 - Headline title bar with reset data button
 
 •	Headline bar informs signposts user to the dashboard and when clicked, the user will return to the top of the dashboard. In addition, a reset button is available for the user to click to return all data & charts to their default values
 
 •	For ease of navigation, the headline bar is fixed at the dashboard top to help the user quickly find the rest button or automatically move to the top, whilst scrolling through to the bottom  
 
-### Feature 2 - Introduction
+### Feature 3 - Introduction
 
 •	Information to the user that provides a basic instruction on how to use the dashboard, brief background on data used and a link to source of original data sample via www.kaggle.com 
 
-### Feature 3 - Filter by student
+### Feature 4 - Filter by student
 
 •	Single student exam performance can be reviewed by clicking on the ID code that appears in a dropdown box. Student ID range from 1 to 1000. Their respective exam performance can then be viewed in the array of graphical analysis
 
-### Feature 4 - Filter by gender
+### Feature 5 - Filter by gender
 
 •	Total student population contained within data sample can be viewed via a female / male lens. A dropdown box has been designed to create a filter on gender type, together with a total gender count
 
 •   Furthermore, the user will receive an instant percentage split on gender activity, on both unfiltered and filtered data analysis    
 
-### Feature 5 - Composite line graph 
+### Feature 6 - Composite line graph 
 
 •	Math, reading and writing exam results for 1,000 students appear in the form of a line graph. This chart can be viewed in multiple dimensions, depending on how the user has configured dropdown boxes and data filters. By hovering the cursor over the legend, the user will receive a bespoke view of a single subject. Furthermore, the user can hover over the data plot to understand an individual student exam score 
 
-### Feature 6 - Scatter chart x3 
+### Feature 7 - Scatter chart x3 
 
 •	3 scatter plot charts have been designed to initiate regression analysis of all exam subjects. Combinations include math vs reading, reading vs writing & math vs writing. Again, these charts can be viewed in multiple dimensions, depending on how the user has configured dropdown boxes and data filters. The user will certainly get a quick and clear view of how the exam subjects correlate with each other 
 
-### Feature 7 - Bar chart x2 
+### Feature 8 - Bar chart x2 
 
 •	Ethnicity origin and the distribution over 5 groups’ is the focus of the 1st bar chart. The view of the chart can be altered by either clicking on a selected bar(s) &/or the user can configure the bar chart through work completed to configure other dropdown boxes and data filters
 
 •	Parents educational background distributed over 6 levels of academia is the focus of the 2nd bar chart. The same functionality exists, as with 1st bar chart. The user can look to create some interesting data configurations to see if either ethnicity &/or students parental education has any bearing upon the students’ exam results  
 
-### Feature 8 - Pie chart x2 
+### Feature 9 - Pie chart x2 
 
 •	Lunch funding is the focus of the 1st pie chart. The influence of a standard lunch allowance or reduced/free lunch allowance can be evaluated by either clicking on a selected pie section(s) &/or the user can configure the pie chart through work completed to configure other dropdown boxes and data filters
 
 •	Student preparation for their exams is the focus of the 2nd pie chart. The options are binary, either the student did or did not prepare for their exams. The same functionality exists, as with 1st pie chart. The user can look to create further interesting data configurations to see if either lunch funding &/or students exam preparation has any bearing upon the students’ exam results  
 
-### Feature 9 - Collapse / re-open articles 
+### Feature 10 - Collapse / re-open articles 
 
 •	All articles can collapse and re-open, by clicking a blue chevron icon positioned at the top right corner of each article. The chevron becomes inverted upon collapse of the article 
 
 •	Valuable screen space is freed up by closing articles that may not feature in a given data analysis configuration
 
-### Feature 10 - Footer 
+### Feature 11 - Footer 
 
 •	Provides a social media link to LinkedIn and a link to my GitHub page. Fonts (icons) secured from bootstrap / font awesome. The links are wired to the website designers’ respective social media sites. A `.hover` pseudo class has been used to provide a background colour change (white `#FFFFFF` to corporate colour code) and font colour change too.   
 
-### Feature 11 - 404 alert page
+### Feature 12 - 404 alert page
 
 •	Provides a friendly sign post for the user in the event an incorrect link has been clicked and the user has the option to click back into a correct link
 
