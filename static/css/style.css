@@ -53,6 +53,9 @@ h5 {
 /* #CC99FF - Purple */
 /* #FF9933 - Orange */
 
+/*--------------Buttons-------------*/
+/* #F4511E - Orange */
+
 /*------------Navbar----------------*/
 
 .navbar {
@@ -308,7 +311,8 @@ h5 {
 /*Homepage button to access data dashbaord*/
 .button {
   border-radius: 0.5rem;
-  background-color: #f4511e;
+  background-color: #F4511E;
+  /*Orange*/
   border: none;
   color: #FFFFFF;
   opacity: 0.9;
