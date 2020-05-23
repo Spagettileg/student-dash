@@ -109,6 +109,7 @@ CSS  | Blue           | #004D99   | Male gender icon
 CSS  | Pale Blue      | #E6EEFF   | Data dashbaord background colour
 CSS  | Mid Blue       | #CCDDFF   | Chart background colour
 CSS  | Sky Blue       | #236AB9   | DC Chart select menu
+CSS  | Orange         | #F4511E   | Enter button on homepage
 
 File      | Colour    | Hex Code  | Colour Function
 ----------|-----------|-----------|------------------
