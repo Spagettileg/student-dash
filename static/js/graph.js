@@ -133,7 +133,7 @@ function show_stats_all_subjects(ndx) {
 
     var compositeChart = dc.compositeChart('#composite-chart-exam-score');
     compositeChart
-        .width(900)
+        .width(700)
         .height(400)
         .useViewBoxResizing(true)
         .x(d3.scale.linear().domain([0, 100]))
