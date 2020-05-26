@@ -80,6 +80,10 @@ h5 {
     text-decoration: none;
 }
 
+.mytitle {
+  color: #E6EEFF;
+}
+
 /*----------Dropdown Navigation------*/
 
 .dropdown-box { /* For student & gender dropdown data filters */
@@ -168,10 +172,26 @@ h5 {
 
 .color-pink { /*female*/
     color: #FF99FF;
+    animation: mypink 5s infinite;
+}
+
+@keyframes mypink {
+    /*Female icon colour change is animated via 3 shades of pink*/
+  from {color: #FF99FF;} /* 80% rgb(255, 153, 255) */
+  to {color: #FF66FF;} /* 70% rgb(255, 153, 255) */
+  to {color: #FF33FF;} /* 60% rgb(255, 153, 255) */
 }
 
 .color-blue { /*male*/
     color: #004D99;
+    animation: myblue 5s infinite;
+}
+
+@keyframes myblue {
+    /*Male icon colour change is animated via 3 shades of blue*/
+  from {color: #0080FF;} /* 50% rgb(0, 77, 153) */
+  to {color: #0066CC;} /* 40% rgb(0, 77, 153) */
+  to {color: #004D99;} /* 30% rgb(0, 77, 153) */
 }
 
 .gender-box {
@@ -367,18 +387,19 @@ h5 {
 
 .reset-filters-top {
     margin: 0 20px 0px 35px;
-    background-color: #DEE9FC;
-    border-color: #DEE9FC;
-
+    background-color: #E6EEFF;
+    border: 2px solid #F4511E;
+    border-radius: 0.5rem;
 }
 
 .reset-filters-top:hover {
     /* reset button changes colour when hovered & clicked */
-    background-color: #6395F2;
-    /*blue*/
-    border-color: #6395F2;
-    color: #e6e6e6;
-    /*Light Grey*/
+    background-color: #F4511E;
+    /*Orange*/
+    border-color: #F4511E;
+    /*Orange*/
+    color: #FFFFFF;
+    /*White*/
     transition: all 0.15s ease-in-out;
     -o-transition: all 0.15s ease-in-out;
     /*Opera*/
