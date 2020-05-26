@@ -24,7 +24,7 @@
 <body>
     <!-- Headline Bar -->
     <nav class="container-fluid navbar">
-        <a href="index.html" class="mytitle text-bold">Student Exam Results Dashboard</a>
+        <a href="index.html" class="mytitle">Student Exam Results Dashboard</a>
         <button id="reset-filters" class="btn btn-sm reset-filters-top"><strong>Reset Filters</strong></button>
     </nav>
     <section id="dash-background">
@@ -80,20 +80,22 @@
                 </div>
             </div>
             <!--Line Graph Analysis-->
-            <div class="container-fluid col-12 line-graph-container eq-column-height">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="content-wrapper">
-                        <div><i class="fa fa-angle-up hide-content-btn"></i></div>
-                        <h5 class="section-heading">Line Graph Analysis</h5>
-                        <div class="hide-content-toggle">
-                            <hr>
-                            <div id="composite-chart-exam-score"></div>
-                            <p>Overall, there appears to be a normal distribution (bell curve) at 70 marks out of 100 for all subjects. This points towards both a clean data set and a significant sample size.</p>
-                            <p>Mode Range - Math scores peaked between 59-65 marks, reading scores peaked between 64-74 marks & writing scores peaked between 68-74 marks.</p>
-                            <p>Mode Frequency - Maths (female students score 65 (28 students/5%) vs Male 62 (19 students/4%). Reading (male students score 74 (19 students/4%) vs female 72 (23 students/4%). Writing (female students score 70 (24 students/4%)
-                                vs Male 68 (18 students/4%). </p>
-                            <p>Summary - Female students exam results appear to be marginally better than male students. The reminder of the detailed analysis may uncover further reasons on female student exam results supremacy. </p>
-                            <hr>
+                    <div class="col-sm-12 eq-column-height">
+                        <div class="content-wrapper">
+                            <div><i class="fa fa-angle-up hide-content-btn"></i></div>
+                            <h5 class="section-heading">Line Graph Analysis</h5>
+                            <div class="hide-content-toggle">
+                                <hr>
+                                <div id="composite-chart-exam-score"></div>
+                                <p>Overall, there appears to be a normal distribution (bell curve) at 70 marks out of 100 for all subjects. This points towards both a clean data set and a significant sample size.</p>
+                                <p>Mode Range - Math scores peaked between 59-65 marks, reading scores peaked between 64-74 marks & writing scores peaked between 68-74 marks.</p>
+                                <p>Mode Frequency - Maths (female students score 65 (28 students/5%) vs Male 62 (19 students/4%). Reading (male students score 74 (19 students/4%) vs female 72 (23 students/4%). Writing (female students score 70 (24 students/4%)
+                                    vs Male 68 (18 students/4%). </p>
+                                <p>Summary - Female students exam results appear to be marginally better than male students. The reminder of the detailed analysis may uncover further reasons on female student exam results supremacy. </p>
+                                <hr>
+                            </div>
                         </div>
                     </div>
                 </div>
