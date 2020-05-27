@@ -74,7 +74,7 @@ In summary, the user will have a good understanding of how all 1,000 students pe
 ### Wireframes
 My wireframe mock-up design have been created in [Balsamiq](https://balsamiq.com/) to showcase the 'data-dashboard' website responsiveness on mobile, tablet and desktop devices.
 
-•	[Student-Dash](https://github.com/Spagettileg/music-promotion-pbf/blob/master/wireframe/music-promotions-pbf_final.zip)
+•	[Student-Dash](https://github.com/Spagettileg/student-dash/blob/master/wireframes/student-dash_vfinal.zip)
 
 
 ### User Stories
