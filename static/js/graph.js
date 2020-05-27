@@ -323,8 +323,8 @@ function show_source_student_nutrition(ndx) {
     var lunch_Dim = ndx.dimension(dc.pluck('lunch'));
     var total_lunch_per_student = lunch_Dim.group();
     dc.pieChart('#nutrition-analysis')
-        .height(300)
-        .radius(130)
+        .height(350)
+        .radius(140)
         .useViewBoxResizing(true)
         .transitionDuration(750)
         .ordinalColors(['#3366CC', '#0099CC']) // Blue & Green
@@ -340,8 +340,8 @@ function show_exam_preparation(ndx) {
     var examPrep_Dim = ndx.dimension(dc.pluck('test.prep.course'));
     var total_prep_per_student = examPrep_Dim.group();
     dc.pieChart('#test-preparation-analysis')
-        .height(300)
-        .radius(130)
+        .height(350)
+        .radius(135)
         .useViewBoxResizing(true)
         .transitionDuration(750)
         .ordinalColors(['#3366CC', '#0099CC']) // Blue & Green
