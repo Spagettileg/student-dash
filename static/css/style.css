@@ -163,11 +163,6 @@ h5 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.line-graph-container {
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
 .eq-column-height {
     display: flex;
     flex-wrap: wrap;
@@ -476,5 +471,30 @@ h5 {
     .pie-chart-1 {
         /*Aligns containers*/
         padding-bottom: 2rem;
+    }
+    #nutrition-analysis.dc-chart.svg viewBox {
+        height: 300px;
+         
+    }
+}
+
+@media (min-width: 1770px) and (max-width: 4000px) {
+    /* Larger Desktop */
+    .line-chart.hide-content-toggle {
+        /*Aligns containers*/
+        margin-right: 7vw;
+    }
+    .gender-chart.hide-content-toggle {
+        /*Aligns containers*/
+        margin-right: 4vw;
+    }
+    .intro-base {
+        padding-bottom: 5.3rem;
+    }
+    .bar-chart-2 {
+        padding-bottom: 7.75rem;
+    }
+    .pie-chart-2 {
+        padding-bottom: 4rem;
     }
 }
