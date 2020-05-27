@@ -12,6 +12,8 @@ Link to [GitHub](https://github.com/Spagettileg/student-dash) Repo
 
 ***
 
+![](static/images/student-image.jpg)
+
 ## Table of Contents
 
 1. [UXD Considerations](#uxd-considerations)
