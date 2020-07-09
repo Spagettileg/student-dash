@@ -143,19 +143,19 @@ Desktop          | >1440px
 
 ## Code Validation
 
-•	HTML Validator (https://validator.w3.org/) used and shows the html document to be valid. Slight issue on hr tag being used in footer, but no detrimental effect upon web page performance
+•	HTML Validator (https://validator.w3.org/) used and shows the html document to be valid. 
 
 •	CSS Validator (https://jigsaw.w3.org/css-validator/) used and shows the stylesheet to be valid CSS level 3 + SVG
 
 ### Responsiveness and Rendering
 Chrome DevTools together with a selection of mobile, table and desktop devices were relied upon through the entire software development cycle. A key objective was to test both the rendering and responsiveness of the software application against multiple screen resolutions and web browser platforms. Any bugs identified were debugged in real time. 
 
-The Re-Boot application has been tested by students from the Slack community, together with friends and family members. Feedback on what worked well and what did not was recorded and suitable corrections to the code were keyed.
+The student-dash application has been tested by students from the Slack community, together with friends and family members. Feedback on what worked well and what did not was recorded and suitable corrections to the code were keyed.
 
 In the final analysis, this application can be passed as fully responsive across all devices that participated in testing.
 
 ### Browser Compatibility
-The following browsers were used in testing the Re-Boot application. Internet Explorer was out of scope for testing due to obsolete capability
+The following browsers were used in testing the student-dash application. Internet Explorer was out of scope for testing due to obsolete capability
 
 platform | version
 ---------|--------
