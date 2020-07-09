@@ -1,8 +1,8 @@
-# Data-Dashboard | Test Analysis & Report 
+# Student-Dash | Test Analysis & Report 
 
-Access main [READEME](https://github.com/Spagettileg/data-dashboard/blob/master/README.md) file
+Access main [READEME](https://github.com/Spagettileg/student-dash/blob/master/README.md) file
 
-View [Data-Dashboard](https://spagettileg.github.io/data-dashbaord/) as a deployed project in GitHub Pages
+View [Data-Dashboard](https://spagettileg.github.io/student-dash/) as a deployed project in GitHub Pages
 
 ## Table of Contents
 1. [Introduction](#introduction) 
