@@ -409,6 +409,50 @@ h5 {
     /*Apple*/
 }
 
+.btn-up {
+    /*Edit recipe button found at the bottom of the recipe detail page - recipe.html*/
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #F4511E;
+    /*Orange*/
+    border-color: #F4511E;
+    /*Orange*/
+    color: #FFF;
+    /*White*/
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    width: 3rem;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-up:hover {
+    /* edit recipe button change colour when hovered & clicked */
+    transform: scale(1.25);
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    /*Opera*/
+    -moz-transition: all 0.5s ease-in-out;
+    /*Windows*/
+    -webkit-transition: all 0.5s ease-in-out;
+    /*Apple*/
+}
+
+.fa-angle-double-up:hover {
+    transform: scale(1.25);
+}
+
+.move-top {
+    z-index: 99;
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+    display: none;
+}
+
 /*--------------Media Queries---------*/
 
 /* Media queries have set set at 490px, 768px, 1200 px & 1440px to help manage good responsiveness for this software */ 
